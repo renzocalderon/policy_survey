@@ -3056,5 +3056,110 @@ table.compact td textarea.comment-box {
   document.getElementById('prevBtn').onclick=()=>{ if(step>0){ step--; update(); } };
   update();
 </script>
+
+<script>
+  // ====== CONFIG ======
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwaRPMzOIS7rQAI_tUrvzyqor0A9Sxdf4yxmgn0H0EG_R5Kni71bz2NQWuaKPbmrG3Jfw/exec';
+
+  // ====== FORM SERIALIZATION ======
+  function serializeForm(form) {
+    const data = {};
+    // loop all elements, not just successful controls in FormData
+    const elements = form.querySelectorAll('input, select, textarea');
+
+    // helper to set value
+    const set = (name, value) => {
+      // normalize to dotted names as-is (your form already uses them)
+      data[name] = value;
+    };
+
+    // First, initialize all checkboxes as false so unchecked ones are captured
+    elements.forEach(el => {
+      if (!el.name) return;
+      if (el.type === 'checkbox') {
+        // If a checkbox has an explicit value attribute and you prefer multi-select arrays,
+        // you could collect arrays instead. Here, we use booleans per unique name.
+        if (data[el.name] === undefined) set(el.name, false);
+      }
+    });
+
+    // Now fill in actual values
+    elements.forEach(el => {
+      if (!el.name || el.disabled) return;
+
+      const type = (el.type || '').toLowerCase();
+      const tag = el.tagName.toLowerCase();
+
+      if (type === 'checkbox') {
+        // store boolean by name
+        if (el.checked) set(el.name, true);
+      } else if (type === 'radio') {
+        if (el.checked) set(el.name, el.value);
+        else if (data[el.name] === undefined) set(el.name, ''); // ensure key exists
+      } else if (tag === 'select') {
+        if (el.multiple) {
+          const vals = Array.from(el.selectedOptions).map(o => o.value);
+          set(el.name, vals.join('; '));
+        } else {
+          set(el.name, el.value);
+        }
+      } else {
+        // text, number, email, url, textarea, etc.
+        set(el.name, el.value);
+      }
+    });
+
+    // You can also attach metadata if useful:
+    data._userAgent = navigator.userAgent;
+    data._submittedAtLocal = new Date().toString();
+    return data;
+  }
+
+  // ====== SUBMIT HANDLER ======
+  const formEl = document.getElementById('survey');
+  formEl.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = document.getElementById('submitBtn');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    try {
+      const payload = serializeForm(formEl);
+      const res = await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      // Apps Script returns 200 OK with {ok:true}. Treat non-200 as error.
+      let ok = res.ok;
+      try {
+        const json = await res.json();
+        if (json && json.ok) ok = true;
+      } catch (_) {
+        // In case JSON parse fails (e.g., if you adjusted the script), fall back to status
+      }
+
+      if (ok) {
+        alert('Thank you! Your response was submitted successfully.');
+        // Optional: reset the form & jump to the first page
+        formEl.reset();
+        // reset to page 0 if you like:
+        try { step = 0; update(); } catch(_) {}
+      } else {
+        throw new Error(`Submission failed (status ${res.status}).`);
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Sorry, there was a problem submitting the survey. Please try again.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+</script>
+
+  
 </body>
 </html>
