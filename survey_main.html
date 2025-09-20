@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -53,6 +53,14 @@
     .radio-group{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
     .radio-group label{display:inline-flex; align-items:center; gap:6px; font-weight:500}
     .nowrap{white-space:nowrap}
+    /* tidy checkbox alignment */
+    .checklist{display:flex; flex-direction:column; gap:10px}
+    .check-row{display:flex; align-items:flex-start; gap:10px}
+    .check-row input[type=checkbox]{margin-top:4px}
+    .nowrap{white-space:nowrap}
+    /* compact radios inside tables */
+    .radio-group{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .radio-group label{display:inline-flex; align-items:center; gap:6px; font-weight:500}
   </style>
 </head>
 <body>
@@ -114,17 +122,21 @@
 
         <h4>A) How are the quality department and quality strategy positioned within your Ministry of Health? Please tick all that apply. </h4>
         <div class="checklist">
-          <label><input type="checkbox" name="pos.quality_unit"/> A separate quality unit/department exists within the Ministry</label><br>
-          <label><input type="checkbox" name="pos.integrated"/> The quality function is integrated within other units/departments</label><br>
-          <label><input type="checkbox" name="pos.crosscutting"/> Quality is positioned as a cross-cutting element across sectoral strategies</label><br>
-          <label><input type="checkbox" name="pos.uhc"/> Quality is positioned as the core element of the Universal Health Coverage (UHC) strategy</label><br>
-          <label><input type="checkbox" name="pos.mandate"/> Quality has a formal mandate with defined governance (e.g., steering committee, focal points)</label><br>
-          <label><input type="checkbox" name="pos.plan"/> Quality has an implementation plan with budget and M&E framework</label><br>
-          <label><input type="checkbox" name="pos.not_addressed"/> Quality is not formally addressed in the organizational structure or strategy</label><br>
-          <label><input type="checkbox" name="pos.other"/> Other: <input type="text" name="pos.other_text" placeholder="Specify"/></label>
+          <label class="check-row"><input type="checkbox" name="pos.quality_unit"><span>A separate quality unit/department exists within the Ministry</span></label>
+          <label class="check-row"><input type="checkbox" name="pos.integrated"><span>The quality function is integrated within other units/departments</span></label>
+          <label class="check-row"><input type="checkbox" name="pos.crosscutting"><span>Quality is positioned as a cross-cutting element across sectoral strategies</span></label>
+          <label class="check-row"><input type="checkbox" name="pos.uhc"><span>Quality is positioned as the core element of the Universal Health Coverage (UHC) strategy</span></label>
+          <label class="check-row"><input type="checkbox" name="pos.mandate"><span>Quality has a formal mandate with defined governance (e.g., steering committee, focal points)</span></label>
+          <label class="check-row"><input type="checkbox" name="pos.plan"><span>Quality has an implementation plan with budget and M&E framework</span></label>
+          <label class="check-row"><input type="checkbox" name="pos.not_addressed"><span>Quality is not formally addressed in the organizational structure or strategy</span></label>
+          <div class="check-row">
+            <span class="nowrap" style="min-width:52px">Other:</span>
+            <input type="text" name="pos.other_text" placeholder="Specify" style="flex:1 1 auto">
+            <input type="checkbox" name="pos.other" style="display:none">
+          </div>
         </div>
 
-        <h4>B) Brief details (e.g., unit name, reporting line, year established) How does the quality function coordinate with other ministry priorities and programs?  What are the main mechanisms for inter-departmental collaboration on quality (e.g., task forces, joint planning, shared indicators)? (Open question)</h4>
+        <h4>B) Brief details (e.g., unit name, reporting line, year established) How does the quality function coordinate with other ministry priorities and programs?  What are the main mechanisms for inter-departmental collaboration on quality (e.g., task forces, joint planning, shared indicators)? (Open question)</h4> Brief details (e.g., unit name, reporting line, year established) How does the quality function coordinate with other ministry priorities and programs?  What are the main mechanisms for inter-departmental collaboration on quality (e.g., task forces, joint planning, shared indicators)? (Open question)</h4>
         <textarea name="coordination.details" rows="6" placeholder="Type your answer here"></textarea>
 
         <h4>C) We are interested in building a high-level snapshot of key quality of care policies in countries in the Latin America and Caribbean region. For each organisation below, rate its current role in assuring quality of care at the national level. Please rate from 1 (No role) to 5 (Primary lead) </h4>
@@ -633,7 +645,7 @@
     // Scroll to top / start of page for each step
     const current = sections[step];
     const header = current.querySelector('h2, h3, h1') || current;
-    header.scrollIntoView({ behavior: 'instant', block: 'start' });
+    header.scrollIntoView({ behavior: 'auto', block: 'start' });
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
   document.getElementById('nextBtn').onclick=()=>{ if(step<sections.length-1){ step++; update(); } window.scrollTo({ top: 0, behavior: 'smooth' }); };
