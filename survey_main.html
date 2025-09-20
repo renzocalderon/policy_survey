@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -46,6 +46,13 @@
     table{width:100%; border-collapse:collapse; background:#fff}
     th,td{border:1px solid var(--line); padding:8px; text-align:left; vertical-align:top}
     th{background:#f8fafc}
+    /* tidy checkbox alignment */
+    .checklist label{display:flex; align-items:flex-start; gap:10px; margin:6px 0; line-height:1.4}
+    .checklist input[type=checkbox]{margin-top:2px}
+    /* compact radios inside tables */
+    .radio-group{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .radio-group label{display:inline-flex; align-items:center; gap:6px; font-weight:500}
+    .nowrap{white-space:nowrap}
   </style>
 </head>
 <body>
@@ -106,7 +113,7 @@
         <h3>1.1 Overview of key quality of care policies</h3>
 
         <h4>A) How are the quality department and quality strategy positioned within your Ministry of Health? Please tick all that apply. </h4>
-        <div>
+        <div class="checklist">
           <label><input type="checkbox" name="pos.quality_unit"/> A separate quality unit/department exists within the Ministry</label><br>
           <label><input type="checkbox" name="pos.integrated"/> The quality function is integrated within other units/departments</label><br>
           <label><input type="checkbox" name="pos.crosscutting"/> Quality is positioned as a cross-cutting element across sectoral strategies</label><br>
@@ -134,6 +141,7 @@
         <h4>D) What you regard to be the key policies and strategies aiming at quality of care in your country? What are the main strategic goals in this topic? Please complete the table below considering both existing and planned strategies.</h4>
         <table>
           <tr>
+            <th> </th>
             <th>Key Policy / Strategy? (Yes/No)</th>
             <th>Status<br>(Implemented / <br>Planned)</th>
             <th>Documents (Titles + links)</th>
@@ -141,23 +149,448 @@
             <th>Responsible institution</th>
             <th>Providers involved<br>(All / Private / Public)</th>
           </tr>
-          <tr><td>National Quality Strategy / Plan</td><td><input type="text" name="pol.nqs.status"></td><td><input type="text" name="pol.nqs.docs"></td><td><input type="text" name="pol.nqs.goal"></td><td><input type="text" name="pol.nqs.inst"></td><td><input type="text" name="pol.nqs.providers"></td></tr>
-          <tr><td>Disease specific: National Cancer Plan</td><td><input type="text" name="pol.cancer.status"></td><td><input type="text" name="pol.cancer.docs"></td><td><input type="text" name="pol.cancer.goal"></td><td><input type="text" name="pol.cancer.inst"></td><td><input type="text" name="pol.cancer.providers"></td></tr>
-          <tr><td>Disease specific: National CVD Plan</td><td><input type="text" name="pol.cvd.status"></td><td><input type="text" name="pol.cvd.docs"></td><td><input type="text" name="pol.cvd.goal"></td><td><input type="text" name="pol.cvd.inst"></td><td><input type="text" name="pol.cvd.providers"></td></tr>
-          <tr><td>Accreditation & Licensing (facilities/providers)</td><td><input type="text" name="pol.accred.status"></td><td><input type="text" name="pol.accred.docs"></td><td><input type="text" name="pol.accred.goal"></td><td><input type="text" name="pol.accred.inst"></td><td><input type="text" name="pol.accred.providers"></td></tr>
-          <tr><td>Clinical Guidelines & Clinical Audit</td><td><input type="text" name="pol.guidelines.status"></td><td><input type="text" name="pol.guidelines.docs"></td><td><input type="text" name="pol.guidelines.goal"></td><td><input type="text" name="pol.guidelines.inst"></td><td><input type="text" name="pol.guidelines.providers"></td></tr>
-          <tr><td>Measurement & Public Reporting</td><td><input type="text" name="pol.measure.status"></td><td><input type="text" name="pol.measure.docs"></td><td><input type="text" name="pol.measure.goal"></td><td><input type="text" name="pol.measure.inst"></td><td><input type="text" name="pol.measure.providers"></td></tr>
-          <tr><td>Disease specific: National Cancer Registry</td><td><input type="text" name="pol.cancerreg.status"></td><td><input type="text" name="pol.cancerreg.docs"></td><td><input type="text" name="pol.cancerreg.goal"></td><td><input type="text" name="pol.cancerreg.inst"></td><td><input type="text" name="pol.cancerreg.providers"></td></tr>
-          <tr><td>Disease specific: CVD Epidemiological Monitoring</td><td><input type="text" name="pol.cvdmon.status"></td><td><input type="text" name="pol.cvdmon.docs"></td><td><input type="text" name="pol.cvdmon.goal"></td><td><input type="text" name="pol.cvdmon.inst"></td><td><input type="text" name="pol.cvdmon.providers"></td></tr>
-          <tr><td>Patient Safety: Incident Reporting & Learning System</td><td><input type="text" name="pol.safety.status"></td><td><input type="text" name="pol.safety.docs"></td><td><input type="text" name="pol.safety.goal"></td><td><input type="text" name="pol.safety.inst"></td><td><input type="text" name="pol.safety.providers"></td></tr>
-          <tr><td>Infection Prevention & Control (incl. AMR)</td><td><input type="text" name="pol.ipc.status"></td><td><input type="text" name="pol.ipc.docs"></td><td><input type="text" name="pol.ipc.goal"></td><td><input type="text" name="pol.ipc.inst"></td><td><input type="text" name="pol.ipc.providers"></td></tr>
-          <tr><td>Medication Safety & Antimicrobial Stewardship</td><td><input type="text" name="pol.medsafety.status"></td><td><input type="text" name="pol.medsafety.docs"></td><td><input type="text" name="pol.medsafety.goal"></td><td><input type="text" name="pol.medsafety.inst"></td><td><input type="text" name="pol.medsafety.providers"></td></tr>
-          <tr><td>Surgical Safety (e.g., WHO checklist)</td><td><input type="text" name="pol.surg.status"></td><td><input type="text" name="pol.surg.docs"></td><td><input type="text" name="pol.surg.goal"></td><td><input type="text" name="pol.surg.inst"></td><td><input type="text" name="pol.surg.providers"></td></tr>
-          <tr><td>Patient-Centred Care: PROMs/PREMs & Shared Decision-Making</td><td><input type="text" name="pol.pcc.status"></td><td><input type="text" name="pol.pcc.docs"></td><td><input type="text" name="pol.pcc.goal"></td><td><input type="text" name="pol.pcc.inst"></td><td><input type="text" name="pol.pcc.providers"></td></tr>
-          <tr><td>Digital Health Quality Standards (EHR, e-prescribing, CDS)</td><td><input type="text" name="pol.dh.status"></td><td><input type="text" name="pol.dh.docs"></td><td><input type="text" name="pol.dh.goal"></td><td><input type="text" name="pol.dh.inst"></td><td><input type="text" name="pol.dh.providers"></td></tr>
-          <tr><td>Other, please specify: __________________________</td><td><input type="text" name="pol.other1.status"></td><td><input type="text" name="pol.other1.docs"></td><td><input type="text" name="pol.other1.goal"></td><td><input type="text" name="pol.other1.inst"></td><td><input type="text" name="pol.other1.providers"></td></tr>
-          <tr><td>Other, please specify: __________________________</td><td><input type="text" name="pol.other2.status"></td><td><input type="text" name="pol.other2.docs"></td><td><input type="text" name="pol.other2.goal"></td><td><input type="text" name="pol.other2.inst"></td><td><input type="text" name="pol.other2.providers"></td></tr>
-          <tr><td>Other, please specify: __________________________</td><td><input type="text" name="pol.other3.status"></td><td><input type="text" name="pol.other3.docs"></td><td><input type="text" name="pol.other3.goal"></td><td><input type="text" name="pol.other3.inst"></td><td><input type="text" name="pol.other3.providers"></td></tr>
+          <!-- Row: National Quality Strategy / Plan -->
+          <tr>
+            <td>National Quality Strategy / Plan</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.nqs.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.nqs.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.nqs.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.nqs.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.nqs.docs"></td>
+            <td><input type="text" name="pol.nqs.goal"></td>
+            <td><input type="text" name="pol.nqs.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.nqs.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.nqs.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.nqs.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: National Cancer Plan -->
+          <tr>
+            <td><em>Disease specific:</em> National Cancer Plan</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cancer.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.cancer.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.cancer.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.cancer.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.cancer.docs"></td>
+            <td><input type="text" name="pol.cancer.goal"></td>
+            <td><input type="text" name="pol.cancer.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cancer.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.cancer.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.cancer.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: National CVD Plan -->
+          <tr>
+            <td><em>Disease specific:</em> National CVD Plan</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cvd.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.cvd.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.cvd.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.cvd.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.cvd.docs"></td>
+            <td><input type="text" name="pol.cvd.goal"></td>
+            <td><input type="text" name="pol.cvd.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cvd.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.cvd.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.cvd.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Accreditation & Licensing -->
+          <tr>
+            <td>Accreditation & Licensing (facilities/providers)</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.accred.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.accred.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.accred.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.accred.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.accred.docs"></td>
+            <td><input type="text" name="pol.accred.goal"></td>
+            <td><input type="text" name="pol.accred.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.accred.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.accred.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.accred.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Clinical Guidelines & Audit -->
+          <tr>
+            <td>Clinical Guidelines & Clinical Audit</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.guidelines.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.guidelines.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.guidelines.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.guidelines.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.guidelines.docs"></td>
+            <td><input type="text" name="pol.guidelines.goal"></td>
+            <td><input type="text" name="pol.guidelines.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.guidelines.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.guidelines.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.guidelines.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Measurement & Public Reporting -->
+          <tr>
+            <td>Measurement & Public Reporting</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.measure.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.measure.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.measure.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.measure.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.measure.docs"></td>
+            <td><input type="text" name="pol.measure.goal"></td>
+            <td><input type="text" name="pol.measure.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.measure.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.measure.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.measure.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: National Cancer Registry -->
+          <tr>
+            <td>Disease specific: National Cancer Registry</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cancerreg.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.cancerreg.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.cancerreg.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.cancerreg.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.cancerreg.docs"></td>
+            <td><input type="text" name="pol.cancerreg.goal"></td>
+            <td><input type="text" name="pol.cancerreg.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cancerreg.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.cancerreg.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.cancerreg.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: CVD Epidemiological Monitoring -->
+          <tr>
+            <td>Disease specific: CVD Epidemiological Monitoring</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cvdmon.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.cvdmon.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.cvdmon.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.cvdmon.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.cvdmon.docs"></td>
+            <td><input type="text" name="pol.cvdmon.goal"></td>
+            <td><input type="text" name="pol.cvdmon.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cvdmon.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.cvdmon.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.cvdmon.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Patient Safety IRLS -->
+          <tr>
+            <td>Patient Safety: Incident Reporting & Learning System</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.safety.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.safety.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.safety.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.safety.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.safety.docs"></td>
+            <td><input type="text" name="pol.safety.goal"></td>
+            <td><input type="text" name="pol.safety.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.safety.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.safety.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.safety.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: IPC (incl. AMR) -->
+          <tr>
+            <td>Infection Prevention & Control (incl. AMR)</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.ipc.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.ipc.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.ipc.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.ipc.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.ipc.docs"></td>
+            <td><input type="text" name="pol.ipc.goal"></td>
+            <td><input type="text" name="pol.ipc.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.ipc.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.ipc.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.ipc.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Medication Safety & AMS -->
+          <tr>
+            <td>Medication Safety & Antimicrobial Stewardship</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.medsafety.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.medsafety.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.medsafety.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.medsafety.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.medsafety.docs"></td>
+            <td><input type="text" name="pol.medsafety.goal"></td>
+            <td><input type="text" name="pol.medsafety.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.medsafety.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.medsafety.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.medsafety.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Surgical Safety -->
+          <tr>
+            <td>Surgical Safety (e.g., WHO checklist)</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.surg.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.surg.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.surg.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.surg.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.surg.docs"></td>
+            <td><input type="text" name="pol.surg.goal"></td>
+            <td><input type="text" name="pol.surg.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.surg.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.surg.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.surg.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Patient‑Centred Care -->
+          <tr>
+            <td>Patient-Centred Care: PROMs/PREMs & Shared Decision-Making</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.pcc.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.pcc.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.pcc.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.pcc.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.pcc.docs"></td>
+            <td><input type="text" name="pol.pcc.goal"></td>
+            <td><input type="text" name="pol.pcc.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.pcc.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.pcc.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.pcc.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Digital Health Quality Standards -->
+          <tr>
+            <td>Digital Health Quality Standards (EHR, e-prescribing, CDS)</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.dh.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.dh.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.dh.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.dh.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.dh.docs"></td>
+            <td><input type="text" name="pol.dh.goal"></td>
+            <td><input type="text" name="pol.dh.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.dh.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.dh.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.dh.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Other 1 -->
+          <tr>
+            <td>Other, please specify: __________________________</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other1.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.other1.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.other1.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.other1.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.other1.docs"></td>
+            <td><input type="text" name="pol.other1.goal"></td>
+            <td><input type="text" name="pol.other1.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other1.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.other1.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.other1.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Other 2 -->
+          <tr>
+            <td>Other, please specify: __________________________</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other2.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.other2.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.other2.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.other2.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.other2.docs"></td>
+            <td><input type="text" name="pol.other2.goal"></td>
+            <td><input type="text" name="pol.other2.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other2.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.other2.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.other2.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Row: Other 3 -->
+          <tr>
+            <td>Other, please specify: __________________________</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other3.exist" value="Yes"> Yes</label>
+                <label><input type="radio" name="pol.other3.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.other3.status" value="Implemented"> Implemented</label>
+                <label class="nowrap"><input type="radio" name="pol.other3.status" value="Planned"> Planned</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.other3.docs"></td>
+            <td><input type="text" name="pol.other3.goal"></td>
+            <td><input type="text" name="pol.other3.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other3.providers" value="All"> All</label>
+                <label><input type="radio" name="pol.other3.providers" value="Private"> Private</label>
+                <label><input type="radio" name="pol.other3.providers" value="Public"> Public</label>
+              </div>
+            </td>
+          </tr>
         </table>
 
         <h4>E) Does your country have regular, institutionalised mechanisms to recognise and spread success in healthcare quality improvement—including the identification of best practices and high-performing “positive outliers” (i.e., organisations/teams performing significantly above peers on indicators fit for benchmarking)?</h4>
