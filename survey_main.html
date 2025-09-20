@@ -1,171 +1,98 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>LAC Quality-of-Care Survey</title>
-  <style>
-    body{font-family:system-ui,Arial,sans-serif;background:#0a0f23;color:#eaf0ff;margin:0;padding:20px}
-    .app{max-width:950px;margin:0 auto}
-    .card{background:#121a34;border-radius:20px;padding:20px}
-    .q{display:none}
-    .q.active{display:block}
-    .grid{display:grid;gap:14px}
-    @media(min-width:820px){.grid{grid-template-columns:1fr 1fr}}
-    .pager{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
-    .btn{padding:10px 14px;border-radius:12px;border:none;cursor:pointer;font-weight:600}
-    .btn.primary{background:#2b4ea5;color:white}
-    .btn.ghost{background:#333;color:white}
-    label{font-weight:600}
-    textarea,input,select{width:100%;padding:8px;border-radius:8px;border:1px solid #444;background:#0c1533;color:white}
-    table{width:100%;border-collapse:collapse}
-    th,td{border:1px solid #444;padding:6px;text-align:left}
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LAC Quality-of-Care Survey</title>
+<style>
+/* Light, formal theme */
+:root{
+--ink:#111827; /* text */
+--muted:#6b7280; /* secondary text */
+--bg:#f7f7fb; /* page bg */
+--card:#ffffff; /* surfaces */
+--line:#e5e7eb; /* borders */
+--primary:#1d4ed8; /* buttons/links */
+--primary-ink:#ffffff; /* on-primary */
+--focus:#2563eb; /* focus ring */
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink); margin:0; padding:20px}
+h1,h2,h3,h4{margin:0 0 10px; color:var(--ink)}
+.muted{color:var(--muted)}
+.app{max-width:1000px;margin:0 auto}
+.card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:24px}
+
+
+/* Layout */
+.q{display:none}
+.q.active{display:block}
+.grid{display:grid; gap:16px}
+@media(min-width:820px){.grid{grid-template-columns:1fr 1fr}}
+
+
+/* Controls */
+label{font-weight:600}
+textarea,input,select{width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--line); background:#fff; color:var(--ink)}
+textarea:focus,input:focus,select:focus{outline:3px solid rgba(37,99,235,.15); border-color:var(--focus)}
+
+
+.pager{display:flex; justify-content:space-between; align-items:center; margin-top:22px}
+.btn{padding:10px 14px; border-radius:8px; border:1px solid var(--line); cursor:pointer; font-weight:600; background:#fff; color:var(--ink)}
+.btn:hover{background:#f3f4f6}
+.btn.primary{background:var(--primary); color:var(--primary-ink); border-color:var(--primary)}
+.btn.primary:hover{filter:brightness(0.95)}
+.btn[disabled]{opacity:.5; cursor:not-allowed}
+
+
+/* Tables */
+table{width:100%; border-collapse:collapse; background:#fff}
+th,td{border:1px solid var(--line); padding:8px; text-align:left; vertical-align:top}
+th{background:#f8fafc}
+</style>
 </head>
 <body>
 <div class="app">
-  <div class="card">
-    <form id="survey">
+<div class="card">
+<form id="survey">
 
-      <!-- Landing Page: Intro + Contact + Definitions -->
-      <section class="q active" data-key="landing">
-        <h2>Policy Survey</h2>
-        <h3 class="muted">Health at a Glance: Latin America and the Caribbean</h3>
-        <h4 class="muted">Thematic chapter on quality-of-care policies</h4>
 
-        <p>This questionnaire is designed to collect information from LAC countries on quality-of-care policies and overall government efforts to assure and improve the quality of healthcare. The work based on this information will be released in 2026 as a thematic chapter of the third edition of <em>Health at a Glance: Latin America and the Caribbean</em>, co-published by the OECD, the World Bank and the Inter-American Development Bank.</p>
+<!-- Landing Page: Intro + Contact + Definitions -->
+<section class="q active" data-key="landing">
+<h2>Policy Survey</h2>
+<h3 class="muted">Health at a Glance: Latin America and the Caribbean</h3>
+<h4 class="muted">Thematic chapter on quality-of-care policies</h4>
 
-        <p>The questionnaire has two parts. <strong>Part I</strong> maps the state of play in quality-of-care policies—what exists in law and governance, the standards that guide practice, how performance is measured and improved, and how patients and professionals are engaged. <strong>Part II</strong> asks about the digital health capabilities and the uses of health data for quality improvement.</p>
 
-        <p>If it helps to communicate the information you want to provide as an answer, please include URLs and links as appropriate.</p>
+<p>This questionnaire is designed to collect information from LAC countries on quality-of-care policies and overall government efforts to assure and improve the quality of healthcare. The work based on this information will be released in 2026 as a thematic chapter of the third edition of <em>Health at a Glance: Latin America and the Caribbean</em>, co-published by the OECD, the World Bank and the Inter-American Development Bank.</p>
 
-        <hr>
-        <h3>Contact persons</h3>
-        <p class="muted">Please provide the name, affiliation, and email address of the main contact person for this questionnaire (you may also add the names of people who were responsible for completing specific sections).</p>
-        <div class="grid">
-          <div>
-            <label for="country">Country</label>
-            <input id="country" name="contact.country" type="text" required>
-          </div>
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="contact.name" type="text" required>
-          </div>
-          <div>
-            <label for="position">Position</label>
-            <input id="position" name="contact.position" type="text">
-          </div>
-          <div>
-            <label for="organisation">Organisation</label>
-            <input id="organisation" name="contact.organisation" type="text">
-          </div>
-          <div>
-            <label for="email">E‑mail address</label>
-            <input id="email" name="contact.email" type="email" required>
-          </div>
-        </div>
 
-        <hr>
-        <h3>Definition of key terms used in this questionnaire</h3>
-        <ul>
-          <li><strong>Hospital:</strong> Establishments primarily engaged in providing medical, diagnostic, and treatment services that include physician, nursing, and other health services to in‑patients and the specialised accommodation services required by in‑patients. Hospitals may also provide out‑patient services as a secondary activity.</li>
-          <li><strong>Primary Health Care (PHC):</strong> Primary care is the first level of contact of individuals, the family and community with the (national) health system bringing health care as close as possible to where people live and work and provides continuing and comprehensive medical care to individuals and families in an ambulatory setting. It may be provided by general practitioners (or "family doctors") and their teams but could also be provided by out‑patient departments of first level hospitals.</li>
-          <li><strong>Health care quality:</strong> Healthcare quality comprises three core dimensions of care—effectiveness, safety and patient‑centredness (responsiveness). These dimensions are applied across the care pathway: preventive, acute, chronic, and palliative care.</li>
-        </ul>
-      </section>
+<p>The questionnaire has two parts. <strong>Part I</strong> maps the state of play in quality-of-care policies—what exists in law and governance, the standards that guide practice, how performance is measured and improved, and how patients and professionals are engaged. <strong>Part II</strong> asks about the digital health capabilities and the uses of health data for quality improvement.</p>
 
-      <!-- Page 1: Part I, Section 1.1 -->
-      <section class="q" data-key="part1_overview">
-        <h2>Part I: Quality-of-care policy landscape</h2>
-        <h3>1.1 Overview of key quality of care policies</h3>
 
-        <h4>A) Positioning of quality department and strategy</h4>
-        <p>Please tick all that apply.</p>
-        <div>
-          <label><input type="checkbox" name="pos.quality_unit"/> A separate quality unit/department exists within the Ministry</label><br>
-          <label><input type="checkbox" name="pos.integrated"/> The quality function is integrated within other units/departments</label><br>
-          <label><input type="checkbox" name="pos.crosscutting"/> Quality is positioned as a cross-cutting element across sectoral strategies</label><br>
-          <label><input type="checkbox" name="pos.uhc"/> Quality is positioned as the core element of the UHC strategy</label><br>
-          <label><input type="checkbox" name="pos.mandate"/> Quality has a formal mandate with defined governance (e.g., steering committee, focal points)</label><br>
-          <label><input type="checkbox" name="pos.plan"/> Quality has an implementation plan with budget and M&E framework</label><br>
-          <label><input type="checkbox" name="pos.not_addressed"/> Quality is not formally addressed in the organizational structure or strategy</label><br>
-          <label><input type="checkbox" name="pos.other"/> Other: <input type="text" name="pos.other_text"/></label>
-        </div>
+<p>If it helps to communicate the information you want to provide as an answer, please include URLs and links as appropriate.</p>
 
-        <h4>B) Coordination and mechanisms</h4>
-        <textarea name="coordination.details" rows="5" placeholder="Brief details, mechanisms, collaboration"></textarea>
 
-        <h4>C) Role of organisations in assuring quality of care</h4>
-        <p>Rate from 1 (No role) to 5 (Primary lead)</p>
-        <table>
-          <tr><th>Organisation</th><th>Rate</th><th>Organisation name (link)</th></tr>
-          <tr><td>Ministry of Health / central health authority</td><td><input type="number" name="org.moh.rate" min="1" max="5"></td><td><input type="url" name="org.moh.name"></td></tr>
-          <tr><td>National institute/agency for healthcare quality</td><td><input type="number" name="org.quality.rate" min="1" max="5"></td><td><input type="url" name="org.quality.name"></td></tr>
-          <tr><td>National public health institute</td><td><input type="number" name="org.nphi.rate" min="1" max="5"></td><td><input type="url" name="org.nphi.name"></td></tr>
-          <tr><td>Health insurance funds / payers</td><td><input type="number" name="org.insurance.rate" min="1" max="5"></td><td><input type="url" name="org.insurance.name"></td></tr>
-          <tr><td>Professional regulators</td><td><input type="number" name="org.regulators.rate" min="1" max="5"></td><td><input type="url" name="org.regulators.name"></td></tr>
-          <tr><td>Another key organisation</td><td><input type="number" name="org.other.rate" min="1" max="5"></td><td><input type="text" name="org.other.name"></td></tr>
-        </table>
-
-        <h4>D) Key policies and strategies</h4>
-        <p>Complete the table (existing/planned, documents, goals, etc.).</p>
-        <table>
-          <tr><th>Policy/Strategy</th><th>Exists (Yes/No)</th><th>Status</th><th>Documents</th><th>Key goal & timeline</th><th>Responsible institution</th><th>Providers involved</th></tr>
-          <tr><td>National Quality Strategy / Plan</td><td><input type="text" name="pol.nqs.exist"></td><td><input type="text" name="pol.nqs.status"></td><td><input type="text" name="pol.nqs.docs"></td><td><input type="text" name="pol.nqs.goal"></td><td><input type="text" name="pol.nqs.inst"></td><td><input type="text" name="pol.nqs.providers"></td></tr>
-          <tr><td>National Cancer Plan</td><td><input type="text" name="pol.cancer.exist"></td><td><input type="text" name="pol.cancer.status"></td><td><input type="text" name="pol.cancer.docs"></td><td><input type="text" name="pol.cancer.goal"></td><td><input type="text" name="pol.cancer.inst"></td><td><input type="text" name="pol.cancer.providers"></td></tr>
-          <tr><td>National CVD Plan</td><td><input type="text" name="pol.cvd.exist"></td><td><input type="text" name="pol.cvd.status"></td><td><input type="text" name="pol.cvd.docs"></td><td><input type="text" name="pol.cvd.goal"></td><td><input type="text" name="pol.cvd.inst"></td><td><input type="text" name="pol.cvd.providers"></td></tr>
-          <tr><td>Accreditation & Licensing (facilities/providers)</td><td><input type="text" name="pol.accred.exist"></td><td><input type="text" name="pol.accred.status"></td><td><input type="text" name="pol.accred.docs"></td><td><input type="text" name="pol.accred.goal"></td><td><input type="text" name="pol.accred.inst"></td><td><input type="text" name="pol.accred.providers"></td></tr>
-          <tr><td>Clinical Guidelines & Clinical Audit</td><td><input type="text" name="pol.guidelines.exist"></td><td><input type="text" name="pol.guidelines.status"></td><td><input type="text" name="pol.guidelines.docs"></td><td><input type="text" name="pol.guidelines.goal"></td><td><input type="text" name="pol.guidelines.inst"></td><td><input type="text" name="pol.guidelines.providers"></td></tr>
-          <tr><td>Measurement & Public Reporting</td><td><input type="text" name="pol.measure.exist"></td><td><input type="text" name="pol.measure.status"></td><td><input type="text" name="pol.measure.docs"></td><td><input type="text" name="pol.measure.goal"></td><td><input type="text" name="pol.measure.inst"></td><td><input type="text" name="pol.measure.providers"></td></tr>
-          <tr><td>National Cancer Registry</td><td><input type="text" name="pol.cancerreg.exist"></td><td><input type="text" name="pol.cancerreg.status"></td><td><input type="text" name="pol.cancerreg.docs"></td><td><input type="text" name="pol.cancerreg.goal"></td><td><input type="text" name="pol.cancerreg.inst"></td><td><input type="text" name="pol.cancerreg.providers"></td></tr>
-          <tr><td>CVD Epidemiological Monitoring</td><td><input type="text" name="pol.cvdmon.exist"></td><td><input type="text" name="pol.cvdmon.status"></td><td><input type="text" name="pol.cvdmon.docs"></td><td><input type="text" name="pol.cvdmon.goal"></td><td><input type="text" name="pol.cvdmon.inst"></td><td><input type="text" name="pol.cvdmon.providers"></td></tr>
-          <tr><td>Patient Safety: Incident Reporting & Learning System</td><td><input type="text" name="pol.safety.exist"></td><td><input type="text" name="pol.safety.status"></td><td><input type="text" name="pol.safety.docs"></td><td><input type="text" name="pol.safety.goal"></td><td><input type="text" name="pol.safety.inst"></td><td><input type="text" name="pol.safety.providers"></td></tr>
-          <tr><td>Infection Prevention & Control (incl. AMR)</td><td><input type="text" name="pol.ipc.exist"></td><td><input type="text" name="pol.ipc.status"></td><td><input type="text" name="pol.ipc.docs"></td><td><input type="text" name="pol.ipc.goal"></td><td><input type="text" name="pol.ipc.inst"></td><td><input type="text" name="pol.ipc.providers"></td></tr>
-          <tr><td>Medication Safety & Antimicrobial Stewardship</td><td><input type="text" name="pol.medsafety.exist"></td><td><input type="text" name="pol.medsafety.status"></td><td><input type="text" name="pol.medsafety.docs"></td><td><input type="text" name="pol.medsafety.goal"></td><td><input type="text" name="pol.medsafety.inst"></td><td><input type="text" name="pol.medsafety.providers"></td></tr>
-          <tr><td>Surgical Safety (e.g., WHO checklist)</td><td><input type="text" name="pol.surg.exist"></td><td><input type="text" name="pol.surg.status"></td><td><input type="text" name="pol.surg.docs"></td><td><input type="text" name="pol.surg.goal"></td><td><input type="text" name="pol.surg.inst"></td><td><input type="text" name="pol.surg.providers"></td></tr>
-          <tr><td>Patient‑Centred Care: PROMs/PREMs & Shared Decision‑Making</td><td><input type="text" name="pol.pcc.exist"></td><td><input type="text" name="pol.pcc.status"></td><td><input type="text" name="pol.pcc.docs"></td><td><input type="text" name="pol.pcc.goal"></td><td><input type="text" name="pol.pcc.inst"></td><td><input type="text" name="pol.pcc.providers"></td></tr>
-          <tr><td>Digital Health Quality Standards (EHR, e‑prescribing, CDS)</td><td><input type="text" name="pol.dh.exist"></td><td><input type="text" name="pol.dh.status"></td><td><input type="text" name="pol.dh.docs"></td><td><input type="text" name="pol.dh.goal"></td><td><input type="text" name="pol.dh.inst"></td><td><input type="text" name="pol.dh.providers"></td></tr>
-          <tr><td>Other (specify)</td><td><input type="text" name="pol.other1.exist"></td><td><input type="text" name="pol.other1.status"></td><td><input type="text" name="pol.other1.docs"></td><td><input type="text" name="pol.other1.goal"></td><td><input type="text" name="pol.other1.inst"></td><td><input type="text" name="pol.other1.providers"></td></tr>
-          <tr><td>Other (specify)</td><td><input type="text" name="pol.other2.exist"></td><td><input type="text" name="pol.other2.status"></td><td><input type="text" name="pol.other2.docs"></td><td><input type="text" name="pol.other2.goal"></td><td><input type="text" name="pol.other2.inst"></td><td><input type="text" name="pol.other2.providers"></td></tr>
-          <tr><td>Other (specify)</td><td><input type="text" name="pol.other3.exist"></td><td><input type="text" name="pol.other3.status"></td><td><input type="text" name="pol.other3.docs"></td><td><input type="text" name="pol.other3.goal"></td><td><input type="text" name="pol.other3.inst"></td><td><input type="text" name="pol.other3.providers"></td></tr>
-        </table>
-
-        <h4>E) Mechanisms to recognise and spread success</h4>
-        <div>
-          <label><input type="checkbox" name="recog.forum"/> National quality forum/conference</label><br>
-          <label><input type="checkbox" name="recog.events"/> Regional or sub-national quality events</label><br>
-          <label><input type="checkbox" name="recog.awards"/> National awards/recognition programme</label><br>
-          <label><input type="checkbox" name="recog.mechanism"/> Formal mechanism to identify and spread best practices</label><br>
-          <label><input type="checkbox" name="recog.publications"/> Regular publication/dissemination of case studies</label><br>
-          <label><input type="checkbox" name="recog.none"/> None of the above</label><br>
-          <label><input type="checkbox" name="recog.other"/> Other: <input type="text" name="recog.other_text"></label>
-        </div>
-        <textarea name="recog.comment" rows="4" placeholder="Comments on frequency, coverage, basis for identifying positive outliers"></textarea>
-
-        <h4>F) WHO/PAHO and national quality improvement initiatives</h4>
-        <textarea name="initiatives" rows="5" placeholder="List all WHO/PAHO or national initiatives"></textarea>
-
-      </section>
-
-      <div class="pager">
-        <button type="button" class="btn ghost" id="prevBtn">← Back</button>
-        <button type="button" class="btn ghost" id="nextBtn">Next →</button>
-        <button type="submit" class="btn primary" id="submitBtn" style="display:none">Submit</button>
-      </div>
-    </form>
-  </div>
+<hr>
+<h3>Contact persons</h3>
+<p class="muted">Please provide the name, affiliation, and email address of the main contact person for this questionnaire (you may also add the names of people who were responsible for completing specific sections).</p>
+<div class="grid">
+<div>
+<label for="country">Country</label>
+<input id="country" name="contact.country" type="text" required>
 </div>
-
-<script>
-  const sections=document.querySelectorAll('.q');
-  let step=0;
-  function update(){sections.forEach((s,i)=>s.classList.toggle('active',i===step));
-    document.getElementById('prevBtn').disabled=step===0;
-    document.getElementById('nextBtn').disabled=step===sections.length-1;
-    document.getElementById('submitBtn').style.display=(step===sections.length-1)?'inline-block':'none';}
-  document.getElementById('nextBtn').onclick=()=>{if(step<sections.length-1){step++;update();}};
-  document.getElementById('prevBtn').onclick=()=>{if(step>0){step--;update();}};
-  update();
-</script>
-</body>
-</html>
+<div>
+<label for="name">Name</label>
+<input id="name" name="contact.name" type="text" required>
+</div>
+<div>
+<label for="position">Position</label>
+<input id="position" name="contact.position" type="text">
+</div>
+<div>
+<label for="organisation">Organisation</label>
+<input id="organisation" name="contact.organisation" type="text">
+</div>
+<div>
+<label for="email">E‑mail address</label>
