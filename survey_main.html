@@ -3044,6 +3044,65 @@ table.compact td textarea.comment-box {
     </form>
   </div>
 </div>
+
+
+  <script>
+  const sections = document.querySelectorAll('.q');
+  let step = 0;
+
+  function update(){
+    sections.forEach((s,i)=>s.classList.toggle('active', i===step));
+    document.getElementById('prevBtn').disabled = step===0;
+    document.getElementById('nextBtn').disabled = step===sections.length-1;
+    document.getElementById('submitBtn').style.display = (step===sections.length-1)?'inline-block':'none';
+    const current = sections[step];
+    const header = current.querySelector('h2, h3, h1') || current;
+    header.scrollIntoView({ behavior: 'auto', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  function validateCurrentSection(){
+    // keep your per-page validation here if you’ve added it
+    return true;
+  }
+
+  // Navigation with history
+  document.getElementById('nextBtn').onclick = () => {
+    if (step < sections.length-1){
+      if (!validateCurrentSection()) return;
+      step++;
+      update();
+      history.pushState({ step }, '', `#step${step}`);
+    }
+  };
+  document.getElementById('prevBtn').onclick = () => {
+    if (step > 0){
+      step--;
+      update();
+      history.pushState({ step }, '', `#step${step}`);
+    }
+  };
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', (event) => {
+    if (event.state && typeof event.state.step === 'number') {
+      step = event.state.step;
+      update();
+    }
+  });
+
+  // Initialize step from URL hash
+  window.addEventListener('DOMContentLoaded', () => {
+    const match = location.hash.match(/#step(\d+)/);
+    if (match) {
+      step = parseInt(match[1], 10) || 0;
+    }
+    history.replaceState({ step }, '', `#step${step}`);
+    update();
+  });
+</script>
+
+  
  <script>
   // ====== CONFIG ======
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxmN8XjWQ6lZDUU2dNas4bfkO6kwAoUO9A3xB9-y03bGHWZAeEUWLEzRdvh_VK3OLka3Q/exec';
