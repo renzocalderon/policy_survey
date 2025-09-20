@@ -2042,6 +2042,532 @@
   </div>
 </section>
 
+<!-- ========================= -->
+<!-- Part II: Digitalization & Health Data (intro + Q a) -->
+<!-- ========================= -->
+
+<section class="q" data-key="part2_intro">
+  <h2>Part II. Health data infrastructure / digitalization</h2>
+  <p>This section documents how your country collects, digitizes, links, and uses patient-care data to monitor and improve the quality of care.</p>
+  <ul>
+    <li><strong>Available data sources:</strong> Identify the sources and care settings that provide data to assess quality of care.</li>
+    <li><strong>Extent of digitalization:</strong> Presence/maturity of EHRs and whether key data are structured and coded.</li>
+    <li><strong>Capacity to link datasets:</strong> Patient-level linkage across settings to build robust, comparable quality indicators.</li>
+    <li><strong>Data structure, auditing &amp; reporting capacity:</strong> Challenges and solutions for managing data and reporting on quality of care.</li>
+  </ul>
+  <p class="muted"><strong>Key definition:</strong> An <em>EHR</em> is a longitudinal, interoperable record that contains—or virtually links—information from multiple Electronic Medical Records (EMRs) across settings. Where a nationwide EHR is absent or partial, equivalent data may exist in hospital data, primary care databases, disease registries (e.g., cancer), pharmacy/prescription records, mortality data, and long-term care datasets.</p>
+</section>
+
+<section class="q" data-key="part2_availability">
+  <h2>Part II. Health data infrastructure / digitalization</h2>
+  <h3>a) Health data availability</h3>
+  <p>The table maps the availability of patient-care data for quality monitoring and improvement across healthcare settings. Mark all options that apply. If subnational, add % population covered and indicate whether it corresponds to public or private providers.</p>
+
+  <!-- Helper note -->
+  <p class="muted">Columns (domains): <em>All care settings, Hospital data, Primary care data, Mortality data, Prescription medicines, Formal long-term care, Cancer registry data, Population Health Survey</em>.</p>
+
+  <style>
+    /* Narrow helpers for this section only */
+    .mini { width: 140px; }
+    .w-yesno { display:flex; gap:12px; flex-wrap:wrap }
+    .cellpad { padding:6px 0 }
+    .domain-head { writing-mode:horizontal-tb; transform:none; }
+    @media (min-width:900px){
+      .domain-head { white-space:nowrap }
+    }
+  </style>
+
+  <table>
+    <tr>
+      <th>Question</th>
+      <th class="domain-head">All care settings</th>
+      <th class="domain-head">Hospital data</th>
+      <th class="domain-head">Primary care data</th>
+      <th class="domain-head">Mortality data</th>
+      <th class="domain-head">Prescription medicines</th>
+      <th class="domain-head">Formal long-term care</th>
+      <th class="domain-head">Cancer registry data</th>
+      <th class="domain-head">Population Health Survey</th>
+      <th>Comments</th>
+    </tr>
+
+    <!-- Row 1: Availability to a national authority in digital form -->
+    <tr>
+      <td><strong>Is patient care data available to a national authority in a digital form?</strong><br><span class="muted">(If subnational, specify coverage % and sector)</span></td>
+
+      <!-- All care settings -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.all.national"> National</label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="hd.avail.all.subnational"> Subnational, specify:
+          </label>
+          <input type="text" class="mini" name="hd.avail.all.subnational_spec" placeholder="% &amp; sector">
+        </div>
+      </td>
+
+      <!-- Hospital -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.hosp.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.hosp.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.hosp.subnational_spec" placeholder="% &amp; sector">
+        </div>
+      </td>
+
+      <!-- Primary care -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.phc.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.phc.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.phc.subnational_spec" placeholder="% &amp; sector">
+        </div>
+      </td>
+
+      <!-- Mortality -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.mort.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.mort.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.mort.subnational_spec" placeholder="% &amp; sector">
+        </div>
+      </td>
+
+      <!-- Rx -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.rx.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.rx.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.rx.subnational_spec" placeholder="% &amp; sector">
+        </div>
+      </td>
+
+      <!-- LTC -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.ltc.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.ltc.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.ltc.subnational_spec" placeholder="% &amp; sector">
+        </div>
+      </td>
+
+      <!-- Cancer registry -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.cancer.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.cancer.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.cancer.subnational_spec" placeholder="% &amp; sector">
+        </div>
+      </td>
+
+      <!-- Pop Health Survey -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.phs.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.phs.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.phs.subnational_spec" placeholder="% &amp; sector">
+        </div>
+      </td>
+
+      <td><input type="text" name="hd.avail.comments" placeholder="If non-digital, please comment"></td>
+    </tr>
+
+    <!-- Row 2: Managed in EHR -->
+    <tr>
+      <td><strong>Is patient care data managed in an EHR system?</strong><br><span class="muted">(National or subnational—please specify)</span></td>
+
+      <!-- All care settings -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.all.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.all.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.all.subnational_spec" placeholder="region/program">
+        </div>
+      </td>
+
+      <!-- Hospital -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.hosp.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.hosp.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.hosp.subnational_spec" placeholder="region/program">
+        </div>
+      </td>
+
+      <!-- Primary care -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.phc.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.phc.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.phc.subnational_spec" placeholder="region/program">
+        </div>
+      </td>
+
+      <!-- Mortality -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.mort.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.mort.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.mort.subnational_spec" placeholder="region/program">
+        </div>
+      </td>
+
+      <!-- Rx -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.rx.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.rx.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.rx.subnational_spec" placeholder="region/program">
+        </div>
+      </td>
+
+      <!-- LTC -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.ltc.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.ltc.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.ltc.subnational_spec" placeholder="region/program">
+        </div>
+      </td>
+
+      <!-- Cancer registry -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.cancer.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.cancer.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.cancer.subnational_spec" placeholder="region/program">
+        </div>
+      </td>
+
+      <!-- Pop Health Survey -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.phs.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.phs.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.phs.subnational_spec" placeholder="region/program">
+        </div>
+      </td>
+
+      <td><input type="text" name="hd.ehr.comments" placeholder="Notes (platform/vendor, scope, etc.)"></td>
+    </tr>
+
+    <!-- Row 3: Unique patient ID -->
+    <tr>
+      <td><strong>Is there a unique patient identifier (ID) used that can link records across providers or settings?</strong></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.all" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.all" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.hosp" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.hosp" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.phc" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.phc" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.mort" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.mort" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.rx" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.rx" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.ltc" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.ltc" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.cancer" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.cancer" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.phs" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.phs" value="No"> No</label>
+      </div></td>
+
+      <td><input type="text" name="hd.id.comments" placeholder="If yes, describe governance/format (e.g., national ID)"></td>
+    </tr>
+
+    <!-- Row 4: Data storage/processing -->
+    <tr>
+      <td><strong>How is patient care data managed, stored and processed?</strong></td>
+
+      <!-- All -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.all.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.all.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.all.other"></label>
+        </div>
+      </td>
+
+      <!-- Hospital -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.hosp.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.hosp.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.hosp.other"></label>
+        </div>
+      </td>
+
+      <!-- PHC -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.phc.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.phc.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.phc.other"></label>
+        </div>
+      </td>
+
+      <!-- Mortality -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.mort.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.mort.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.mort.other"></label>
+        </div>
+      </td>
+
+      <!-- Rx -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.rx.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.rx.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.rx.other"></label>
+        </div>
+      </td>
+
+      <!-- LTC -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.ltc.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.ltc.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.ltc.other"></label>
+        </div>
+      </td>
+
+      <!-- Cancer -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.cancer.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.cancer.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.cancer.other"></label>
+        </div>
+      </td>
+
+      <!-- PHS -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.phs.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.phs.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.phs.other"></label>
+        </div>
+      </td>
+
+      <td><input type="text" name="hd.store.comments" placeholder="Vendors, standards, hosting notes"></td>
+    </tr>
+
+    <!-- Row 5: Breakdown availability -->
+    <tr>
+      <td><strong>Are the following breakdowns available?</strong><br><span class="muted">Mark all that apply in each domain</span></td>
+
+      <!-- All -->
+      <td>
+        <div class="checklist cellpad">
+          <label><input type="checkbox" name="hd.brk.all.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.all.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.all.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.all.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.all.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.all.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.all.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- Hospital -->
+      <td>
+        <div class="checklist cellpad">
+          <label><input type="checkbox" name="hd.brk.hosp.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.hosp.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.hosp.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.hosp.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.hosp.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.hosp.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.hosp.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- PHC -->
+      <td>
+        <div class="checklist cellpad">
+          <label><input type="checkbox" name="hd.brk.phc.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.phc.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.phc.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.phc.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.phc.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.phc.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.phc.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- Mortality -->
+      <td>
+        <div class="checklist cellpad">
+          <label><input type="checkbox" name="hd.brk.mort.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.mort.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.mort.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.mort.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.mort.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.mort.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.mort.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- Rx -->
+      <td>
+        <div class="checklist cellpad">
+          <label><input type="checkbox" name="hd.brk.rx.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.rx.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.rx.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.rx.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.rx.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.rx.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.rx.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- LTC -->
+      <td>
+        <div class="checklist cellpad">
+          <label><input type="checkbox" name="hd.brk.ltc.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.ltc.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.ltc.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.ltc.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.ltc.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.ltc.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.ltc.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- Cancer registry -->
+      <td>
+        <div class="checklist cellpad">
+          <label><input type="checkbox" name="hd.brk.cancer.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.cancer.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.cancer.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.cancer.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.cancer.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.cancer.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.cancer.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- Pop Health Survey -->
+      <td>
+        <div class="checklist cellpad">
+          <label><input type="checkbox" name="hd.brk.phs.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.phs.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.phs.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.phs.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.phs.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.phs.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.phs.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <td><input type="text" name="hd.brk.comments" placeholder="Notes on definitions/harmonization"></td>
+    </tr>
+
+    <!-- Row 6: Patient access -->
+    <tr>
+      <td><strong>Do patients have access to their own data?</strong><br><span class="muted">If yes, specify how access is provided (e.g., portal, app, request)</span></td>
+
+      <!-- All -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.all" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.all.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.all" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- Hospital -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.hosp" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.hosp.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.hosp" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- PHC -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.phc" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.phc.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.phc" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- Mortality -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.mort" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.mort.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.mort" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- Rx -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.rx" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.rx.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.rx" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- LTC -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.ltc" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.ltc.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.ltc" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- Cancer -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.cancer" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.cancer.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.cancer" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- PHS -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.phs" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.phs.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.phs" value="No"> No</label>
+        </div>
+      </td>
+
+      <td><input type="text" name="hd.ptacc.comments" placeholder="Access rights, timelines, fees, appeal routes"></td>
+    </tr>
+  </table>
+</section>
 
 
 
