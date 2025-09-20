@@ -1668,58 +1668,43 @@
   <textarea name="fi.details" rows="6" placeholder="Type your answer here"></textarea>
 </section>
 
-      <!-- Page: Part I – 1.9 Patient safety, medical malpractice and infection control -->
+<!-- Page: Part I – 1.9 Patient safety, medical malpractice and infection control -->
 <section class="q" data-key="part1_patient_safety">
   <h2>Part I: Quality-of-care policy landscape</h2>
   <h3>1.9&nbsp;&nbsp;Patient safety, medical malpractice and infection control</h3>
 
-  <!-- a) National patient safety programme -->
   <h4>a) Does your country have a national patient safety program? If yes, which of the following topics does it address? (Select all that apply)</h4>
   <div class="checklist">
-  </div>
-  <div class="checklist" style="margin-left:16px">
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.patient_id"> Patient identification</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.ipc"> Infection prevention and control</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.medsafety"> Medication safety</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.surgsafety"> Surgical safety (e.g., checklists, wrong-site surgery prevention)</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.handhygiene"> Hand hygiene</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.device"> Device-related safety (catheters, lines, ventilators)</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.obstetric"> Obstetric/perinatal safety</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.falls"> Fall prevention</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.pressure"> Pressure ulcer prevention</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.transfusion"> Safe transfusion</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.anesthesia"> Safe anesthesia</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.sepsis"> Sepsis recognition/management</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.ams"> Antimicrobial stewardship</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.diagnostic"> Diagnostic safety</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.irls"> Incident reporting &amp; learning system</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.culture"> Safety culture &amp; leadership</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.topic.disclosure"> Disclosure &amp; apology policies</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.patient_id"> Patient identification </label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.ipc"> Infection prevention and control</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.med_safety"> Medication safety</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.surg_safety"> Surgical safety</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.falls"> Prevention of falls</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.transfusion"> Safe blood transfusion</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.devices"> Safe use of medical devices</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.reporting"> Reporting and learning from adverse events</label>
     <label class="checkbox-label">
-      <input type="checkbox" name="ps.topic.other"> Other (please specify):
-      <input type="text" name="ps.topic.other_text" placeholder="Specify">
+      <input type="checkbox" name="ps.a.other"> Other (please specify): 
+      <input type="text" name="ps.a.other_text" placeholder="_______________________________">
     </label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.prog.none"> No national patient safety program exists</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.none"> No national patient safety program exists</label>
   </div>
 
-  <!-- b) Responsible organizations -->
   <h4>b) Which organizations are responsible for patient safety in your country? (Select all that apply)</h4>
   <div class="checklist">
-    <label class="checkbox-label"><input type="checkbox" name="ps.resp.moh"> Ministry of Health</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.resp.agency"> National patient safety agency</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.resp.regulator"> Health regulator / inspectorate</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.resp.payers"> Health insurance funds / payers</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.resp.prof"> Professional associations / licensing boards</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.resp.providers"> Providers (hospitals/PHC networks)</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.resp.academia"> Universities / research institutes</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.moh"> Ministry of Health</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.npsa"> National patient safety agency</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.prof"> Professional medical associations</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.accr"> Hospital accreditation bodies</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.ins"> Health insurance providers</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.local"> Regional/local health authorities</label>
     <label class="checkbox-label">
-      <input type="checkbox" name="ps.resp.other"> Other (please specify):
-      <input type="text" name="ps.resp.other_text" placeholder="Specify">
+      <input type="checkbox" name="ps.b.other"> Other (please specify): 
+      <input type="text" name="ps.b.other_text" placeholder="________________________________________________________">
     </label>
   </div>
 
-  <!-- c) Adverse event / medical error reporting -->
-  <h4>c) Are there national procedures for reporting adverse events, medical errors, and near misses? How is this information used? (Check the applicable option)</h4>
+  <h4>c) Are there national procedures for reporting adverse events, never-events, and medical errors? How is this information used? (Check the applicable option)</h4>
   <table>
     <tr>
       <th></th>
@@ -1728,34 +1713,33 @@
     </tr>
     <tr>
       <td>Yes, mandatory reporting system exists</td>
-      <td><label><input type="radio" name="ps.report.public" value="mandatory"></label></td>
-      <td><label><input type="radio" name="ps.report.private" value="mandatory"></label></td>
+      <td class="choice"><input type="checkbox" name="ps.c.mandatory.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.c.mandatory.private"></td>
     </tr>
     <tr>
       <td>Yes, voluntary reporting system exists</td>
-      <td><label><input type="radio" name="ps.report.public" value="voluntary"></label></td>
-      <td><label><input type="radio" name="ps.report.private" value="voluntary"></label></td>
+      <td class="choice"><input type="checkbox" name="ps.c.voluntary.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.c.voluntary.private"></td>
     </tr>
     <tr>
       <td>No national reporting procedures</td>
-      <td><label><input type="radio" name="ps.report.public" value="none"></label></td>
-      <td><label><input type="radio" name="ps.report.private" value="none"></label></td>
+      <td class="choice"><input type="checkbox" name="ps.c.none.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.c.none.private"></td>
     </tr>
   </table>
 
-  <p><em>If Yes (select all that apply):</em></p>
+  <p><em>If Yes (Select all that apply):</em></p>
   <div class="checklist">
-    <label class="checkbox-label"><input type="checkbox" name="ps.use.qi"> Data is used for quality improvement and learning</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.use.public"> Data is publicly reported</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.use.reg"> Data is used for regulatory oversight/enforcement</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.use.educ"> Data is used for professional education</label>
-    <label class="checkbox-label"><input type="checkbox" name="ps.use.none"> Data is not systematically used</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.c.use.qi"> Data is used for quality improvement initiatives</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.c.use.reg"> Data is used for regulatory action or sanctions</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.c.use.public"> Data is used for public reporting</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.c.use.educ"> Data is used for professional education</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.c.use.none"> Data is not systematically used</label>
   </div>
 
-  <!-- d) Infection control policies -->
-  <h4>d) Infection control policies. We are interested in understanding the policies and practices related to infection control and antimicrobial resistance in your health system. To this end, could you please outline:</h4>
+  <p><strong>Infection control policies. We are interested in understanding policy and implementation challenges towards improving infection control policies in your health system. To this end, could you please outline:</strong></p>
 
-  <h5>Which of the following infection control policies and programmes are in place in your country’s health care settings? (Select all that apply)</h5>
+  <h4>d) Which of the following infection control policies and programs are currently in place in your country’s health care settings? (Select all that apply)</h4>
   <table>
     <tr>
       <th></th>
@@ -1763,65 +1747,53 @@
       <th>Private sector</th>
     </tr>
     <tr>
-      <td>Hand hygiene programme (monitoring, training, supplies)</td>
-      <td><label><input type="checkbox" name="ipc.hh.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.hh.private"></label></td>
+      <td>Mandatory infection control committee</td>
+      <td class="choice"><input type="checkbox" name="ps.d.comm.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.comm.private"></td>
     </tr>
     <tr>
-      <td>Standard &amp; transmission-based precautions</td>
-      <td><label><input type="checkbox" name="ipc.prec.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.prec.private"></label></td>
+      <td>Infection control nurses or specialists</td>
+      <td class="choice"><input type="checkbox" name="ps.d.staff.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.staff.private"></td>
     </tr>
     <tr>
-      <td>Isolation / cohorting policies</td>
-      <td><label><input type="checkbox" name="ipc.iso.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.iso.private"></label></td>
+      <td>Guidelines for infection prevention and control</td>
+      <td class="choice"><input type="checkbox" name="ps.d.guidelines.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.guidelines.private"></td>
     </tr>
     <tr>
-      <td>Antimicrobial stewardship programmes</td>
-      <td><label><input type="checkbox" name="ipc.ams.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.ams.private"></label></td>
+      <td>Policies on rational use of antibiotics</td>
+      <td class="choice"><input type="checkbox" name="ps.d.antibiotics.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.antibiotics.private"></td>
     </tr>
     <tr>
-      <td>Healthcare worker vaccination policies</td>
-      <td><label><input type="checkbox" name="ipc.vax.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.vax.private"></label></td>
+      <td>Regular staff training on infection control</td>
+      <td class="choice"><input type="checkbox" name="ps.d.training.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.training.private"></td>
     </tr>
     <tr>
-      <td>Bundles for device-associated infections (CLABSI, CAUTI, VAP)</td>
-      <td><label><input type="checkbox" name="ipc.bundles.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.bundles.private"></label></td>
+      <td>Surveillance systems for hospital-acquired infections</td>
+      <td class="choice"><input type="checkbox" name="ps.d.surv.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.surv.private"></td>
     </tr>
     <tr>
-      <td>Surgical site infection (SSI) prevention bundle</td>
-      <td><label><input type="checkbox" name="ipc.ssi.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.ssi.private"></label></td>
+      <td>Integration with patient safety policies</td>
+      <td class="choice"><input type="checkbox" name="ps.d.integration.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.integration.private"></td>
     </tr>
     <tr>
-      <td>Environmental cleaning/sterilization policies</td>
-      <td><label><input type="checkbox" name="ipc.env.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.env.private"></label></td>
-    </tr>
-    <tr>
-      <td>MDRO screening / outbreak investigation protocols</td>
-      <td><label><input type="checkbox" name="ipc.mdro.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.mdro.private"></label></td>
-    </tr>
-    <tr>
-      <td>National AMR action plan implemented in facilities</td>
-      <td><label><input type="checkbox" name="ipc.amr.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.amr.private"></label></td>
+      <td>No formal infection control policies or programs</td>
+      <td class="choice"><input type="checkbox" name="ps.d.none.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.none.private"></td>
     </tr>
     <tr>
       <td>Other (please specify)</td>
-      <td colspan="2">
-        <label><input type="checkbox" name="ipc.other"></label>
-        <input type="text" name="ipc.other_text" placeholder="Specify">
-      </td>
+      <td class="choice"><input type="checkbox" name="ps.d.other.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.other.private"></td>
     </tr>
   </table>
 
-  <h5>Do facilities collect and report infection control indicators? (Select all that apply)</h5>
+  <h4>e) Which of the following quality indicators and performance measures relating to hospital-acquired and other infections are used in hospitals in your country? (Select all that apply)</h4>
   <table>
     <tr>
       <th></th>
@@ -1829,29 +1801,53 @@
       <th>Private sector</th>
     </tr>
     <tr>
-      <td>Yes (indicators reported)</td>
-      <td><label><input type="checkbox" name="ipc.collect.public"></label></td>
-      <td><label><input type="checkbox" name="ipc.collect.private"></label></td>
+      <td>Rates of surgical site infections</td>
+      <td class="choice"><input type="checkbox" name="ps.e.ssi.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.ssi.private"></td>
+    </tr>
+    <tr>
+      <td>Rates of catheter-associated urinary tract infections</td>
+      <td class="choice"><input type="checkbox" name="ps.e.cauti1.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.cauti1.private"></td>
+    </tr>
+    <tr>
+      <td>Rates of catheter-associated urinary tract infections</td>
+      <td class="choice"><input type="checkbox" name="ps.e.cauti2.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.cauti2.private"></td>
+    </tr>
+    <tr>
+      <td>Rates of central line-associated bloodstream infections</td>
+      <td class="choice"><input type="checkbox" name="ps.e.clabsi.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.clabsi.private"></td>
+    </tr>
+    <tr>
+      <td>Rates of ventilator-associated pneumonia</td>
+      <td class="choice"><input type="checkbox" name="ps.e.vap.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.vap.private"></td>
+    </tr>
+    <tr>
+      <td>Hand hygiene compliance rates</td>
+      <td class="choice"><input type="checkbox" name="ps.e.hand.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.hand.private"></td>
+    </tr>
+    <tr>
+      <td>Antibiotic stewardship indicators</td>
+      <td class="choice"><input type="checkbox" name="ps.e.ams.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.ams.private"></td>
+    </tr>
+    <tr>
+      <td>No standardized indicators are used</td>
+      <td class="choice"><input type="checkbox" name="ps.e.none.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.none.private"></td>
+    </tr>
+    <tr>
+      <td>Other (please specify)</td>
+      <td class="choice"><input type="checkbox" name="ps.e.other.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.other.private"></td>
     </tr>
   </table>
 
-  <p><em>If Yes, which of the following standardized indicators are used? (Select all that apply)</em></p>
-  <div class="checklist">
-    <label class="checkbox-label"><input type="checkbox" name="ipc.ind.overall_hai"> Healthcare-associated infection (HAI) rates (overall)</label>
-    <label class="checkbox-label"><input type="checkbox" name="ipc.ind.ssi"> Surgical site infection (SSI) rates</label>
-    <label class="checkbox-label"><input type="checkbox" name="ipc.ind.cauti"> Catheter-associated urinary tract infection (CAUTI) rates</label>
-    <label class="checkbox-label"><input type="checkbox" name="ipc.ind.clabsi"> Central line-associated bloodstream infection (CLABSI) rates</label>
-    <label class="checkbox-label"><input type="checkbox" name="ipc.ind.vap"> Ventilator-associated pneumonia (VAP) rates</label>
-    <label class="checkbox-label"><input type="checkbox" name="ipc.ind.hand"> Hand hygiene compliance rates</label>
-    <label class="checkbox-label"><input type="checkbox" name="ipc.ind.ams"> Antibiotic stewardship indicators</label>
-    <label class="checkbox-label"><input type="checkbox" name="ipc.ind.none"> No standardized indicators are used</label>
-    <label class="checkbox-label">
-      <input type="checkbox" name="ipc.ind.other"> Other (please specify)
-      <input type="text" name="ipc.ind.other_text" placeholder="Specify">
-    </label>
-  </div>
-
-  <h5>Are these infection control indicators and performance measures nationally standardized and publicly reported? (Select all that apply)</h5>
+  <h4>f) Are these infection control indicators and performance measures nationally standardized and publicly reported? (Select all that apply)</h4>
   <table>
     <tr>
       <th></th>
@@ -1860,35 +1856,37 @@
     </tr>
     <tr>
       <td>Yes, nationally standardized and publicly reported</td>
-      <td><label><input type="radio" name="ipc.pub.public" value="nat_std_public"></label></td>
-      <td><label><input type="radio" name="ipc.pub.private" value="nat_std_public"></label></td>
+      <td class="choice"><input type="checkbox" name="ps.f.std_pub.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.std_pub.private"></td>
     </tr>
     <tr>
       <td>Yes, nationally standardized but not publicly reported</td>
-      <td><label><input type="radio" name="ipc.pub.public" value="nat_std_not_public"></label></td>
-      <td><label><input type="radio" name="ipc.pub.private" value="nat_std_not_public"></label></td>
+      <td class="choice"><input type="checkbox" name="ps.f.std_notpub.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.std_notpub.private"></td>
     </tr>
     <tr>
       <td>Yes, locally standardized and publicly reported</td>
-      <td><label><input type="radio" name="ipc.pub.public" value="loc_std_public"></label></td>
-      <td><label><input type="radio" name="ipc.pub.private" value="loc_std_public"></label></td>
+      <td class="choice"><input type="checkbox" name="ps.f.loc_pub.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.loc_pub.private"></td>
     </tr>
     <tr>
       <td>Yes, locally standardized but not publicly reported</td>
-      <td><label><input type="radio" name="ipc.pub.public" value="loc_std_not_public"></label></td>
-      <td><label><input type="radio" name="ipc.pub.private" value="loc_std_not_public"></label></td>
+      <td class="choice"><input type="checkbox" name="ps.f.loc_notpub.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.loc_notpub.private"></td>
     </tr>
     <tr>
       <td>No standardized or public reporting</td>
-      <td><label><input type="radio" name="ipc.pub.public" value="none"></label></td>
-      <td><label><input type="radio" name="ipc.pub.private" value="none"></label></td>
+      <td class="choice"><input type="checkbox" name="ps.f.none.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.none.private"></td>
     </tr>
     <tr>
       <td>Other (please specify)</td>
-      <td colspan="2"><input type="text" name="ipc.pub.other_text" placeholder="Specify"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.other.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.other.private"></td>
     </tr>
   </table>
 </section>
+
 
 
 
