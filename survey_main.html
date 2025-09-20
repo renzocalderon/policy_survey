@@ -3116,48 +3116,42 @@ table.compact td textarea.comment-box {
   }
 
   // ====== SUBMIT HANDLER ======
-  const formEl = document.getElementById('survey');
-  formEl.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const submitBtn = document.getElementById('submitBtn');
-    const originalText = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting…';
+const formEl = document.getElementById('survey');
+formEl.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const submitBtn = document.getElementById('submitBtn');
+  const originalText = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting…';
 
-    try {
-      const payload = serializeForm(formEl);
-      const res = await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+  try {
+    const payload = serializeForm(formEl);
 
-      // Apps Script returns 200 OK with {ok:true}. Treat non-200 as error.
-      let ok = res.ok;
-      try {
-        const json = await res.json();
-        if (json && json.ok) ok = true;
-      } catch (_) {
-        // In case JSON parse fails (e.g., if you adjusted the script), fall back to status
-      }
+    // Send as FormData to avoid CORS preflight
+    const fd = new FormData();
+    fd.append('payload', JSON.stringify(payload));
 
-      if (ok) {
-        alert('Thank you! Your response was submitted successfully.');
-        // Optional: reset the form & jump to the first page
-        formEl.reset();
-        // reset to page 0 if you like:
-        try { step = 0; update(); } catch(_) {}
-      } else {
-        throw new Error(`Submission failed (status ${res.status}).`);
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Sorry, there was a problem submitting the survey. Please try again.');
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
-    }
-  });
+    const res = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      body: fd,          // <-- no headers
+      // don't use mode:'no-cors' (you won't be able to read the response)
+    });
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    if (!json || !json.ok) throw new Error('Server returned not ok');
+
+    alert('Thank you! Your response was submitted successfully.');
+    formEl.reset();
+    try { step = 0; update(); } catch(_) {}
+  } catch (err) {
+    console.error('Submit error:', err);
+    alert('Sorry, there was a problem submitting the survey. Please try again.');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
+  }
+});
 </script>
 
   
