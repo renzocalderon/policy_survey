@@ -99,6 +99,38 @@
 .scope-table th:nth-child(3),
 .scope-table td:nth-child(2),
 .scope-table td:nth-child(3){ width:17.5% }
+
+    /* ---- Part II table polish ---- */
+.table-wrap{
+  overflow:auto;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  box-shadow: inset 0 0 0 rgba(0,0,0,0);
+  /* subtle edge fade */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
+}
+table.compact{ min-width:1350px } /* give columns breathing room */
+table.compact th, table.compact td{ padding:6px 8px }
+table.compact .checkbox-label{ gap:6px; font-weight:400 }
+table.compact .cellpad{ padding:4px 0 }
+table.compact .mini{ width:100% }            /* inputs fill the small space well */
+table.compact input[type="text"]::placeholder{ color:#9ca3af }
+
+/* sticky first column so questions stay visible */
+table.compact th:first-child,
+table.compact td:first-child{
+  position:sticky; left:0; z-index:1; background:#fff;
+  box-shadow: 1px 0 0 var(--line);
+}
+
+/* keep header readable */
+table.compact thead th{ position:sticky; top:0; z-index:2; background:#f8fafc }
+
+/* radios/checkboxes align neatly */
+table.compact .w-yesno{ display:flex; gap:10px; flex-wrap:wrap }
+
     
   </style>
 </head>
@@ -2077,7 +2109,8 @@
     }
   </style>
 
-  <table>
+  <div class="table-wrap">
+  <table class="compact">
     <tr>
       <th>Question</th>
       <th class="domain-head">All care settings</th>
@@ -2567,6 +2600,7 @@
       <td><input type="text" name="hd.ptacc.comments" placeholder="Access rights, timelines, fees, appeal routes"></td>
     </tr>
   </table>
+</div>
 </section>
 
 
