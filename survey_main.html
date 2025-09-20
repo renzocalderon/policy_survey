@@ -142,6 +142,10 @@ table.compact td textarea.comment-box {
   font-family: inherit;
   font-size: 0.9rem;
 }
+
+    /* vertical, single-choice options inside matrix cells */
+.stack{display:flex; flex-direction:column; gap:6px}
+.stack label{font-weight:400}
     
   </style>
 </head>
@@ -2615,15 +2619,19 @@ table.compact td textarea.comment-box {
 </section>
 
 <!-- ================== Part II (b) ================== -->
-<section class="q" data-key="part2_linkage">
+ <!-- Page: Part II – b, c, d -->
+<section class="q" data-key="part2_linkage_struct_quality">
+  <h2>Part II: Health data infrastructure / digitalization</h2>
+
+  <!-- b) Data linkage -->
   <h3>b) Data linkage</h3>
-  <p>This question maps your country’s current capacity to link patient-level records across care settings for producing quality-of-care assessments.</p>
+  <p class="muted">This question maps your country’s current capacity to link patient-level records across care settings for producing quality-of-care assessments.</p>
 
   <div class="table-wrap">
     <table class="compact">
       <thead>
         <tr>
-          <th></th>
+          <th> </th>
           <th>Primary care data</th>
           <th>Mortality data</th>
           <th>Prescription medicines</th>
@@ -2633,83 +2641,200 @@ table.compact td textarea.comment-box {
         </tr>
       </thead>
       <tbody>
+        <!-- Hospital data -->
         <tr>
-          <td><strong>Hospital data</strong></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
+          <th>Hospital data</th>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.pcare" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.pcare" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.mort" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.mort" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.rx" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.rx" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.ltc" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.ltc" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.cancer" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.cancer" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
         </tr>
+
+        <!-- Primary care data -->
         <tr>
-          <td><strong>Primary care data</strong></td>
+          <th>Primary care data</th>
           <td></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.pcare.mort" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.pcare.mort" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.pcare.rx" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.pcare.rx" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.pcare.ltc" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.pcare.ltc" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.pcare.cancer" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.pcare.cancer" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.pcare.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.pcare.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
         </tr>
+
+        <!-- Mortality data -->
         <tr>
-          <td><strong>Mortality data</strong></td>
+          <th>Mortality data</th>
+          <td></td>
+          <td></td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.mort.rx" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.mort.rx" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.mort.ltc" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.mort.ltc" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.mort.cancer" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.mort.cancer" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.mort.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.mort.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Prescription medicines -->
+        <tr>
+          <th>Prescription medicines</th>
           <td></td><td></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
+          <td></td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.rx.ltc" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.rx.ltc" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.rx.cancer" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.rx.cancer" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.rx.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.rx.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
         </tr>
+
+        <!-- Formal long-term care -->
         <tr>
-          <td><strong>Prescription medicines</strong></td>
+          <th>Formal long-term care</th>
           <td></td><td></td><td></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
+          <td></td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.ltc.cancer" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.ltc.cancer" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.ltc.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.ltc.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
         </tr>
+
+        <!-- Cancer registry data -->
         <tr>
-          <td><strong>Formal long-term care</strong></td>
+          <th>Cancer registry data</th>
           <td></td><td></td><td></td><td></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
-        </tr>
-        <tr>
-          <td><strong>Cancer registry data</strong></td>
-          <td></td><td></td><td></td><td></td><td></td>
-          <td><label><input type="checkbox"> Linked</label><label><input type="checkbox"> No capability</label></td>
+          <td></td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.cancer.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.cancer.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <p><strong>Are there ongoing efforts to enhance linkage capabilities for quality-of-care measurement? If so, please describe them.</strong></p>
-  <textarea class="comment-box"></textarea>
-</section>
+  <p><strong>Are there ongoing efforts to enhance linkage capabilities for quality-of-care measurement?</strong> If so, please describe them.</p>
+  <textarea name="linkage.efforts" rows="4" placeholder="Open question: describe current projects, timelines, governance, legal/technical enablers…"></textarea>
 
+  <hr>
 
-<!-- ================== Part II (c) ================== -->
-<section class="q" data-key="part2_structures">
-  <h3>c) Data Structures</h3>
-  <p>This question aims to identify to what extent key data elements within patient-level data are structured (i.e., standardized, coded vs. free text). What terminology standards are currently used in your country?</p>
-
+  <!-- c) Data structures -->
+  <h3>c) Data structures</h3>
+  <p class="muted">Which terminology / messaging standards are currently used? (Select all that apply and specify where relevant.)</p>
   <div class="checklist">
-    <label class="checkbox-label"><input type="checkbox"> For clinical terminology: SNOMED-CT. Other, please specify: <input type="text"></label>
-    <label class="checkbox-label"><input type="checkbox"> Coding of safety incidents/near misses: SNOMED CT. Other (e.g., WHO ICPS): <input type="text"></label>
-    <label class="checkbox-label"><input type="checkbox"> For information exchange: HL7. Other: <input type="text"></label>
-    <label class="checkbox-label"><input type="checkbox"> For coding diagnosis: ICD9 or ICD10. Other: <input type="text"></label>
-    <label class="checkbox-label"><input type="checkbox"> For coding cause-of-death: ICD9 or ICD10. Other: <input type="text"></label>
-    <label class="checkbox-label"><input type="checkbox"> For coding medications: WHO ATC. Other: <input type="text"></label>
-    <label class="checkbox-label"><input type="checkbox"> Other (e.g., radiological diagnostics, telehealth): <input type="text"></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.snomed"> For clinical terminology: SNOMED-CT. Other, please specify: <input type="text" name="ds.snomed.other" placeholder="Specify (if not SNOMED-CT)"></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.safety"> Coding of safety incidents/near misses: SNOMED-CT. Other (e.g., WHO ICPS), specify: <input type="text" name="ds.safety.other" placeholder="Specify"></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.hl7"> For information exchange: HL7. Other, please specify: <input type="text" name="ds.hl7.other" placeholder="FHIR, CDA, IHE profiles, etc."></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.icd"> For coding diagnosis: ICD-9 or ICD-10. Other, please specify: <input type="text" name="ds.icd.other" placeholder="ICD-11, SNOMED-CT, etc."></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.cod"> For coding cause-of-death: ICD-9 or ICD-10. Other, please specify: <input type="text" name="ds.cod.other" placeholder="ICD-11, etc."></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.atc"> For coding medications: WHO ATC. Other, please specify: <input type="text" name="ds.atc.other" placeholder="RxNorm, DM+D, etc."></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.other"> Other (e.g., radiology, telehealth): <input type="text" name="ds.other.text" placeholder="LOINC, DICOM, SNOMED Procedures, etc."></label>
   </div>
+
+  <hr>
+
+  <!-- d) Data quality challenges -->
+  <h3>d) Data quality challenges</h3>
+  <p class="muted">What are the main challenges you encounter? (Examples: inconsistent terminology, lack of national governance for standards, lack of legal requirements for EHR adoption, funding or technical constraints, etc.)</p>
+  <textarea name="dq.challenges" rows="6" placeholder="Open question: describe the key issues, affected datasets, root causes, and any known impacts on quality measurement."></textarea>
 </section>
 
-
-<!-- ================== Part II (d) ================== -->
-<section class="q" data-key="part2_challenges">
-  <h3>d) Data Quality Challenges</h3>
-  <p>Countries investing in health information systems and EHR data often face technical and financial barriers. What are the main challenges in your country?</p>
-
-  <textarea class="comment-box"></textarea>
-</section>
 
 
 
