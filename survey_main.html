@@ -917,6 +917,198 @@
   <textarea name="cert.description" rows="6" placeholder="Type your answer here"></textarea>
 </section>
 
+      <!-- Page 4: Part I, Section 1.4 -->
+<section class="q" data-key="part1_accreditation">
+  <h2>Part I: Quality-of-care policy landscape</h2>
+  <h3>1.4 Accreditation and other external quality assessment mechanisms</h3>
+
+  <p>Accreditation and other external quality assessment mechanisms provide structured, independent verification that health care organizations meet defined standards and continuously improve. Originating as profession-led initiatives, accreditation programs have evolved with growing government involvement while generally remaining accountable to autonomous governing bodies. They apply broadly consistent, health care–specific standards and emphasize bottom-up improvement through self-assessment, peer review, and management reporting, with recognition granted to organizations that meet requirements; these programs now extend from hospitals to primary care. Complementing accreditation, certification evaluates conformity with international standards such as ISO 9001 through audits by recognized, independent bodies operating under ISO 19011, producing findings on compliance and noncompliance without prescribing corrective recommendations.</p>
+
+  <h4>Which organizations are primarily responsible for conducting accreditation programs in your country? (Check the applicable option) For each one, explain if these organizations have been accredited by ISQua.</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Government agencies</th>
+      <th>Private organizations</th>
+      <th>Both government and private organizations</th>
+      <th>Other</th>
+      <th>No formal accreditation programs exist</th>
+      <th>Explain ISQua accreditation (if any)</th>
+    </tr>
+    <!-- Hospitals -->
+    <tr>
+      <td>For Hospitals</td>
+      <td><label><input type="checkbox" name="acc.org.hosp.gov"></label></td>
+      <td><label><input type="checkbox" name="acc.org.hosp.priv"></label></td>
+      <td><label><input type="checkbox" name="acc.org.hosp.both"></label></td>
+      <td><label><input type="checkbox" name="acc.org.hosp.other"></label></td>
+      <td><label><input type="checkbox" name="acc.org.hosp.none"></label></td>
+      <td><input type="text" name="acc.org.hosp.isqua" placeholder="e.g., ISQua accredited (year)"></td>
+    </tr>
+    <!-- PHC -->
+    <tr>
+      <td>For PHC facilities</td>
+      <td><label><input type="checkbox" name="acc.org.phc.gov"></label></td>
+      <td><label><input type="checkbox" name="acc.org.phc.priv"></label></td>
+      <td><label><input type="checkbox" name="acc.org.phc.both"></label></td>
+      <td><label><input type="checkbox" name="acc.org.phc.other"></label></td>
+      <td><label><input type="checkbox" name="acc.org.phc.none"></label></td>
+      <td><input type="text" name="acc.org.phc.isqua" placeholder="e.g., ISQua accredited (year)"></td>
+    </tr>
+    <!-- LTC -->
+    <tr>
+      <td>Long Term Care</td>
+      <td><label><input type="checkbox" name="acc.org.ltc.gov"></label></td>
+      <td><label><input type="checkbox" name="acc.org.ltc.priv"></label></td>
+      <td><label><input type="checkbox" name="acc.org.ltc.both"></label></td>
+      <td><label><input type="checkbox" name="acc.org.ltc.other"></label></td>
+      <td><label><input type="checkbox" name="acc.org.ltc.none"></label></td>
+      <td><input type="text" name="acc.org.ltc.isqua" placeholder="e.g., ISQua accredited (year)"></td>
+    </tr>
+    <!-- ICN -->
+    <tr>
+      <td>Integrated Care Networks</td>
+      <td><label><input type="checkbox" name="acc.org.icn.gov"></label></td>
+      <td><label><input type="checkbox" name="acc.org.icn.priv"></label></td>
+      <td><label><input type="checkbox" name="acc.org.icn.both"></label></td>
+      <td><label><input type="checkbox" name="acc.org.icn.other"></label></td>
+      <td><label><input type="checkbox" name="acc.org.icn.none"></label></td>
+      <td><input type="text" name="acc.org.icn.isqua" placeholder="e.g., ISQua accredited (year)"></td>
+    </tr>
+    <!-- Other -->
+    <tr>
+      <td>Other:</td>
+      <td><label><input type="checkbox" name="acc.org.other.gov"></label></td>
+      <td><label><input type="checkbox" name="acc.org.other.priv"></label></td>
+      <td><label><input type="checkbox" name="acc.org.other.both"></label></td>
+      <td><label><input type="checkbox" name="acc.org.other.other"></label></td>
+      <td><label><input type="checkbox" name="acc.org.other.none"></label></td>
+      <td><input type="text" name="acc.org.other.isqua" placeholder="Describe"></td>
+    </tr>
+  </table>
+
+  <h4>Are there national standards used in the accreditation process, and are these programs voluntary or mandatory? (For each column, check the applicable option)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>National standards exist; accreditation is mandatory</th>
+      <th>National standards exist; accreditation is voluntary</th>
+      <th>No national standards exist</th>
+      <th>No accreditation program exists</th>
+    </tr>
+    <tr>
+      <td>For Hospitals</td>
+      <td><label><input type="radio" name="acc.std.hosp" value="mandatory"></label></td>
+      <td><label><input type="radio" name="acc.std.hosp" value="voluntary"></label></td>
+      <td><label><input type="radio" name="acc.std.hosp" value="no_standards"></label></td>
+      <td><label><input type="radio" name="acc.std.hosp" value="no_program"></label></td>
+    </tr>
+    <tr>
+      <td>For PHC facilities</td>
+      <td><label><input type="radio" name="acc.std.phc" value="mandatory"></label></td>
+      <td><label><input type="radio" name="acc.std.phc" value="voluntary"></label></td>
+      <td><label><input type="radio" name="acc.std.phc" value="no_standards"></label></td>
+      <td><label><input type="radio" name="acc.std.phc" value="no_program"></label></td>
+    </tr>
+    <tr>
+      <td>Long Term Care</td>
+      <td><label><input type="radio" name="acc.std.ltc" value="mandatory"></label></td>
+      <td><label><input type="radio" name="acc.std.ltc" value="voluntary"></label></td>
+      <td><label><input type="radio" name="acc.std.ltc" value="no_standards"></label></td>
+      <td><label><input type="radio" name="acc.std.ltc" value="no_program"></label></td>
+    </tr>
+    <tr>
+      <td>Integrated Care Networks</td>
+      <td><label><input type="radio" name="acc.std.icn" value="mandatory"></label></td>
+      <td><label><input type="radio" name="acc.std.icn" value="voluntary"></label></td>
+      <td><label><input type="radio" name="acc.std.icn" value="no_standards"></label></td>
+      <td><label><input type="radio" name="acc.std.icn" value="no_program"></label></td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td><label><input type="radio" name="acc.std.other" value="mandatory"></label></td>
+      <td><label><input type="radio" name="acc.std.other" value="voluntary"></label></td>
+      <td><label><input type="radio" name="acc.std.other" value="no_standards"></label></td>
+      <td><label><input type="radio" name="acc.std.other" value="no_program"></label></td>
+    </tr>
+  </table>
+
+  <h4>What are the main quality assessment areas considered in the accreditation process? (Mark all that apply)</h4>
+  <div class="checklist">
+    <label><input type="checkbox" name="acc.areas.psafety"> Patient safety</label>
+    <label><input type="checkbox" name="acc.areas.clinical"> Clinical management</label>
+    <label><input type="checkbox" name="acc.areas.infrastructure"> Infrastructure and equipment</label>
+    <label><input type="checkbox" name="acc.areas.staff"> Staff competence</label>
+    <label><input type="checkbox" name="acc.areas.satisfaction"> User/patient satisfaction</label>
+    <label><input type="checkbox" name="acc.areas.admin"> Administrative processes</label>
+    <label><input type="checkbox" name="acc.areas.continuity"> Continuity of care</label>
+    <label><input type="checkbox" name="acc.areas.it"> Use of information technology</label>
+    <label>Others (please specify): <input type="text" name="acc.areas.other_text" placeholder="Specify"></label>
+  </div>
+
+  <h4>Are accreditation or quality assurance standards designed to reduce inequities in service delivery? (Select one)</h4>
+  <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+    <label><input type="radio" name="acc.inequities" value="Yes, systematically"> Yes, systematically</label>
+    <label><input type="radio" name="acc.inequities" value="Yes, occasionally"> Yes, occasionally</label>
+    <label><input type="radio" name="acc.inequities" value="No"> No</label>
+    <label>Other (specify) <input type="text" name="acc.inequities.other_text" placeholder="Specify"></label>
+  </div>
+
+  <h4>What is the current % of facilities with accreditation? (Complete the table)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Private level</th>
+      <th>Public Level</th>
+      <th>Other</th>
+    </tr>
+    <tr>
+      <td>Hospitals</td>
+      <td><input type="number" min="0" max="100" name="acc.rate.hosp.private" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.hosp.public" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.hosp.other" placeholder="%"></td>
+    </tr>
+    <tr>
+      <td>PHC facilities</td>
+      <td><input type="number" min="0" max="100" name="acc.rate.phc.private" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.phc.public" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.phc.other" placeholder="%"></td>
+    </tr>
+    <tr>
+      <td>Long Term Care Facilities</td>
+      <td><input type="number" min="0" max="100" name="acc.rate.ltc.private" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.ltc.public" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.ltc.other" placeholder="%"></td>
+    </tr>
+    <tr>
+      <td>Integrated Care Networks</td>
+      <td><input type="number" min="0" max="100" name="acc.rate.icn.private" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.icn.public" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.icn.other" placeholder="%"></td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td><input type="number" min="0" max="100" name="acc.rate.other.private" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.other.public" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.other.other" placeholder="%"></td>
+    </tr>
+  </table>
+
+  <p>Accreditation is also highly context specific. Although the various forms of external evaluation – accreditation, certification and licensing – differ in theory. External evaluation processes may include elements of some or all of these forms and may self-define as accreditation.</p>
+
+  <h4>Please describe briefly the system used in your country, the scoring and provide results for one recent year (e.g., percentage of hospitals that achieved the maximum score). What have been the consequences of accreditation results? (Open question)</h4>
+  <textarea name="acc.system.description" rows="6" placeholder="Type your answer here"></textarea>
+
+  <h4>In the European system, an inspectorate focuses on ensuring a health facility's compliance with mandatory legal and regulatory standards, acting as a government-mandated oversight body to enforce minimum requirements, while accreditation is an independent, external assessment of a facility against a set of voluntary, pre-defined quality standards by a recognized body, providing public recognition of quality and facilitating mutual recognition of services across borders. The key difference lies in their purpose: inspection ensures legal compliance and minimum safety, whereas accreditation demonstrates a higher level of quality and commitment to excellence beyond basic legal requirements. Does this model with inspectorate exist in your country? (Check the applicable option)</h4>
+  <div class="radio-group">
+    <label><input type="radio" name="acc.inspectorate" value="Yes"> Yes</label>
+    <label><input type="radio" name="acc.inspectorate" value="No"> No</label>
+  </div>
+  <label for="acc_inspectorate_comments">Comments:</label>
+  <textarea id="acc_inspectorate_comments" name="acc.inspectorate.comments" rows="4" placeholder="Add any details, scope, responsible body, how it relates to accreditation"></textarea>
+</section>
+
+
       <div class="pager">
         <button type="button" class="btn ghost" id="prevBtn">← Back</button>
         <button type="button" class="btn ghost" id="nextBtn">Next →</button>
