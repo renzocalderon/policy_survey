@@ -2879,6 +2879,153 @@ table.compact td textarea.comment-box {
   <textarea name="p2.audit.mortality" rows="4" placeholder="Please describe types, frequency, coverage, tools/guidance used, learning actions…"></textarea>
 </section>
 
+<!-- ================== Part II (g) ================== -->
+<section class="q" data-key="part2_health_data_intel">
+  <h2>Part II: Health data infrastructure / digitalization</h2>
+
+  <!-- g) Health Data Intelligence -->
+  <h3>g) Health Data Intelligence</h3>
+  <p class="muted">These questions aim to understand the capability of the healthcare information architecture to collect, monitor, and analyse health data for assessing health system performance.</p>
+
+  <div class="table-wrap">
+    <table class="compact">
+      <thead>
+        <tr>
+          <th></th>
+          <th>All care settings</th>
+          <th>Hospital data</th>
+          <th>Primary care data</th>
+          <th>Mortality data</th>
+          <th>Prescription medicines</th>
+          <th>Formal long-term care</th>
+          <th>Cancer registry data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Q1: Regular reporting -->
+        <tr>
+          <th>Is health data used to regularly report on health care quality?<br><span class="muted">For example, regularly published quality indicators.</span></th>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.all" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.all" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.hosp" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.hosp" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.pcare" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.pcare" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.mort" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.mort" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.rx" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.rx" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.ltc" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.ltc" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.cancer" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.cancer" value="No"> No</label>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Q2: Secondary uses -->
+        <tr>
+          <th>Does your national plan, legal framework, or policies include secondary uses of health data?</th>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.all.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.all.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.all.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.all.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.all.other"> Other: <input type="text" name="g.use.all.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.hosp.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.hosp.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.hosp.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.hosp.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.hosp.other"> Other: <input type="text" name="g.use.hosp.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.pcare.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.pcare.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.pcare.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.pcare.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.pcare.other"> Other: <input type="text" name="g.use.pcare.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.mort.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.mort.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.mort.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.mort.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.mort.other"> Other: <input type="text" name="g.use.mort.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.rx.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.rx.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.rx.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.rx.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.rx.other"> Other: <input type="text" name="g.use.rx.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.ltc.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.ltc.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.ltc.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.ltc.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.ltc.other"> Other: <input type="text" name="g.use.ltc.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.cancer.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.cancer.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.cancer.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.cancer.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.cancer.other"> Other: <input type="text" name="g.use.cancer.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Are there ongoing efforts to enhance these capabilities?</strong> If so, please describe them.</p>
+  <textarea name="g.efforts" rows="4"></textarea>
+
+  <p><strong>Is there a national plan for training and skills development of personnel responsible for processing and analysing patient-level health data?</strong> Please describe.</p>
+  <textarea name="g.training" rows="4"></textarea>
+</section>
 
 
 
