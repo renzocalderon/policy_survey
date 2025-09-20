@@ -82,6 +82,24 @@
     /* Radios inside tables */
     .radio-group{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
     .radio-group label{display:inline-flex; align-items:center; gap:6px; font-weight:500}
+
+    /* Align single-choice radios inside tables */
+.scope-table td.choice{
+  text-align:center;
+  vertical-align:middle;
+}
+.scope-table td.choice input[type=radio]{
+  margin:0;              /* no default margins */
+}
+
+/* Optional: balance column widths for that table */
+.scope-table th:first-child,
+.scope-table td:first-child{ width:65% }
+.scope-table th:nth-child(2),
+.scope-table th:nth-child(3),
+.scope-table td:nth-child(2),
+.scope-table td:nth-child(3){ width:17.5% }
+    
   </style>
 </head>
 <body>
@@ -1189,32 +1207,31 @@
 
   <!-- C) Nature of guidelines -->
   <h4>With regards to your country's clinical guidelines, please select the option that best describes:</h4>
-  <table>
-    <tr>
-      <th></th>
-      <th>Cancer Screening &amp; Early Detection</th>
-      <th>Cardiovascular Disease</th>
-    </tr>
-    <tr>
-      <td>…are limited to specifying the clinical aspects to be attained at individual health facilities</td>
-      <td class="radio-group">
-        <label><input type="radio" name="pg.scope.cancer" value="Facility clinical aspects"></label>
-      </td>
-      <td class="radio-group">
-        <label><input type="radio" name="pg.scope.cvd" value="Facility clinical aspects"></label>
-      </td>
-    </tr>
-    <tr>
-      <td>…include patient journey guidelines that address the integration and coordination of care between different facilities, levels, and systems.</td>
-      <td class="radio-group">
-        <label><input type="radio" name="pg.scope.cancer" value="Patient journey / integrated care"></label>
-      </td>
-      <td class="radio-group">
-        <label><input type="radio" name="pg.scope.cvd" value="Patient journey / integrated care"></label>
-      </td>
-    </tr>
-  </table>
-
+   <table class="scope-table">
+  <tr>
+    <th></th>
+    <th>Cancer Screening &amp; Early Detection</th>
+    <th>Cardiovascular Disease</th>
+  </tr>
+  <tr>
+    <td>…are limited to specifying the clinical aspects to be attained at individual health facilities</td>
+    <td class="choice">
+      <input type="radio" name="pg.scope.cancer" value="Facility clinical aspects">
+    </td>
+    <td class="choice">
+      <input type="radio" name="pg.scope.cvd" value="Facility clinical aspects">
+    </td>
+  </tr>
+  <tr>
+    <td>…include patient journey guidelines that address the integration and coordination of care between different facilities, levels, and systems.</td>
+    <td class="choice">
+      <input type="radio" name="pg.scope.cancer" value="Patient journey / integrated care">
+    </td>
+    <td class="choice">
+      <input type="radio" name="pg.scope.cvd" value="Patient journey / integrated care">
+    </td>
+  </tr>
+</table>
   <!-- D) Update frequency -->
   <h4>How frequently are the practice guidelines updated in your country? (Check the applicable option)</h4>
   <table>
