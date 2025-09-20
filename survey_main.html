@@ -698,55 +698,139 @@
   <h4>a) Does your country have a comprehensive national health workforce strategy that addresses gaps in numbers, distribution, and retention of physicians and nurses in both the short and long term? (Check the applicable option)</h4>
 
   <table>
-    <tr>
-      <th></th>
-      <th>Public sector applies</th>
-      <th>Private sector applies</th>
-    </tr>
-    <tr>
-      <td>
-        Yes, a comprehensive strategy exists and is actively implemented with regards to
-        <ul>
-          <li>Numbers</li>
-          <li>Distribution</li>
-          <li>Rural retention of health professionals</li>
-          <li>National retention of health professionals</li>
-        </ul>
-      </td>
-      <td>
-        <div class="radio-group"><label><input type="radio" name="wf.comp.numbers.public" value="Yes">Yes</label><label><input type="radio" name="wf.comp.numbers.public" value="No">No</label></div>
-        <div class="radio-group"><label><input type="radio" name="wf.comp.distribution.public" value="Yes">Yes</label><label><input type="radio" name="wf.comp.distribution.public" value="No">No</label></div>
-        <div class="radio-group"><label><input type="radio" name="wf.comp.rural.public" value="Yes">Yes</label><label><input type="radio" name="wf.comp.rural.public" value="No">No</label></div>
-        <div class="radio-group"><label><input type="radio" name="wf.comp.national.public" value="Yes">Yes</label><label><input type="radio" name="wf.comp.national.public" value="No">No</label></div>
-      </td>
-      <td>
-        <div class="radio-group"><label><input type="radio" name="wf.comp.numbers.private" value="Yes">Yes</label><label><input type="radio" name="wf.comp.numbers.private" value="No">No</label></div>
-        <div class="radio-group"><label><input type="radio" name="wf.comp.distribution.private" value="Yes">Yes</label><label><input type="radio" name="wf.comp.distribution.private" value="No">No</label></div>
-        <div class="radio-group"><label><input type="radio" name="wf.comp.rural.private" value="Yes">Yes</label><label><input type="radio" name="wf.comp.rural.private" value="No">No</label></div>
-        <div class="radio-group"><label><input type="radio" name="wf.comp.national.private" value="Yes">Yes</label><label><input type="radio" name="wf.comp.national.private" value="No">No</label></div>
-      </td>
-    </tr>
-    <tr>
-      <td>Yes, a strategy exists but implementation is partial or limited</td>
-      <td><div class="radio-group"><label><input type="radio" name="wf.partial.public" value="Yes">Yes</label><label><input type="radio" name="wf.partial.public" value="No">No</label></div></td>
-      <td><div class="radio-group"><label><input type="radio" name="wf.partial.private" value="Yes">Yes</label><label><input type="radio" name="wf.partial.private" value="No">No</label></div></td>
-    </tr>
-    <tr>
-      <td>No, a strategy is under development</td>
-      <td><div class="radio-group"><label><input type="radio" name="wf.develop.public" value="Yes">Yes</label><label><input type="radio" name="wf.develop.public" value="No">No</label></div></td>
-      <td><div class="radio-group"><label><input type="radio" name="wf.develop.private" value="Yes">Yes</label><label><input type="radio" name="wf.develop.private" value="No">No</label></div></td>
-    </tr>
-    <tr>
-      <td>No, there is no national strategy in place but there are specific provinces/states that have health workforce policies in place</td>
-      <td><div class="radio-group"><label><input type="radio" name="wf.subnat.public" value="Yes">Yes</label><label><input type="radio" name="wf.subnat.public" value="No">No</label></div></td>
-      <td><div class="radio-group"><label><input type="radio" name="wf.subnat.private" value="Yes">Yes</label><label><input type="radio" name="wf.subnat.private" value="No">No</label></div></td>
-    </tr>
-    <tr>
-      <td>No, there is no national or subnational strategy in place</td>
-      <td><div class="radio-group"><label><input type="radio" name="wf.none.public" value="Yes">Yes</label><label><input type="radio" name="wf.none.public" value="No">No</label></div></td>
-      <td><div class="radio-group"><label><input type="radio" name="wf.none.private" value="Yes">Yes</label><label><input type="radio" name="wf.none.private" value="No">No</label></div></td>
-    </tr>
-  </table>
+  <tr>
+    <th> </th>
+    <th>Public sector applies</th>
+    <th>Private sector applies</th>
+  </tr>
+
+  <!-- Subheader: comprehensive strategy implemented -->
+  <tr>
+    <td colspan="3"><strong>Yes, a comprehensive strategy exists and is actively implemented with regards to:</strong></td>
+  </tr>
+  <tr>
+    <td>Numbers</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.numbers.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.numbers.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.numbers.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.numbers.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>Distribution</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.distribution.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.distribution.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.distribution.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.distribution.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>Rural retention of health professionals</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.rural.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.rural.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.rural.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.rural.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>National retention of health professionals</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.national.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.national.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.national.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.national.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+
+  <!-- Other overall statuses -->
+  <tr>
+    <td>Yes, a strategy exists but implementation is partial or limited</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.partial.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.partial.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.partial.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.partial.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>No, a strategy is under development</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.develop.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.develop.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.develop.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.develop.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>No, there is no national strategy in place but there are specific provinces/states that have health workforce policies in place</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.subnat.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.subnat.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.subnat.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.subnat.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>No, there is no national or subnational strategy in place</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.none.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.none.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.none.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.none.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+</table>
 
   <h4>b) Please tick the box next to the option that best describes your country’s approach to workforce forecasting and planning policy. (Check the applicable option)</h4>
   <div class="checklist">
