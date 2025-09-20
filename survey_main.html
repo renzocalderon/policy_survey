@@ -131,6 +131,17 @@ table.compact thead th{ position:sticky; top:0; z-index:2; background:#f8fafc }
 /* radios/checkboxes align neatly */
 table.compact .w-yesno{ display:flex; gap:10px; flex-wrap:wrap }
 
+    /* bigger comment boxes */
+table.compact td textarea.comment-box {
+  width: 100%;
+  min-height: 60px;   /* adjust to make taller */
+  resize: vertical;   /* lets user drag to expand if needed */
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
     
   </style>
 </head>
@@ -2202,7 +2213,7 @@ table.compact .w-yesno{ display:flex; gap:10px; flex-wrap:wrap }
         </div>
       </td>
 
-      <td><input type="text" name="hd.avail.comments" placeholder="If non-digital, please comment"></td>
+      <td><textarea class="comment-box" name="hd.avail.comments" placeholder="If non-digital, please comment"></textarea></td>
     </tr>
 
     <!-- Row 2: Managed in EHR -->
@@ -2281,7 +2292,7 @@ table.compact .w-yesno{ display:flex; gap:10px; flex-wrap:wrap }
         </div>
       </td>
 
-      <td><input type="text" name="hd.ehr.comments" placeholder="Notes (platform/vendor, scope, etc.)"></td>
+      <td><textarea class="comment-box" name="hd.ehr.comments" placeholder="Please comment"></textarea></td>
     </tr>
 
     <!-- Row 3: Unique patient ID -->
@@ -2328,7 +2339,7 @@ table.compact .w-yesno{ display:flex; gap:10px; flex-wrap:wrap }
         <label><input type="radio" name="hd.id.phs" value="No"> No</label>
       </div></td>
 
-      <td><input type="text" name="hd.id.comments" placeholder="If yes, describe governance/format (e.g., national ID)"></td>
+      <td><textarea class="comment-box" name="hd.id.comments" placeholder="Please comment"></textarea></td>
     </tr>
 
     <!-- Row 4: Data storage/processing -->
@@ -2407,7 +2418,7 @@ table.compact .w-yesno{ display:flex; gap:10px; flex-wrap:wrap }
         </div>
       </td>
 
-      <td><input type="text" name="hd.store.comments" placeholder="Vendors, standards, hosting notes"></td>
+     <td><textarea class="comment-box" name="hd.store.comments" placeholder="Please comment"></textarea></td>
     </tr>
 
     <!-- Row 5: Breakdown availability -->
@@ -2517,8 +2528,8 @@ table.compact .w-yesno{ display:flex; gap:10px; flex-wrap:wrap }
           <label><input type="checkbox" name="hd.brk.phs.ins"> Insurance affiliation</label>
         </div>
       </td>
-
-      <td><input type="text" name="hd.brk.comments" placeholder="Notes on definitions/harmonization"></td>
+ 
+      <td><textarea class="comment-box" name="hd.brk.comments" placeholder="Please comment"></textarea></td>
     </tr>
 
     <!-- Row 6: Patient access -->
@@ -2596,8 +2607,8 @@ table.compact .w-yesno{ display:flex; gap:10px; flex-wrap:wrap }
           <label><input type="radio" name="hd.ptacc.phs" value="No"> No</label>
         </div>
       </td>
-
-      <td><input type="text" name="hd.ptacc.comments" placeholder="Access rights, timelines, fees, appeal routes"></td>
+ 
+       <td><textarea class="comment-box" name="hd.ptacc.comments" placeholder="Please comment"></textarea></td>
     </tr>
   </table>
 </div>
