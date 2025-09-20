@@ -30,10 +30,36 @@
     .grid{display:grid; gap:16px}
     @media(min-width:820px){.grid{grid-template-columns:1fr 1fr}}
 
-    /* Controls */
+    /* Controls (scope width to text-like inputs only) */
     label{font-weight:600}
-    textarea,input,select{width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--line); background:#fff; color:var(--ink)}
-    textarea:focus,input:focus,select:focus{outline:3px solid rgba(37,99,235,.15); border-color:var(--focus)}
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="password"],
+    textarea,
+    select{
+      width:100%;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--ink);
+    }
+    textarea:focus,
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    input[type="number"]:focus,
+    input[type="search"]:focus,
+    input[type="tel"]:focus,
+    input[type="password"]:focus,
+    select:focus{outline:3px solid rgba(37,99,235,.15); border-color:var(--focus)}
+
+    /* Never stretch checkboxes/radios */
+    input[type="checkbox"], input[type="radio"]{width:auto; height:auto}
 
     .pager{display:flex; justify-content:space-between; align-items:center; margin-top:22px}
     .btn{padding:10px 14px; border-radius:8px; border:1px solid var(--line); cursor:pointer; font-weight:600; background:#fff; color:var(--ink)}
@@ -46,19 +72,14 @@
     table{width:100%; border-collapse:collapse; background:#fff}
     th,td{border:1px solid var(--line); padding:8px; text-align:left; vertical-align:top}
     th{background:#f8fafc}
-    /* tidy checkbox alignment */
-    .checklist label{display:flex; align-items:flex-start; gap:10px; margin:6px 0; line-height:1.4}
-    .checklist input[type=checkbox]{margin-top:2px}
-    /* compact radios inside tables */
-    .radio-group{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
-    .radio-group label{display:inline-flex; align-items:center; gap:6px; font-weight:500}
     .nowrap{white-space:nowrap}
-    /* tidy checkbox alignment */
+
+    /* Checkbox alignment (cross-browser) */
     .checklist{display:flex; flex-direction:column; gap:10px}
-    .check-row{display:flex; align-items:flex-start; gap:10px}
-    .check-row input[type=checkbox]{margin-top:4px}
-    .nowrap{white-space:nowrap}
-    /* compact radios inside tables */
+    .checkbox-label{display:flex; align-items:flex-start; gap:10px; font-weight:400}
+    .checkbox-label input[type="checkbox"]{flex:none; margin-top:2px}
+
+    /* Radios inside tables */
     .radio-group{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
     .radio-group label{display:inline-flex; align-items:center; gap:6px; font-weight:500}
   </style>
@@ -101,7 +122,7 @@
             <input id="organisation" name="contact.organisation" type="text">
           </div>
           <div>
-            <label for="email">E‑mail address</label>
+            <label for="email">E-mail address</label>
             <input id="email" name="contact.email" type="email" required>
           </div>
         </div>
@@ -109,34 +130,30 @@
         <hr>
         <h3>Definition of key terms used in this questionnaire</h3>
         <ul>
-          <li><strong>Hospital:</strong> Establishments primarily engaged in providing medical, diagnostic, and treatment services that include physician, nursing, and other health services to in‑patients and the specialised accommodation services required by in‑patients. Hospitals may also provide out‑patient services as a secondary activity.</li>
-          <li><strong>Primary Health Care (PHC):</strong> Primary care is the first level of contact of individuals, the family and community with the (national) health system bringing health care as close as possible to where people live and work and provides continuing and comprehensive medical care to individuals and families in an ambulatory setting. It may be provided by general practitioners (or "family doctors") and their teams but could also be provided by out‑patient departments of first level hospitals.</li>
-          <li><strong>Health care quality:</strong> Healthcare quality comprises three core dimensions of care—effectiveness, safety and patient‑centredness (responsiveness). These dimensions are applied across the care pathway: preventive, acute, chronic, and palliative care.</li>
+          <li><strong>Hospital:</strong> Establishments primarily engaged in providing medical, diagnostic, and treatment services that include physician, nursing, and other health services to in-patients and the specialised accommodation services required by in-patients. Hospitals may also provide out-patient services as a secondary activity.</li>
+          <li><strong>Primary Health Care (PHC):</strong> Primary care is the first level of contact of individuals, the family and community with the (national) health system bringing health care as close as possible to where people live and work and provides continuing and comprehensive medical care to individuals and families in an ambulatory setting. It may be provided by general practitioners (or "family doctors") and their teams but could also be provided by out-patient departments of first level hospitals.</li>
+          <li><strong>Health care quality:</strong> Healthcare quality comprises three core dimensions of care—effectiveness, safety and patient-centredness (responsiveness). These dimensions are applied across the care pathway: preventive, acute, chronic, and palliative care.</li>
         </ul>
       </section>
 
       <!-- Page 1: Part I, Section 1.1 -->
       <section class="q" data-key="part1_overview">
         <h2>Part I: Quality-of-care policy landscape</h2>
-        <h3>1.1 Overview of key quality of care policies</h3>
+        <h3>1.1 Overview of key quality of care policies</h3>
 
         <h4>A) How are the quality department and quality strategy positioned within your Ministry of Health? Please tick all that apply. </h4>
         <div class="checklist">
-          <label class="check-row"><input type="checkbox" name="pos.quality_unit"><span>A separate quality unit/department exists within the Ministry</span></label>
-          <label class="check-row"><input type="checkbox" name="pos.integrated"><span>The quality function is integrated within other units/departments</span></label>
-          <label class="check-row"><input type="checkbox" name="pos.crosscutting"><span>Quality is positioned as a cross-cutting element across sectoral strategies</span></label>
-          <label class="check-row"><input type="checkbox" name="pos.uhc"><span>Quality is positioned as the core element of the Universal Health Coverage (UHC) strategy</span></label>
-          <label class="check-row"><input type="checkbox" name="pos.mandate"><span>Quality has a formal mandate with defined governance (e.g., steering committee, focal points)</span></label>
-          <label class="check-row"><input type="checkbox" name="pos.plan"><span>Quality has an implementation plan with budget and M&E framework</span></label>
-          <label class="check-row"><input type="checkbox" name="pos.not_addressed"><span>Quality is not formally addressed in the organizational structure or strategy</span></label>
-          <div class="check-row">
-            <span class="nowrap" style="min-width:52px">Other:</span>
-            <input type="text" name="pos.other_text" placeholder="Specify" style="flex:1 1 auto">
-            <input type="checkbox" name="pos.other" style="display:none">
-          </div>
+          <label class="checkbox-label"><input type="checkbox" name="pos.quality_unit"> A separate quality unit/department exists within the Ministry</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.integrated"> The quality function is integrated within other units/departments</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.crosscutting"> Quality is positioned as a cross-cutting element across sectoral strategies</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.uhc"> Quality is positioned as the core element of the Universal Health Coverage (UHC) strategy</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.mandate"> Quality has a formal mandate with defined governance (e.g., steering committee, focal points)</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.plan"> Quality has an implementation plan with budget and M&E framework</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.not_addressed"> Quality is not formally addressed in the organizational structure or strategy</label>
+          <label class="checkbox-label">Other: <input type="text" name="pos.other_text" placeholder="Specify"></label>
         </div>
 
-        <h4>B) Brief details (e.g., unit name, reporting line, year established) How does the quality function coordinate with other ministry priorities and programs?  What are the main mechanisms for inter-departmental collaboration on quality (e.g., task forces, joint planning, shared indicators)? (Open question)</h4> Brief details (e.g., unit name, reporting line, year established) How does the quality function coordinate with other ministry priorities and programs?  What are the main mechanisms for inter-departmental collaboration on quality (e.g., task forces, joint planning, shared indicators)? (Open question)</h4>
+        <h4>B) Brief details (e.g., unit name, reporting line, year established) How does the quality function coordinate with other ministry priorities and programs?  What are the main mechanisms for inter-departmental collaboration on quality (e.g., task forces, joint planning, shared indicators)? (Open question)</h4>
         <textarea name="coordination.details" rows="6" placeholder="Type your answer here"></textarea>
 
         <h4>C) We are interested in building a high-level snapshot of key quality of care policies in countries in the Latin America and Caribbean region. For each organisation below, rate its current role in assuring quality of care at the national level. Please rate from 1 (No role) to 5 (Primary lead) </h4>
@@ -161,7 +178,7 @@
             <th>Responsible institution</th>
             <th>Providers involved<br>(All / Private / Public)</th>
           </tr>
-          <!-- Row: National Quality Strategy / Plan -->
+          <!-- National Quality Strategy / Plan -->
           <tr>
             <td>National Quality Strategy / Plan</td>
             <td>
@@ -187,7 +204,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: National Cancer Plan -->
+          <!-- National Cancer Plan -->
           <tr>
             <td><em>Disease specific:</em> National Cancer Plan</td>
             <td>
@@ -213,7 +230,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: National CVD Plan -->
+          <!-- National CVD Plan -->
           <tr>
             <td><em>Disease specific:</em> National CVD Plan</td>
             <td>
@@ -239,7 +256,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Accreditation & Licensing -->
+          <!-- Accreditation & Licensing -->
           <tr>
             <td>Accreditation & Licensing (facilities/providers)</td>
             <td>
@@ -265,7 +282,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Clinical Guidelines & Audit -->
+          <!-- Clinical Guidelines & Clinical Audit -->
           <tr>
             <td>Clinical Guidelines & Clinical Audit</td>
             <td>
@@ -291,7 +308,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Measurement & Public Reporting -->
+          <!-- Measurement & Public Reporting -->
           <tr>
             <td>Measurement & Public Reporting</td>
             <td>
@@ -317,7 +334,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: National Cancer Registry -->
+          <!-- National Cancer Registry -->
           <tr>
             <td>Disease specific: National Cancer Registry</td>
             <td>
@@ -343,7 +360,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: CVD Epidemiological Monitoring -->
+          <!-- CVD Epidemiological Monitoring -->
           <tr>
             <td>Disease specific: CVD Epidemiological Monitoring</td>
             <td>
@@ -369,7 +386,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Patient Safety IRLS -->
+          <!-- Patient Safety IRLS -->
           <tr>
             <td>Patient Safety: Incident Reporting & Learning System</td>
             <td>
@@ -395,7 +412,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: IPC (incl. AMR) -->
+          <!-- IPC (incl. AMR) -->
           <tr>
             <td>Infection Prevention & Control (incl. AMR)</td>
             <td>
@@ -421,7 +438,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Medication Safety & AMS -->
+          <!-- Medication Safety & AMS -->
           <tr>
             <td>Medication Safety & Antimicrobial Stewardship</td>
             <td>
@@ -447,7 +464,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Surgical Safety -->
+          <!-- Surgical Safety -->
           <tr>
             <td>Surgical Safety (e.g., WHO checklist)</td>
             <td>
@@ -473,7 +490,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Patient‑Centred Care -->
+          <!-- Patient-Centred Care -->
           <tr>
             <td>Patient-Centred Care: PROMs/PREMs & Shared Decision-Making</td>
             <td>
@@ -499,7 +516,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Digital Health Quality Standards -->
+          <!-- Digital Health Quality Standards -->
           <tr>
             <td>Digital Health Quality Standards (EHR, e-prescribing, CDS)</td>
             <td>
@@ -525,7 +542,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Other 1 -->
+          <!-- Other 1 -->
           <tr>
             <td>Other, please specify: __________________________</td>
             <td>
@@ -551,7 +568,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Other 2 -->
+          <!-- Other 2 -->
           <tr>
             <td>Other, please specify: __________________________</td>
             <td>
@@ -577,7 +594,7 @@
               </div>
             </td>
           </tr>
-          <!-- Row: Other 3 -->
+          <!-- Other 3 -->
           <tr>
             <td>Other, please specify: __________________________</td>
             <td>
@@ -606,14 +623,14 @@
         </table>
 
         <h4>E) Does your country have regular, institutionalised mechanisms to recognise and spread success in healthcare quality improvement—including the identification of best practices and high-performing “positive outliers” (i.e., organisations/teams performing significantly above peers on indicators fit for benchmarking)?</h4>
-        <div>
-          <label><input type="checkbox" name="recog.forum"/> National quality forum/conference</label><br>
-          <label><input type="checkbox" name="recog.events"/> Regional or sub-national quality events</label><br>
-          <label><input type="checkbox" name="recog.awards"/> National awards/recognition programme for quality improvement or positive outliers</label><br>
-          <label><input type="checkbox" name="recog.mechanism"/> Formal mechanism to identify and spread best practices (e.g., learning collaboratives, communities of practice, improvement hubs)</label><br>
-          <label><input type="checkbox" name="recog.publications"/> Regular publication/dissemination of case studies, success stories, or dashboards</label><br>
-          <label><input type="checkbox" name="recog.none"/> None of the above (no regular recognition or learning mechanism)</label><br>
-          <label><input type="checkbox" name="recog.other"/> Other (please specify): <input type="text" name="recog.other_text"></label>
+        <div class="checklist">
+          <label class="checkbox-label"><input type="checkbox" name="recog.forum"> National quality forum/conference</label>
+          <label class="checkbox-label"><input type="checkbox" name="recog.events"> Regional or sub-national quality events</label>
+          <label class="checkbox-label"><input type="checkbox" name="recog.awards"> National awards/recognition programme for quality improvement or positive outliers</label>
+          <label class="checkbox-label"><input type="checkbox" name="recog.mechanism"> Formal mechanism to identify and spread best practices (e.g., learning collaboratives, communities of practice, improvement hubs)</label>
+          <label class="checkbox-label"><input type="checkbox" name="recog.publications"> Regular publication/dissemination of case studies, success stories, or dashboards</label>
+          <label class="checkbox-label"><input type="checkbox" name="recog.none"> None of the above (no regular recognition or learning mechanism)</label>
+          <label class="checkbox-label">Other (please specify): <input type="text" name="recog.other_text" placeholder="Specify"></label>
         </div>
         <p>Please comment on the frequency, coverage (Public/Private), basis for identifying “positive outliers” or any other relevant information about such initiative.</p>
         <textarea name="recog.comment" rows="4" placeholder="Type your comments here"></textarea>
@@ -622,7 +639,6 @@
 
         <h4>F) Please list all WHO/PAHO quality improvement initiatives and activities for NCDs or any other quality improvement initiatives and activities in your country. (Open question)</h4>
         <textarea name="initiatives" rows="6" placeholder="Type your answer here"></textarea>
-
       </section>
 
       <div class="pager">
@@ -642,14 +658,13 @@
     document.getElementById('prevBtn').disabled = step===0;
     document.getElementById('nextBtn').disabled = step===sections.length-1;
     document.getElementById('submitBtn').style.display = (step===sections.length-1)?'inline-block':'none';
-    // Scroll to top / start of page for each step
     const current = sections[step];
     const header = current.querySelector('h2, h3, h1') || current;
     header.scrollIntoView({ behavior: 'auto', block: 'start' });
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
   document.getElementById('nextBtn').onclick=()=>{ if(step<sections.length-1){ step++; update(); } window.scrollTo({ top: 0, behavior: 'smooth' }); };
-  document.getElementById('prevBtn').onclick=()=>{if(step>0){step--;update();}};
+  document.getElementById('prevBtn').onclick=()=>{ if(step>0){ step--; update(); } };
   update();
 </script>
 </body>
