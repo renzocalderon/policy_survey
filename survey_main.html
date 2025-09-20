@@ -3057,79 +3057,20 @@ table.compact td textarea.comment-box {
 </div>
 
 
-  <script>
-  const sections = document.querySelectorAll('.q');
-  let step = 0;
-
-  function update(){
-    sections.forEach((s,i)=>s.classList.toggle('active', i===step));
-    document.getElementById('prevBtn').disabled = step===0;
-    document.getElementById('nextBtn').disabled = step===sections.length-1;
-    document.getElementById('submitBtn').style.display = (step===sections.length-1)?'inline-block':'none';
-    const current = sections[step];
-    const header = current.querySelector('h2, h3, h1') || current;
-    header.scrollIntoView({ behavior: 'auto', block: 'start' });
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }
-
-  function validateCurrentSection(){
-    // keep your per-page validation here if you’ve added it
-    return true;
-  }
-
-  // Navigation with history
-  document.getElementById('nextBtn').onclick = () => {
-    if (step < sections.length-1){
-      if (!validateCurrentSection()) return;
-      step++;
-      update();
-      history.pushState({ step }, '', `#step${step}`);
-    }
-  };
-  document.getElementById('prevBtn').onclick = () => {
-    if (step > 0){
-      step--;
-      update();
-      history.pushState({ step }, '', `#step${step}`);
-    }
-  };
-
-  // Handle browser back/forward
-  window.addEventListener('popstate', (event) => {
-    if (event.state && typeof event.state.step === 'number') {
-      step = event.state.step;
-      update();
-    }
-  });
-
-  // Initialize step from URL hash
-  window.addEventListener('DOMContentLoaded', () => {
-    const match = location.hash.match(/#step(\d+)/);
-    if (match) {
-      step = parseInt(match[1], 10) || 0;
-    }
-    history.replaceState({ step }, '', `#step${step}`);
-    update();
-  });
-</script>
-
-  
  <script>
-  // ====== CONFIG ======
+  // ===== CONFIG =====
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxmN8XjWQ6lZDUU2dNas4bfkO6kwAoUO9A3xB9-y03bGHWZAeEUWLEzRdvh_VK3OLka3Q/exec';
 
-  // ====== PAGING + PER-PAGE VALIDATION ======
+  // ===== PAGING (with history) =====
   const sections = document.querySelectorAll('.q');
   let step = 0;
 
   function update(){
     sections.forEach((s,i)=>s.classList.toggle('active', i===step));
-    document.getElementById('prevBtn').disabled = step===0;
-    document.getElementById('nextBtn').disabled = step===sections.length-1;
-    document.getElementById('submitBtn').style.display = (step===sections.length-1)?'inline-block':'none';
-    const current = sections[step];
-    const header = current.querySelector('h2, h3, h1') || current;
-    header.scrollIntoView({ behavior: 'auto', block: 'start' });
+    prevBtn.disabled = step===0;
+    nextBtn.disabled = step===sections.length-1;
+    submitBtn.style.display = (step===sections.length-1)?'inline-block':'none';
+    (sections[step].querySelector('h1,h2,h3')||sections[step]).scrollIntoView({block:'start'});
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
@@ -3138,19 +3079,18 @@ table.compact td textarea.comment-box {
     const controls = current.querySelectorAll('input, select, textarea');
     let firstInvalid = null;
     controls.forEach(el => el.classList.remove('invalid'));
-
-    // validate radios by group name
     const seenRadio = new Set();
+
     for (const el of controls){
       if (!el.name || el.disabled) continue;
-      const type = (el.type || '').toLowerCase();
+      const type = (el.type||'').toLowerCase();
 
       if (type === 'radio'){
         if (seenRadio.has(el.name)) continue;
         seenRadio.add(el.name);
         const group = current.querySelectorAll(`input[type="radio"][name="${CSS.escape(el.name)}"]`);
-        const required = Array.from(group).some(r => r.required);
-        if (required && !Array.from(group).some(r => r.checked)){
+        const required = [...group].some(r => r.required);
+        if (required && ![...group].some(r => r.checked)){
           group.forEach(r => r.classList.add('invalid'));
           firstInvalid = firstInvalid || group[0];
         }
@@ -3161,14 +3101,36 @@ table.compact td textarea.comment-box {
     }
 
     if (firstInvalid){
-      if (typeof firstInvalid.reportValidity === 'function') firstInvalid.reportValidity();
+      firstInvalid.reportValidity?.();
       firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
-      firstInvalid.focus({preventScroll:true});
+      firstInvalid.focus?.({preventScroll:true});
       return false;
     }
     return true;
   }
 
+  // nav buttons + history
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+
+  nextBtn.onclick = () => {
+    if (step < sections.length-1 && validateCurrentSection()){
+      step++; update(); history.pushState({step}, '', `#step${step}`);
+    }
+  };
+  prevBtn.onclick = () => {
+    if (step > 0){ step--; update(); history.pushState({step}, '', `#step${step}`); }
+  };
+  window.addEventListener('popstate', e => {
+    if (e.state && typeof e.state.step === 'number'){ step = e.state.step; update(); }
+  });
+  window.addEventListener('DOMContentLoaded', () => {
+    const m = location.hash.match(/#step(\d+)/); step = m ? +m[1]||0 : 0;
+    history.replaceState({step}, '', `#step${step}`); update();
+  });
+
+  // ===== FULL VALIDATION (all pages) =====
   function validateAllSections(){
     let ok = true, firstInvalid = null, firstSectionIdx = -1;
 
@@ -3179,21 +3141,21 @@ table.compact td textarea.comment-box {
 
       for (const el of controls){
         if (!el.name || el.disabled) continue;
-        const type = (el.type || '').toLowerCase();
+        const type = (el.type||'').toLowerCase();
 
         if (type === 'radio'){
           if (seenRadio.has(el.name)) continue;
           seenRadio.add(el.name);
           const group = sec.querySelectorAll(`input[type="radio"][name="${CSS.escape(el.name)}"]`);
-          const required = Array.from(group).some(r => r.required);
-          if (required && !Array.from(group).some(r => r.checked)){
+          const required = [...group].some(r => r.required);
+          if (required && ![...group].some(r => r.checked)){
             ok = false;
-            if (firstInvalid === null){ firstInvalid = group[0]; firstSectionIdx = idx; }
+            if (!firstInvalid){ firstInvalid = group[0]; firstSectionIdx = idx; }
             group.forEach(r => r.classList.add('invalid'));
           }
         } else if (!el.checkValidity()){
           ok = false;
-          if (firstInvalid === null){ firstInvalid = el; firstSectionIdx = idx; }
+          if (!firstInvalid){ firstInvalid = el; firstSectionIdx = idx; }
           el.classList.add('invalid');
         }
       }
@@ -3202,53 +3164,30 @@ table.compact td textarea.comment-box {
     if (!ok && firstInvalid){
       step = firstSectionIdx >= 0 ? firstSectionIdx : step;
       update();
-      if (typeof firstInvalid.reportValidity === 'function') firstInvalid.reportValidity();
+      firstInvalid.reportValidity?.();
       firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
-      firstInvalid.focus({preventScroll:true});
+      firstInvalid.focus?.({preventScroll:true});
     }
     return ok;
   }
 
-  document.getElementById('nextBtn').onclick = () => {
-    if (step < sections.length-1){
-      if (!validateCurrentSection()) return; // block next if current page invalid
-      step++; update();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-  document.getElementById('prevBtn').onclick = () => { if (step>0){ step--; update(); } };
-  update();
-
-  // ====== SERIALIZE FORM ======
-  function serializeForm(form) {
+  // ===== SERIALIZE + SUBMIT =====
+  function serializeForm(form){
     const data = {};
     const elements = form.querySelectorAll('input, select, textarea');
 
-    const set = (name, value) => { data[name] = value; };
-
-    // initialize checkboxes to false so unchecked are captured
-    elements.forEach(el => {
-      if (el.name && el.type === 'checkbox' && data[el.name] === undefined) set(el.name, false);
-    });
+    // set all checkboxes to false first
+    elements.forEach(el => { if (el.name && el.type === 'checkbox' && data[el.name] === undefined) data[el.name] = false; });
 
     elements.forEach(el => {
       if (!el.name || el.disabled) return;
-      const type = (el.type || '').toLowerCase();
+      const type = (el.type||'').toLowerCase();
       const tag = el.tagName.toLowerCase();
 
-      if (type === 'checkbox'){
-        if (el.checked) set(el.name, true);
-      } else if (type === 'radio'){
-        if (el.checked) set(el.name, el.value);
-        else if (data[el.name] === undefined) set(el.name, '');
-      } else if (tag === 'select'){
-        if (el.multiple){
-          const vals = Array.from(el.selectedOptions).map(o => o.value);
-          set(el.name, vals.join('; '));
-        } else set(el.name, el.value);
-      } else {
-        set(el.name, el.value);
-      }
+      if (type === 'checkbox') { if (el.checked) data[el.name] = true; }
+      else if (type === 'radio') { if (el.checked) data[el.name] = el.value; else if (data[el.name] === undefined) data[el.name] = ''; }
+      else if (tag === 'select') { data[el.name] = el.multiple ? [...el.selectedOptions].map(o=>o.value).join('; ') : el.value; }
+      else { data[el.name] = el.value; }
     });
 
     data._userAgent = navigator.userAgent;
@@ -3256,38 +3195,28 @@ table.compact td textarea.comment-box {
     return data;
   }
 
-  // ====== SUBMIT (VALIDATE ALL + SEND TO APPS SCRIPT) ======
   const formEl = document.getElementById('survey');
   formEl.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    // full validation across all pages before sending
     if (!validateAllSections()) return;
 
-    const submitBtn = document.getElementById('submitBtn');
-    const originalText = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting…';
+    const original = submitBtn.textContent;
+    submitBtn.disabled = true; submitBtn.textContent = 'Submitting…';
 
     try {
       const payload = serializeForm(formEl);
-      const fd = new FormData();
-      fd.append('payload', JSON.stringify(payload));
-
-      const res = await fetch(APPS_SCRIPT_URL, { method: 'POST', body: fd });
+      const fd = new FormData(); fd.append('payload', JSON.stringify(payload));
+      const res = await fetch(APPS_SCRIPT_URL, { method:'POST', body: fd });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const json = await res.json();
-      if (!json || !json.ok) throw new Error('Server returned not ok');
+      const json = await res.json(); if (!json?.ok) throw new Error('Server not ok');
 
       alert('Thank you! Your response was submitted successfully.');
-      formEl.reset();
-      step = 0; update();
+      formEl.reset(); step = 0; update();
     } catch (err) {
-      console.error('Submit error:', err);
+      console.error(err);
       alert('Sorry, there was a problem submitting the survey. Please try again.');
     } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
+      submitBtn.disabled = false; submitBtn.textContent = original;
     }
   });
 </script>
