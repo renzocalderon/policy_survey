@@ -238,16 +238,93 @@ table.compact td textarea.comment-box {
         <h4>B) Brief details (e.g., unit name, reporting line, year established) How does the quality function coordinate with other ministry priorities and programs?  What are the main mechanisms for inter-departmental collaboration on quality (e.g., task forces, joint planning, shared indicators)? (Open question)</h4>
         <textarea name="coordination.details" rows="6" placeholder="Type your answer here"></textarea>
 
-        <h4>C) We are interested in building a high-level snapshot of key quality of care policies in countries in the Latin America and Caribbean region. For each organisation below, rate its current role in assuring quality of care at the national level. Please rate from 1 (No role) to 5 (Primary lead) </h4>
-        <table>
-          <tr><th>Organisation</th><th>Rate</th><th>Organisation name (link)</th></tr>
-          <tr><td>Ministry of Health / central health authority</td><td><input type="number" name="org.moh.rate" min="1" max="5"></td><td><input type="text" name="org.moh.name_link"></td></tr>
-          <tr><td>National institute/agency for healthcare quality</td><td><input type="number" name="org.quality.rate" min="1" max="5"></td><td><input type="text" name="org.quality.name_link"></td></tr>
-          <tr><td>National public health institute</td><td><input type="number" name="org.nphi.rate" min="1" max="5"></td><td><input type="text" name="org.nphi.name_link"></td></tr>
-          <tr><td>Health insurance funds / payers (statutory or private)</td><td><input type="number" name="org.insurance.rate" min="1" max="5"></td><td><input type="text" name="org.insurance.name_link"></td></tr>
-          <tr><td>Professional regulators (medical & nursing councils, licensing boards)</td><td><input type="number" name="org.regulators.rate" min="1" max="5"></td><td><input type="text" name="org.regulators.name_link"></td></tr>
-          <tr><td>Another key organisation (specify):_____________________</td><td><input type="number" name="org.other.rate" min="1" max="5"></td><td><input type="text" name="org.other.name_link"></td></tr>
-        </table>
+        <h4>
+  C) We are interested in building a high-level snapshot of key quality of care policies in countries in the Latin America and Caribbean region. 
+  For each organisation below, rate its current role in assuring quality of care at the national level. 
+  Please rate from 1 (No role) to 5 (Primary lead)
+</h4>
+
+<div id="org-rank" class="rank-matrix">
+  <table class="compact scope-table">
+    <thead>
+      <tr>
+        <th>Organisation</th>
+        <th class="choice">1</th>
+        <th class="choice">2</th>
+        <th class="choice">3</th>
+        <th class="choice">4</th>
+        <th class="choice">5</th>
+        <th class="choice">6<br><span class="muted" style="font-weight:400">only if “Other”</span></th>
+        <th>Organisation name (link)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ministry of Health / central health authority</td>
+        <td class="choice"><input required type="radio" name="org.rank.moh" value="1"></td>
+        <td class="choice"><input required type="radio" name="org.rank.moh" value="2"></td>
+        <td class="choice"><input required type="radio" name="org.rank.moh" value="3"></td>
+        <td class="choice"><input required type="radio" name="org.rank.moh" value="4"></td>
+        <td class="choice"><input required type="radio" name="org.rank.moh" value="5"></td>
+        <td class="choice"><input type="radio" name="org.rank.moh" value="6" disabled></td>
+        <td><input type="text" name="org.moh.name_link"></td>
+      </tr>
+      <tr>
+        <td>National institute/agency for healthcare quality</td>
+        <td class="choice"><input required type="radio" name="org.rank.quality" value="1"></td>
+        <td class="choice"><input required type="radio" name="org.rank.quality" value="2"></td>
+        <td class="choice"><input required type="radio" name="org.rank.quality" value="3"></td>
+        <td class="choice"><input required type="radio" name="org.rank.quality" value="4"></td>
+        <td class="choice"><input required type="radio" name="org.rank.quality" value="5"></td>
+        <td class="choice"><input type="radio" name="org.rank.quality" value="6" disabled></td>
+        <td><input type="text" name="org.quality.name_link"></td>
+      </tr>
+      <tr>
+        <td>National public health institute</td>
+        <td class="choice"><input required type="radio" name="org.rank.nphi" value="1"></td>
+        <td class="choice"><input required type="radio" name="org.rank.nphi" value="2"></td>
+        <td class="choice"><input required type="radio" name="org.rank.nphi" value="3"></td>
+        <td class="choice"><input required type="radio" name="org.rank.nphi" value="4"></td>
+        <td class="choice"><input required type="radio" name="org.rank.nphi" value="5"></td>
+        <td class="choice"><input type="radio" name="org.rank.nphi" value="6" disabled></td>
+        <td><input type="text" name="org.nphi.name_link"></td>
+      </tr>
+      <tr>
+        <td>Health insurance funds / payers (statutory or private)</td>
+        <td class="choice"><input required type="radio" name="org.rank.insurance" value="1"></td>
+        <td class="choice"><input required type="radio" name="org.rank.insurance" value="2"></td>
+        <td class="choice"><input required type="radio" name="org.rank.insurance" value="3"></td>
+        <td class="choice"><input required type="radio" name="org.rank.insurance" value="4"></td>
+        <td class="choice"><input required type="radio" name="org.rank.insurance" value="5"></td>
+        <td class="choice"><input type="radio" name="org.rank.insurance" value="6" disabled></td>
+        <td><input type="text" name="org.insurance.name_link"></td>
+      </tr>
+      <tr>
+        <td>Professional regulators (medical &amp; nursing councils, licensing boards)</td>
+        <td class="choice"><input required type="radio" name="org.rank.regulators" value="1"></td>
+        <td class="choice"><input required type="radio" name="org.rank.regulators" value="2"></td>
+        <td class="choice"><input required type="radio" name="org.rank.regulators" value="3"></td>
+        <td class="choice"><input required type="radio" name="org.rank.regulators" value="4"></td>
+        <td class="choice"><input required type="radio" name="org.rank.regulators" value="5"></td>
+        <td class="choice"><input type="radio" name="org.rank.regulators" value="6" disabled></td>
+        <td><input type="text" name="org.regulators.name_link"></td>
+      </tr>
+
+      <!-- OTHER -->
+      <tr>
+        <td>Another key organisation (specify):</td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="1"></td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="2"></td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="3"></td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="4"></td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="5"></td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="6"></td>
+        <td><input type="text" name="org.other.label" placeholder="Organisation name (link)"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="org-rank-error" class="muted" style="color:#b91c1c; margin-top:6px; display:none"></div>
+</div>
 
         <h4>D) What you regard to be the key policies and strategies aiming at quality of care in your country? What are the main strategic goals in this topic? Please complete the table below considering both existing and planned strategies.</h4>
         <table>
@@ -3057,13 +3134,17 @@ table.compact td textarea.comment-box {
 </div>
 
 
- <script>
+  <script>
   // ===== CONFIG =====
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxmN8XjWQ6lZDUU2dNas4bfkO6kwAoUO9A3xB9-y03bGHWZAeEUWLEzRdvh_VK3OLka3Q/exec';
 
   // ===== PAGING (with history) =====
   const sections = document.querySelectorAll('.q');
   let step = 0;
+
+  const prevBtn   = document.getElementById('prevBtn');
+  const nextBtn   = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
 
   function update(){
     sections.forEach((s,i)=>s.classList.toggle('active', i===step));
@@ -3074,8 +3155,113 @@ table.compact td textarea.comment-box {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
+  // ====== Special validator for the ranking matrix (C) ======
+  // Expects a container with id="org-rank".
+  // Core rows must use each rank 1..5 exactly once.
+  // If "Another key organisation" (name field) is filled, then ranks must be 1..6 exactly once.
+  function validateOrgRanks(container){
+    const errEl = container.querySelector('#org-rank-error');
+    if (errEl){ errEl.style.display = 'none'; errEl.textContent = ''; }
+
+    const core = [
+      'org.rank.moh',
+      'org.rank.quality',
+      'org.rank.nphi',
+      'org.rank.insurance',
+      'org.rank.regulators'
+    ];
+
+    const picks = [];
+    let focusEl = null;
+
+    // gather choices for core rows
+    for (const name of core){
+      const chosen = container.querySelector(`input[type=radio][name="${CSS.escape(name)}"]:checked`);
+      if (!chosen){
+        if (errEl){
+          errEl.textContent = 'Please assign a unique rank (1–5) to each listed organisation.';
+          errEl.style.display = 'block';
+        }
+        // focus first radio of that row
+        focusEl = container.querySelector(`input[type=radio][name="${CSS.escape(name)}"]`);
+        return { ok:false, focusEl };
+      }
+      picks.push(chosen.value);
+    }
+
+    // "Other" rule
+    const otherLabel = container.querySelector('input[name="org.other.label"]');
+    const otherUsed = otherLabel && otherLabel.value.trim() !== '';
+    const otherChosen = container.querySelector(`input[type=radio][name="org.rank.other"]:checked`);
+    if (otherUsed && !otherChosen){
+      if (errEl){
+        errEl.textContent = 'You added “Another key organisation”. Please assign it a unique rank (1–6).';
+        errEl.style.display = 'block';
+      }
+      focusEl = container.querySelector(`input[type=radio][name="org.rank.other"]`);
+      return { ok:false, focusEl };
+    }
+    if (!otherUsed && otherChosen){
+      if (errEl){
+        errEl.textContent = 'If you rank “Another key organisation”, please provide its name/link.';
+        errEl.style.display = 'block';
+      }
+      focusEl = container.querySelector('input[name="org.other.label"]');
+      return { ok:false, focusEl };
+    }
+    if (otherUsed && otherChosen) picks.push(otherChosen.value);
+
+    // uniqueness + full coverage
+    const expectedMax = otherUsed ? 6 : 5;
+    const expected = new Set(Array.from({length: expectedMax}, (_,i)=>String(i+1)));
+    const chosenSet = new Set(picks);
+
+    if (chosenSet.size !== picks.length){
+      if (errEl){
+        errEl.textContent = 'Each rank can be used only once. Please fix duplicates.';
+        errEl.style.display = 'block';
+      }
+      // try to focus the duplicate value if possible
+      for (const v of picks){
+        if (picks.filter(x=>x===v).length > 1){
+          focusEl = container.querySelector(`input[type=radio][value="${CSS.escape(v)}"]`);
+          break;
+        }
+      }
+      return { ok:false, focusEl };
+    }
+    if (picks.length !== expected.size || ![...expected].every(n => chosenSet.has(n))){
+      if (errEl){
+        errEl.textContent = otherUsed
+          ? 'With “Another key organisation”, ranks must cover 1–6 exactly once each.'
+          : 'Please use each rank 1–5 exactly once.';
+        errEl.style.display = 'block';
+      }
+      focusEl = container.querySelector('input[type=radio]');
+      return { ok:false, focusEl };
+    }
+
+    return { ok:true, focusEl:null };
+  }
+
+  // ===== PER-PAGE VALIDATION (includes ranking rule if present) =====
   function validateCurrentSection(){
     const current = sections[step];
+
+    // Ranking matrix rule if this page contains it
+    const rankBox = current.querySelector('#org-rank');
+    if (rankBox){
+      const { ok, focusEl } = validateOrgRanks(rankBox);
+      if (!ok){
+        if (focusEl){
+          focusEl.scrollIntoView({behavior:'smooth', block:'center'});
+          focusEl.focus?.({preventScroll:true});
+        }
+        return false;
+      }
+    }
+
+    // Generic HTML5 validation for the rest of the controls
     const controls = current.querySelectorAll('input, select, textarea');
     let firstInvalid = null;
     controls.forEach(el => el.classList.remove('invalid'));
@@ -3110,10 +3296,6 @@ table.compact td textarea.comment-box {
   }
 
   // nav buttons + history
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const submitBtn = document.getElementById('submitBtn');
-
   nextBtn.onclick = () => {
     if (step < sections.length-1 && validateCurrentSection()){
       step++; update(); history.pushState({step}, '', `#step${step}`);
@@ -3130,11 +3312,22 @@ table.compact td textarea.comment-box {
     history.replaceState({step}, '', `#step${step}`); update();
   });
 
-  // ===== FULL VALIDATION (all pages) =====
+  // ===== FULL VALIDATION (all pages; also enforces ranking rule if present) =====
   function validateAllSections(){
     let ok = true, firstInvalid = null, firstSectionIdx = -1;
 
     sections.forEach((sec, idx) => {
+      // Ranking matrix on this section?
+      const rankBox = sec.querySelector('#org-rank');
+      if (rankBox){
+        const { ok: rOK, focusEl } = validateOrgRanks(rankBox);
+        if (!rOK){
+          ok = false;
+          if (!firstInvalid){ firstInvalid = focusEl || rankBox.querySelector('input,select,textarea'); firstSectionIdx = idx; }
+        }
+      }
+
+      // Generic HTML5 validation
       const controls = sec.querySelectorAll('input, select, textarea');
       const seenRadio = new Set();
       controls.forEach(el => el.classList.remove('invalid'));
@@ -3176,7 +3369,7 @@ table.compact td textarea.comment-box {
     const data = {};
     const elements = form.querySelectorAll('input, select, textarea');
 
-    // set all checkboxes to false first
+    // initialize all checkboxes to false so unchecked are captured
     elements.forEach(el => { if (el.name && el.type === 'checkbox' && data[el.name] === undefined) data[el.name] = false; });
 
     elements.forEach(el => {
@@ -3184,10 +3377,16 @@ table.compact td textarea.comment-box {
       const type = (el.type||'').toLowerCase();
       const tag = el.tagName.toLowerCase();
 
-      if (type === 'checkbox') { if (el.checked) data[el.name] = true; }
-      else if (type === 'radio') { if (el.checked) data[el.name] = el.value; else if (data[el.name] === undefined) data[el.name] = ''; }
-      else if (tag === 'select') { data[el.name] = el.multiple ? [...el.selectedOptions].map(o=>o.value).join('; ') : el.value; }
-      else { data[el.name] = el.value; }
+      if (type === 'checkbox') {
+        if (el.checked) data[el.name] = true;
+      } else if (type === 'radio') {
+        if (el.checked) data[el.name] = el.value;
+        else if (data[el.name] === undefined) data[el.name] = '';
+      } else if (tag === 'select') {
+        data[el.name] = el.multiple ? [...el.selectedOptions].map(o=>o.value).join('; ') : el.value;
+      } else {
+        data[el.name] = el.value;
+      }
     });
 
     data._userAgent = navigator.userAgent;
