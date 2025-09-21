@@ -3418,6 +3418,40 @@ table.compact td textarea.comment-box {
       submitBtn.disabled = false; submitBtn.textContent = original;
     }
   });
+
+      // ---- Ranking matrix behaviour (one rank per column across all rows) ----
+  window.addEventListener('DOMContentLoaded', () => {
+    const box = document.getElementById('org-rank');
+    if (!box) return;
+
+    // 1) Mutually exclusive per rank (column)
+    box.querySelectorAll('input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (!radio.checked) return;
+        const v = radio.value; // "1".."6"
+        // Uncheck the same rank in other rows
+        box.querySelectorAll(`input[type="radio"][value="${CSS.escape(v)}"]`).forEach(other => {
+          if (other !== radio) other.checked = false;
+        });
+      });
+    });
+
+    // 2) Only allow rank "6" if "Another key organisation" is specified
+    const otherName = box.querySelector('input[name="org.other.label"]');
+    const sixRadios = box.querySelectorAll(`input[type="radio"][value="6"]`);
+
+    function syncRank6() {
+      const enabled = otherName && otherName.value.trim() !== '';
+      sixRadios.forEach(r => {
+        r.disabled = !enabled;
+        if (!enabled && r.checked) r.checked = false;
+      });
+    }
+
+    syncRank6();
+    if (otherName) otherName.addEventListener('input', syncRank6);
+  });
+</script>
 </script>
 
   
