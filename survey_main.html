@@ -213,6 +213,20 @@ table.compact td textarea.comment-box {
 @media (max-width: 720px){
   #org-rank{ min-width:880px; }   /* slightly tighter on mobile */
 }
+
+    /* rank columns (1–5) keep current width */
+#org-rank th.choice,
+#org-rank td.choice { width:56px; text-align:center; }
+
+/* make the “6 only if Other” column tighter */
+#org-rank th.rank6,
+#org-rank td.rank6 { width:40px; text-align:center; }
+
+/* optional: slightly smaller header helper text */
+#org-rank th.rank6 small{
+  display:block; line-height:1.1; color:var(--muted); font-weight:400;
+  font-size:0.85em;
+}
     
   </style>
 </head>
@@ -307,7 +321,7 @@ table.compact td textarea.comment-box {
         <th class="choice">3</th>
         <th class="choice">4</th>
         <th class="choice">5</th>
-        <th class="choice">6<br><span class="muted" style="font-weight:400">only if “Other”</span></th>
+        <th class="choice rank6">6<br><span class="muted" style="font-weight:400">only if “Other”</span></th>
         <th>Organisation name (link)</th>
       </tr>
     </thead>
@@ -319,7 +333,7 @@ table.compact td textarea.comment-box {
         <td class="choice"><input required type="radio" name="org.rank.moh" value="3"></td>
         <td class="choice"><input required type="radio" name="org.rank.moh" value="4"></td>
         <td class="choice"><input required type="radio" name="org.rank.moh" value="5"></td>
-        <td class="choice"><input type="radio" name="org.rank.moh" value="6" disabled></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.moh" value="6" disabled></td>
         <td><input type="text" name="org.moh.name_link"></td>
       </tr>
       <tr>
@@ -329,7 +343,7 @@ table.compact td textarea.comment-box {
         <td class="choice"><input required type="radio" name="org.rank.quality" value="3"></td>
         <td class="choice"><input required type="radio" name="org.rank.quality" value="4"></td>
         <td class="choice"><input required type="radio" name="org.rank.quality" value="5"></td>
-        <td class="choice"><input type="radio" name="org.rank.quality" value="6" disabled></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.quality" value="6" disabled></td>
         <td><input type="text" name="org.quality.name_link"></td>
       </tr>
       <tr>
@@ -339,7 +353,7 @@ table.compact td textarea.comment-box {
         <td class="choice"><input required type="radio" name="org.rank.nphi" value="3"></td>
         <td class="choice"><input required type="radio" name="org.rank.nphi" value="4"></td>
         <td class="choice"><input required type="radio" name="org.rank.nphi" value="5"></td>
-        <td class="choice"><input type="radio" name="org.rank.nphi" value="6" disabled></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.nphi" value="6" disabled></td>
         <td><input type="text" name="org.nphi.name_link"></td>
       </tr>
       <tr>
@@ -349,7 +363,7 @@ table.compact td textarea.comment-box {
         <td class="choice"><input required type="radio" name="org.rank.insurance" value="3"></td>
         <td class="choice"><input required type="radio" name="org.rank.insurance" value="4"></td>
         <td class="choice"><input required type="radio" name="org.rank.insurance" value="5"></td>
-        <td class="choice"><input type="radio" name="org.rank.insurance" value="6" disabled></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.insurance" value="6" disabled></td>
         <td><input type="text" name="org.insurance.name_link"></td>
       </tr>
       <tr>
@@ -359,7 +373,7 @@ table.compact td textarea.comment-box {
         <td class="choice"><input required type="radio" name="org.rank.regulators" value="3"></td>
         <td class="choice"><input required type="radio" name="org.rank.regulators" value="4"></td>
         <td class="choice"><input required type="radio" name="org.rank.regulators" value="5"></td>
-        <td class="choice"><input type="radio" name="org.rank.regulators" value="6" disabled></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.regulators" value="6" disabled></td>
         <td><input type="text" name="org.regulators.name_link"></td>
       </tr>
 
@@ -371,7 +385,7 @@ table.compact td textarea.comment-box {
         <td class="choice"><input type="radio" name="org.rank.other" value="3"></td>
         <td class="choice"><input type="radio" name="org.rank.other" value="4"></td>
         <td class="choice"><input type="radio" name="org.rank.other" value="5"></td>
-        <td class="choice"><input type="radio" name="org.rank.other" value="6"></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.other" value="6"></td>
         <td><input type="text" name="org.other.label" placeholder="Organisation name (link)"></td>
       </tr>
     </tbody>
