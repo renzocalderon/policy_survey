@@ -160,6 +160,59 @@ table.compact td textarea.comment-box {
   max-width: 150px; /* adjust size */
   height: auto;
 }
+
+    /* ---------- C) Organisation ranking table ---------- */
+#org-rank{
+  width:100%;
+  border-collapse:collapse;
+  min-width:980px;                /* give columns room; tweak as needed */
+}
+#org-rank th, #org-rank td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  vertical-align:middle;
+  background:#fff;
+}
+#org-rank thead th{               /* sticky header */
+  position:sticky; top:0; z-index:3; background:#f8fafc;
+}
+
+/* sticky first column (organisation names) */
+#org-rank th.orgcol, #org-rank td.orgcol{
+  position:sticky; left:0; z-index:2; background:#fff;
+  max-width:520px;                /* optional wrap width */
+  box-shadow:1px 0 0 var(--line);
+}
+
+/* rank columns 1..6: narrow + centered */
+#org-rank th.rank, #org-rank td.rank{
+  width:56px;                     /* uniform width for each rank col */
+  text-align:center;
+}
+#org-rank td.rank .radio-wrap{
+  display:flex; align-items:center; justify-content:center;
+  min-height:34px;                /* consistent row height */
+}
+#org-rank input[type="radio"]{ margin:0; }
+
+/* “6 only if Other” header helper */
+#org-rank th.rank6 small{
+  display:block; line-height:1.1; color:var(--muted); font-weight:400;
+}
+
+/* last column: organisation name/link field */
+#org-rank th.linkcol, #org-rank td.linkcol{ width:240px; }
+#org-rank td.linkcol input[type="text"]{
+  width:100%; padding:8px 10px; border:1px solid var(--line); border-radius:8px;
+}
+
+/* zebra rows for readability */
+#org-rank tbody tr:nth-child(odd) td{ background:#fcfcfd }
+
+/* small screens: allow scroll without collapsing columns */
+@media (max-width: 720px){
+  #org-rank{ min-width:880px; }   /* slightly tighter on mobile */
+}
     
   </style>
 </head>
@@ -244,8 +297,8 @@ table.compact td textarea.comment-box {
   Please rate from 1 (No role) to 5 (Primary lead)
 </h4>
 
-<div id="org-rank" class="rank-matrix">
-  <table class="compact scope-table">
+<div class="table-wrap">
+  <table id="org-rank">
     <thead>
       <tr>
         <th>Organisation</th>
