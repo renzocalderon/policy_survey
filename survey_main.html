@@ -1632,182 +1632,227 @@ table.compact td textarea.comment-box {
     <li><strong>Regular national quality/performance report.</strong> Many countries publish periodic (e.g., annual) syntheses that combine audit findings and indicator results, highlight trends and disparities, and recommend actions.</li>
   </ul>
 
-  <p>a) Considering the above, please complete the table summarising your country’s quality measurement and reporting. (Check the applicable option)</p>
+  <p>a) Considering the above, please complete the items below summarising your country’s quality measurement and reporting. (Check the applicable option)</p>
 
-  <!-- National audit studies -->
-  <h5>National audit studies (past 4 years)</h5>
-  <table>
-    <tr>
-      <th>Status</th>
-      <th>Services covered (select all)</th>
-      <th>Key scope (select all)</th>
-      <th>Report, Author (link)</th>
-      <th>Use for improvement (select all)</th>
-    </tr>
-    <tr>
-      <td>
-        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
-          <label><input type="radio" name="audit.status" value="Yes"> Yes</label>
-          <label><input type="radio" name="audit.status" value="No"> No</label>
-          <label><input type="radio" name="audit.status" value="Partial"> Partial</label>
-        </div>
-      </td>
-      <td>
-        <div class="checklist">
-          <label class="checkbox-label"><input type="checkbox" name="audit.svc.hosp"> Hospitals</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.svc.out"> Outpatient</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.svc.phc"> Primary care</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.svc.ltc"> Long term care</label>
-        </div>
-      </td>
-      <td>
-        <div class="checklist">
-          <label class="checkbox-label"><input type="checkbox" name="audit.scope.perinatal"> Perinatal death</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.scope.postop"> Post-op mortality</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.scope.anaes"> Anaesthesia adverse events</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.scope.hae"> Hospital adverse events</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.scope.surgery"> Surgery-specific</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.scope.other"> Other: <input type="text" name="audit.scope.other_text" placeholder="Specify"></label>
-        </div>
-      </td>
-      <td><input type="text" name="audit.report.link" placeholder="Title / author / URL"></td>
-      <td>
-        <div class="checklist">
-          <label class="checkbox-label"><input type="checkbox" name="audit.use.benchmark"> Benchmark to providers</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.use.p4p"> Pay-for-performance</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.use.collab"> Learning collaboratives</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.use.afb"> Routine audit &amp; feedback</label>
-          <label class="checkbox-label"><input type="checkbox" name="audit.use.other"> Other: <input type="text" name="audit.use.other_text" placeholder="Specify"></label>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <style>
+    /* small layout helpers just for this page */
+    .gate{margin:14px 0 6px}
+    .gate label{display:inline-flex; align-items:center; gap:8px; margin-right:16px}
+    .detail-card{
+      border:1px solid var(--line); border-radius:10px; padding:14px; background:#fff; margin-bottom:20px
+    }
+    .detail-grid{display:grid; gap:14px}
+    @media (min-width: 860px){
+      .detail-grid{grid-template-columns: 1fr 1fr}
+    }
+    .detail-col h6{margin:0 0 6px; font-size:.95rem}
+    .stacked-checks label{display:block; margin:6px 0; font-weight:400}
+  </style>
 
-  <!-- National quality indicator set -->
-  <h5>National quality indicator set</h5>
-  <table>
-    <tr>
-      <th>Status</th>
-      <th>Services covered (select all)</th>
-      <th>Key scope (select all)</th>
-      <th>Report, Author (link)</th>
-      <th>Use for improvement (select all)</th>
-    </tr>
-    <tr>
-      <td>
-        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
-          <label><input type="radio" name="nqi.status" value="Yes"> Yes</label>
-          <label><input type="radio" name="nqi.status" value="No"> No</label>
-          <label><input type="radio" name="nqi.status" value="Partial"> Partial</label>
-        </div>
-      </td>
-      <td>
-        <div class="checklist">
-          <label class="checkbox-label"><input type="checkbox" name="nqi.svc.hosp"> Hospitals</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.svc.out"> Outpatient</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.svc.phc"> Primary care</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.svc.ltc"> Long term care</label>
-        </div>
-      </td>
-      <td>
-        <div class="checklist">
-          <label class="checkbox-label"><input type="checkbox" name="nqi.scope.struct"> Structure</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.scope.process"> Process</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.scope.outcome"> Outcome</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.scope.safety"> Patient safety</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.scope.eff"> Effectiveness</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.scope.exp"> Patient experience</label>
-        </div>
-      </td>
-      <td><input type="text" name="nqi.report.link" placeholder="Title / author / URL"></td>
-      <td>
-        <div class="checklist">
-          <label class="checkbox-label"><input type="checkbox" name="nqi.use.benchmark"> Benchmark to providers</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.use.p4p"> Pay-for-performance</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.use.collab"> Learning collaboratives</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.use.afb"> Routine audit &amp; feedback</label>
-          <label class="checkbox-label"><input type="checkbox" name="nqi.use.other"> Other: <input type="text" name="nqi.use.other_text" placeholder="Specify"></label>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <!-- ---------- Block 1: National audit studies (past 4 years) ---------- -->
+  <div class="detail-card" id="audit-block">
+    <h5>National audit studies (past 4 years)</h5>
+    <div class="gate" role="group" aria-label="Audit studies status">
+      <label><input type="radio" name="audit.status" value="Yes"> Yes</label>
+      <label><input type="radio" name="audit.status" value="No"> No</label>
+      <label><input type="radio" name="audit.status" value="Partial"> Partial</label>
+    </div>
 
-  <!-- Public reporting of provider performance -->
-  <h5>Public reporting of provider performance</h5>
-  <table>
-    <tr>
-      <th>Status</th>
-      <th>Services covered (select all)</th>
-      <th>Report, Author (link)</th>
-      <th>Use for improvement (select all)</th>
-    </tr>
-    <tr>
-      <td>
-        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
-          <label><input type="radio" name="pr.status" value="Yes"> Yes</label>
-          <label><input type="radio" name="pr.status" value="No"> No</label>
-          <label><input type="radio" name="pr.status" value="Partial"> Partial</label>
+    <div id="audit-details" class="detail-grid" hidden>
+      <div class="detail-col">
+        <h6>Services covered (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="audit.svc.hosp"> Hospitals</label>
+          <label><input type="checkbox" name="audit.svc.out"> Outpatient</label>
+          <label><input type="checkbox" name="audit.svc.phc"> Primary care</label>
+          <label><input type="checkbox" name="audit.svc.ltc"> Long term care</label>
         </div>
-      </td>
-      <td>
-        <div class="checklist">
-          <label class="checkbox-label"><input type="checkbox" name="pr.svc.hosp"> Hospitals</label>
-          <label class="checkbox-label"><input type="checkbox" name="pr.svc.out"> Outpatient</label>
-          <label class="checkbox-label"><input type="checkbox" name="pr.svc.phc"> Primary care</label>
-          <label class="checkbox-label"><input type="checkbox" name="pr.svc.ltc"> Long term care</label>
-        </div>
-      </td>
-      <td><input type="text" name="pr.report.link" placeholder="Title / author / URL"></td>
-      <td>
-        <div class="checklist">
-          <label class="checkbox-label"><input type="checkbox" name="pr.use.benchmark"> Benchmark to providers</label>
-          <label class="checkbox-label"><input type="checkbox" name="pr.use.p4p"> Pay-for-performance</label>
-          <label class="checkbox-label"><input type="checkbox" name="pr.use.collab"> Learning collaboratives</label>
-          <label class="checkbox-label"><input type="checkbox" name="pr.use.afb"> Routine audit &amp; feedback</label>
-          <label class="checkbox-label"><input type="checkbox" name="pr.use.other"> Other: <input type="text" name="pr.use.other_text" placeholder="Specify"></label>
-        </div>
-      </td>
-    </tr>
-  </table>
+      </div>
 
-  <!-- Regular national report -->
-  <h5>Regular national quality/performance report</h5>
-  <table>
-    <tr>
-      <th>Status</th>
-      <th>Services covered (select all)</th>
-      <th>Report, Author (link)</th>
-      <th>Use for improvement (select all)</th>
-    </tr>
-    <tr>
-      <td>
-        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
-          <label><input type="radio" name="nr.status" value="Yes"> Yes</label>
-          <label><input type="radio" name="nr.status" value="No"> No</label>
-          <label><input type="radio" name="nr.status" value="Partial"> Partial</label>
+      <div class="detail-col">
+        <h6>Key scope (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="audit.scope.perinatal"> Perinatal death</label>
+          <label><input type="checkbox" name="audit.scope.postop"> Post-op mortality</label>
+          <label><input type="checkbox" name="audit.scope.anaes"> Anaesthesia adverse events</label>
+          <label><input type="checkbox" name="audit.scope.hae"> Hospital adverse events</label>
+          <label><input type="checkbox" name="audit.scope.surgery"> Surgery-specific</label>
+          <label>Other: <input type="text" name="audit.scope.other_text" placeholder="Specify"></label>
         </div>
-      </td>
-      <td>
-        <div class="checklist">
-          <label class="checkbox-label"><input type="checkbox" name="nr.svc.hosp"> Hospitals</label>
-          <label class="checkbox-label"><input type="checkbox" name="nr.svc.out"> Outpatient</label>
-          <label class="checkbox-label"><input type="checkbox" name="nr.svc.phc"> Primary care</label>
-          <label class="checkbox-label"><input type="checkbox" name="nr.svc.ltc"> Long term care</label>
+      </div>
+
+      <div class="detail-col">
+        <h6>Report, Author (link)</h6>
+        <input type="url" name="audit.report.link" placeholder="Title / author / URL">
+      </div>
+
+      <div class="detail-col">
+        <h6>Use for improvement (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="audit.use.benchmark"> Benchmark to providers</label>
+          <label><input type="checkbox" name="audit.use.p4p"> Pay-for-performance</label>
+          <label><input type="checkbox" name="audit.use.collab"> Learning collaboratives</label>
+          <label><input type="checkbox" name="audit.use.afb"> Routine audit &amp; feedback</label>
+          <label>Other: <input type="text" name="audit.use.other_text" placeholder="Specify"></label>
         </div>
-      </td>
-      <td><input type="text" name="nr.report.link" placeholder="Title / author / URL"></td>
-      <td>
-        <div class="checklist">
-          <label class="checkbox-label"><input type="checkbox" name="nr.use.benchmark"> Benchmark to providers</label>
-          <label class="checkbox-label"><input type="checkbox" name="nr.use.p4p"> Pay-for-performance</label>
-          <label class="checkbox-label"><input type="checkbox" name="nr.use.collab"> Learning collaboratives</label>
-          <label class="checkbox-label"><input type="checkbox" name="nr.use.afb"> Routine audit &amp; feedback</label>
-          <label class="checkbox-label"><input type="checkbox" name="nr.use.other"> Other: <input type="text" name="nr.use.other_text" placeholder="Specify"></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- Block 2: National quality indicator set ---------- -->
+  <div class="detail-card" id="nqi-block">
+    <h5>National quality indicator set</h5>
+    <div class="gate" role="group" aria-label="Indicator set status">
+      <label><input type="radio" name="nqi.status" value="Yes"> Yes</label>
+      <label><input type="radio" name="nqi.status" value="No"> No</label>
+      <label><input type="radio" name="nqi.status" value="Partial"> Partial</label>
+    </div>
+
+    <div id="nqi-details" class="detail-grid" hidden>
+      <div class="detail-col">
+        <h6>Services covered (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="nqi.svc.hosp"> Hospitals</label>
+          <label><input type="checkbox" name="nqi.svc.out"> Outpatient</label>
+          <label><input type="checkbox" name="nqi.svc.phc"> Primary care</label>
+          <label><input type="checkbox" name="nqi.svc.ltc"> Long term care</label>
         </div>
-      </td>
-    </tr>
-  </table>
+      </div>
+
+      <div class="detail-col">
+        <h6>Key scope (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="nqi.scope.struct"> Structure</label>
+          <label><input type="checkbox" name="nqi.scope.process"> Process</label>
+          <label><input type="checkbox" name="nqi.scope.outcome"> Outcome</label>
+          <label><input type="checkbox" name="nqi.scope.safety"> Patient safety</label>
+          <label><input type="checkbox" name="nqi.scope.eff"> Effectiveness</label>
+          <label><input type="checkbox" name="nqi.scope.exp"> Patient experience</label>
+        </div>
+      </div>
+
+      <div class="detail-col">
+        <h6>Report, Author (link)</h6>
+        <input type="url" name="nqi.report.link" placeholder="Title / author / URL">
+      </div>
+
+      <div class="detail-col">
+        <h6>Use for improvement (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="nqi.use.benchmark"> Benchmark to providers</label>
+          <label><input type="checkbox" name="nqi.use.p4p"> Pay-for-performance</label>
+          <label><input type="checkbox" name="nqi.use.collab"> Learning collaboratives</label>
+          <label><input type="checkbox" name="nqi.use.afb"> Routine audit &amp; feedback</label>
+          <label>Other: <input type="text" name="nqi.use.other_text" placeholder="Specify"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- Block 3: Public reporting of provider performance ---------- -->
+  <div class="detail-card" id="pr-block">
+    <h5>Public reporting of provider performance</h5>
+    <div class="gate" role="group" aria-label="Public reporting status">
+      <label><input type="radio" name="pr.status" value="Yes"> Yes</label>
+      <label><input type="radio" name="pr.status" value="No"> No</label>
+      <label><input type="radio" name="pr.status" value="Partial"> Partial</label>
+    </div>
+
+    <div id="pr-details" class="detail-grid" hidden>
+      <div class="detail-col">
+        <h6>Services covered (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="pr.svc.hosp"> Hospitals</label>
+          <label><input type="checkbox" name="pr.svc.out"> Outpatient</label>
+          <label><input type="checkbox" name="pr.svc.phc"> Primary care</label>
+          <label><input type="checkbox" name="pr.svc.ltc"> Long term care</label>
+        </div>
+      </div>
+
+      <div class="detail-col">
+        <h6>Report, Author (link)</h6>
+        <input type="url" name="pr.report.link" placeholder="Title / author / URL">
+      </div>
+
+      <div class="detail-col">
+        <h6>Use for improvement (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="pr.use.benchmark"> Benchmark to providers</label>
+          <label><input type="checkbox" name="pr.use.p4p"> Pay-for-performance</label>
+          <label><input type="checkbox" name="pr.use.collab"> Learning collaboratives</label>
+          <label><input type="checkbox" name="pr.use.afb"> Routine audit &amp; feedback</label>
+          <label>Other: <input type="text" name="pr.use.other_text" placeholder="Specify"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- Block 4: Regular national quality/performance report ---------- -->
+  <div class="detail-card" id="nr-block">
+    <h5>Regular national quality/performance report</h5>
+    <div class="gate" role="group" aria-label="National report status">
+      <label><input type="radio" name="nr.status" value="Yes"> Yes</label>
+      <label><input type="radio" name="nr.status" value="No"> No</label>
+      <label><input type="radio" name="nr.status" value="Partial"> Partial</label>
+    </div>
+
+    <div id="nr-details" class="detail-grid" hidden>
+      <div class="detail-col">
+        <h6>Services covered (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="nr.svc.hosp"> Hospitals</label>
+          <label><input type="checkbox" name="nr.svc.out"> Outpatient</label>
+          <label><input type="checkbox" name="nr.svc.phc"> Primary care</label>
+          <label><input type="checkbox" name="nr.svc.ltc"> Long term care</label>
+        </div>
+      </div>
+
+      <div class="detail-col">
+        <h6>Report, Author (link)</h6>
+        <input type="url" name="nr.report.link" placeholder="Title / author / URL">
+      </div>
+
+      <div class="detail-col">
+        <h6>Use for improvement (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="nr.use.benchmark"> Benchmark to providers</label>
+          <label><input type="checkbox" name="nr.use.p4p"> Pay-for-performance</label>
+          <label><input type="checkbox" name="nr.use.collab"> Learning collaboratives</label>
+          <label><input type="checkbox" name="nr.use.afb"> Routine audit &amp; feedback</label>
+          <label>Other: <input type="text" name="nr.use.other_text" placeholder="Specify"></label>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<script>
+  // Show details when Status is Yes/Partial; hide & clear when No
+  function setupStatusGate(key){
+    const radios = document.querySelectorAll(`input[name="${key}.status"]`);
+    const panel  = document.getElementById(`${key}-details`);
+    if (!radios.length || !panel) return;
+
+    const clearPanel = () => {
+      // clear all inputs inside panel (but not the status radios)
+      panel.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(i => { i.checked = false; });
+      panel.querySelectorAll('input[type="text"], input[type="url"], textarea').forEach(i => { i.value = ''; });
+    };
+
+    const onChange = () => {
+      const v = Array.from(radios).find(r => r.checked)?.value;
+      const show = (v === 'Yes' || v === 'Partial');
+      panel.hidden = !show;
+      if (!show) clearPanel();
+    };
+
+    radios.forEach(r => r.addEventListener('change', onChange));
+    onChange(); // initial
+  }
+
+  // Wire up all four blocks
+  ['audit','nqi','pr','nr'].forEach(setupStatusGate);
+</script>
 
       <!-- Page: Part I – 1.8 Financial incentives to increase health care quality -->
 <section class="q" data-key="part1_financial_incentives">
