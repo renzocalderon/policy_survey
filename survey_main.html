@@ -60,6 +60,7 @@
 
     /* Never stretch checkboxes/radios */
     input[type="checkbox"], input[type="radio"]{width:auto; height:auto}
+    
 
     .pager{display:flex; justify-content:space-between; align-items:center; margin-top:22px}
     .btn{padding:10px 14px; border-radius:8px; border:1px solid var(--line); cursor:pointer; font-weight:600; background:#fff; color:var(--ink)}
@@ -114,6 +115,7 @@
 table.compact{ min-width:1350px } /* give columns breathing room */
 table.compact th, table.compact td{ padding:6px 8px }
 table.compact .checkbox-label{ gap:6px; font-weight:400 }
+table.compact .checkbox-label none-line{ gap:6px; font-weight:400 }
 table.compact .cellpad{ padding:4px 0 }
 table.compact .mini{ width:100% }            /* inputs fill the small space well */
 table.compact input[type="text"]::placeholder{ color:#9ca3af }
@@ -2443,8 +2445,8 @@ table.compact td textarea.comment-box {
         <div class="checklist cellpad">
           <label class="checkbox-label"><input type="checkbox" name="hd.ehr.all.national"> Yes, national</label>
           <label class="checkbox-label"><input type="checkbox" name="hd.ehr.all.subnational"> Yes, subnational (specify):</label>
-          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.all.no" class="none-option"> No</label>
           <input type="text" class="mini" name="hd.ehr.all.subnational_spec" placeholder="region/program">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.all.no" class="none-option"> No</label>
         </div>
       </td>
 
@@ -2453,8 +2455,8 @@ table.compact td textarea.comment-box {
         <div class="checklist cellpad">
           <label class="checkbox-label"><input type="checkbox" name="hd.ehr.hosp.national"> Yes, national</label>
           <label class="checkbox-label"><input type="checkbox" name="hd.ehr.hosp.subnational"> Yes, subnational (specify):</label>
-          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.hosp.no" class="none-option"> No</label>
           <input type="text" class="mini" name="hd.ehr.hosp.subnational_spec" placeholder="region/program">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.hosp.no" class="none-option"> No</label>
         </div>
       </td>
 
