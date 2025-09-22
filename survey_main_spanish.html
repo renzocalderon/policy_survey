@@ -3603,6 +3603,27 @@ table.compact td textarea.comment-box {
 </script>
 </script>
 
+  <script>
+// Custom Spanish messages for required/format errors
+document.addEventListener('DOMContentLoaded', () => {
+  const requiredMsg = 'Por favor complete este campo.';
+  const emailMsg    = 'Ingrese un correo electrónico válido.';
+
+  document.querySelectorAll('#survey input, #survey select, #survey textarea')
+    .forEach(el => {
+      // Clear custom message on input
+      el.addEventListener('input', () => el.setCustomValidity(''));
+
+      // Set message when invalid
+      el.addEventListener('invalid', () => {
+        if (el.validity.valueMissing) el.setCustomValidity(requiredMsg);
+        else if (el.type === 'email' && el.validity.typeMismatch) el.setCustomValidity(emailMsg);
+        // add more rules if needed…
+      });
+    });
+});
+</script>
+
   
 </body>
 </html>
