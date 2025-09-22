@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>LAC Quality-of-Care Survey</title>
+  <style>
+    /* Light, formal theme */
+    :root{
+      --ink:#111827;          /* text */
+      --muted:#6b7280;        /* secondary text */
+      --bg:#f7f7fb;           /* page bg */
+      --card:#ffffff;         /* surfaces */
+      --line:#e5e7eb;         /* borders */
+      --primary:#1d4ed8;      /* buttons/links */
+      --primary-ink:#ffffff;  /* on-primary */
+      --focus:#2563eb;        /* focus ring */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink); margin:0; padding:20px}
+    h1,h2,h3,h4{margin:0 0 10px; color:var(--ink)}
+    .muted{color:var(--muted)}
+    .app{max-width:1000px;margin:0 auto}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:24px}
+
+    /* Layout */
+    .q{display:none}
+    .q.active{display:block}
+    .grid{display:grid; gap:16px}
+    @media(min-width:820px){.grid{grid-template-columns:1fr 1fr}}
+
+    /* Controls (scope width to text-like inputs only) */
+    label{font-weight:600}
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="password"],
+    textarea,
+    select{
+      width:100%;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--ink);
+    }
+    textarea:focus,
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    input[type="number"]:focus,
+    input[type="search"]:focus,
+    input[type="tel"]:focus,
+    input[type="password"]:focus,
+    select:focus{outline:3px solid rgba(37,99,235,.15); border-color:var(--focus)}
+
+    /* Never stretch checkboxes/radios */
+    input[type="checkbox"], input[type="radio"]{width:auto; height:auto}
+    
+
+    .pager{display:flex; justify-content:space-between; align-items:center; margin-top:22px}
+    .btn{padding:10px 14px; border-radius:8px; border:1px solid var(--line); cursor:pointer; font-weight:600; background:#fff; color:var(--ink)}
+    .btn:hover{background:#f3f4f6}
+    .btn.primary{background:var(--primary); color:var(--primary-ink); border-color:var(--primary)}
+    .btn.primary:hover{filter:brightness(0.95)}
+    .btn[disabled]{opacity:.5; cursor:not-allowed}
+
+    /* Tables */
+    table{width:100%; border-collapse:collapse; background:#fff}
+    th,td{border:1px solid var(--line); padding:8px; text-align:left; vertical-align:top}
+    th{background:#f8fafc}
+    .nowrap{white-space:nowrap}
+
+    /* Checkbox alignment (cross-browser) */
+    .checklist{display:flex; flex-direction:column; gap:10px}
+    .checkbox-label{display:flex; align-items:flex-start; gap:10px; font-weight:400}
+    .checkbox-label input[type="checkbox"]{flex:none; margin-top:2px}
+
+    /* Radios inside tables */
+    .radio-group{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .radio-group label{display:inline-flex; align-items:center; gap:6px; font-weight:500}
+
+    /* Align single-choice radios inside tables */
+.scope-table td.choice{
+  text-align:center;
+  vertical-align:middle;
+}
+.scope-table td.choice input[type=radio]{
+  margin:0;              /* no default margins */
+}
+
+/* Optional: balance column widths for that table */
+.scope-table th:first-child,
+.scope-table td:first-child{ width:65% }
+.scope-table th:nth-child(2),
+.scope-table th:nth-child(3),
+.scope-table td:nth-child(2),
+.scope-table td:nth-child(3){ width:17.5% }
+
+    /* ---- Part II table polish ---- */
+.table-wrap{
+  overflow:auto;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  box-shadow: inset 0 0 0 rgba(0,0,0,0);
+  /* subtle edge fade */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
+}
+table.compact{ min-width:1350px } /* give columns breathing room */
+table.compact th, table.compact td{ padding:6px 8px }
+table.compact .checkbox-label{ gap:6px; font-weight:400 }
+table.compact .checkbox-label none-line{ gap:6px; font-weight:400 }
+table.compact .cellpad{ padding:4px 0 }
+table.compact .mini{ width:100% }            /* inputs fill the small space well */
+table.compact input[type="text"]::placeholder{ color:#9ca3af }
+
+/* sticky first column so questions stay visible */
+table.compact th:first-child,
+table.compact td:first-child{
+  position:sticky; left:0; z-index:1; background:#fff;
+  box-shadow: 1px 0 0 var(--line);
+}
+
+/* keep header readable */
+table.compact thead th{ position:sticky; top:0; z-index:2; background:#f8fafc }
+
+/* radios/checkboxes align neatly */
+table.compact .w-yesno{ display:flex; gap:10px; flex-wrap:wrap }
+
+    /* bigger comment boxes */
+table.compact td textarea.comment-box {
+  width: 100%;
+  min-height: 60px;   /* adjust to make taller */
+  resize: vertical;   /* lets user drag to expand if needed */
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+    /* vertical, single-choice options inside matrix cells */
+.stack{display:flex; flex-direction:column; gap:6px}
+.stack label{font-weight:400}
+
+    /* per-page validation highlight */
+.invalid{
+  border-color:#ef4444 !important;
+  outline:3px solid rgba(239,68,68,.25) !important;
+}
+    .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.logo img {
+  max-width: 150px; /* adjust size */
+  height: auto;
+}
+
+    /* ---------- C) Organisation ranking table ---------- */
+#org-rank{
+  width:100%;
+  border-collapse:collapse;
+  min-width:980px;                /* give columns room; tweak as needed */
+}
+#org-rank th, #org-rank td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  vertical-align:middle;
+  background:#fff;
+}
+#org-rank thead th{               /* sticky header */
+  position:sticky; top:0; z-index:3; background:#f8fafc;
+}
+
+/* sticky first column (organisation names) */
+#org-rank th.orgcol, #org-rank td.orgcol{
+  position:sticky; left:0; z-index:2; background:#fff;
+  max-width:520px;                /* optional wrap width */
+  box-shadow:1px 0 0 var(--line);
+}
+
+/* rank columns 1..6: narrow + centered */
+#org-rank th.rank, #org-rank td.rank{
+  width:56px;                     /* uniform width for each rank col */
+  text-align:center;
+}
+#org-rank td.rank .radio-wrap{
+  display:flex; align-items:center; justify-content:center;
+  min-height:34px;                /* consistent row height */
+}
+#org-rank input[type="radio"]{ margin:0; }
+
+/* “6 only if Other” header helper */
+#org-rank th.rank6 small{
+  display:block; line-height:1.1; color:var(--muted); font-weight:400;
+}
+
+/* last column: organisation name/link field */
+#org-rank th.linkcol, #org-rank td.linkcol{ width:240px; }
+#org-rank td.linkcol input[type="text"]{
+  width:100%; padding:8px 10px; border:1px solid var(--line); border-radius:8px;
+}
+
+/* zebra rows for readability */
+#org-rank tbody tr:nth-child(odd) td{ background:#fcfcfd }
+
+/* small screens: allow scroll without collapsing columns */
+@media (max-width: 720px){
+  #org-rank{ min-width:880px; }   /* slightly tighter on mobile */
+}
+
+    /* rank columns (1–5) keep current width */
+#org-rank th.choice,
+#org-rank td.choice { width:56px; text-align:center; }
+
+/* make the “6 only if Other” column tighter */
+#org-rank th.rank6,
+#org-rank td.rank6 { width:40px; text-align:center; }
+
+/* optional: slightly smaller header helper text */
+#org-rank th.rank6 small{
+  display:block; line-height:1.1; color:var(--muted); font-weight:400;
+  font-size:0.85em;
+}
+    
+</style>
+</head>
+<body>
+
+  <h1>Encuesta sobre Políticas de Calidad de la Atención</h1>
+  <p>
+    Este cuestionario está diseñado para recopilar información sobre las políticas de calidad de la atención y los esfuerzos generales de los Gobiernos para garantizar y mejorar la calidad de la atención médica. 
+  </p>
+
+  <div class="section">
+    <h2>Información de contacto</h2>
+
+    <label for="pais">País:</label>
+    <input type="text" id="pais" name="pais">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <label for="cargo">Cargo:</label>
+    <input type="text" id="cargo" name="cargo">
+
+    <label for="organizacion">Organización:</label>
+    <input type="text" id="organizacion" name="organizacion">
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email">
+  </div>
