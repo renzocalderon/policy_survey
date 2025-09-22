@@ -286,3 +286,3309 @@ table.compact td textarea.comment-box {
           <li><strong>Calidad de la atención médica:</strong> La calidad de la atención médica comprende tres dimensiones fundamentales de la atención: eficacia, seguridad y atención centrada en el paciente (capacidad de respuesta). Estas dimensiones se aplican a lo largo de toda la trayectoria: cuidados preventivos, agudos, crónicos y paliativos.</li>
         </ul>
       </section>
+
+    <!-- Page 1: Part I, Section 1.1 -->
+      <section class="q" data-key="part1_overview">
+        <h2>Parte I: Panorama de las políticas de calidad de la atención</h2>
+        <h3>1.1 Reseña de las principales políticas de calidad de la atención</h3>
+
+        <h4>A) A)	¿Cuál es la posición del departamento de calidad y de la estrategia de calidad dentro de su Ministerio de Salud? Marque todas las opciones que correspondan.</h4>
+        <div class="checklist">
+          <label class="checkbox-label"><input type="checkbox" name="pos.quality_unit"> Existe una dependencia/departamento de calidad independiente dentro del ministerio.</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.integrated"> La función de calidad está integrada en otras unidades o departamentos.</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.crosscutting"> La calidad se posiciona como elemento transversal de las estrategias sectoriales.</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.uhc"> La calidad se posiciona como el elemento central de la estrategia de cobertura sanitaria universal</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.mandate"> La calidad tiene un mandato formal con una estructura de gobierno definida (p. ej., comité directivo, coordinadores).</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.plan"> El área de calidad tiene un plan de implementación con un presupuesto y un marco de seguimiento y evaluación</label>
+          <label class="checkbox-label"><input type="checkbox" name="pos.not_addressed"> La calidad no se aborda formalmente en la estructura organizativa ni en la estrategia.</label>
+          <label class="checkbox-label">Otros: <input type="text" name="pos.other_text" placeholder="Especificar"></label>
+        </div>
+
+        <h4>B) Breves detalles (por ejemplo, nombre de la unidad, línea jerárquica, año de constitución) ¿Cómo se coordina la función de calidad con las prioridades y los programas de otros ministerios?  ¿Cuáles son los principales mecanismos de colaboración interdepartamental en materia de calidad (por ejemplo, grupos de trabajo, planificación conjunta, indicadores compartidos)? (Pregunta abierta)</h4>
+        <textarea name="coordination.details" rows="6" placeholder="Escriba su respuesta aquí"></textarea>
+
+        <h4>
+  C) Estamos interesados en elaborar una visión general de alto nivel sobre las principales políticas de calidad de la atención en los países de América Latina y el Caribe. Para cada organización que aparece a continuación, califique su rol actual en garantizar la calidad de la atención a nivel nacional. Por favor califique de 1 (Sin rol) a 5 (Responsable principal). 
+</h4>
+
+<div class="table-wrap">
+  <table id="org-rank">
+    <thead>
+      <tr>
+        <th>Organización</th>
+        <th class="choice">1</th>
+        <th class="choice">2</th>
+        <th class="choice">3</th>
+        <th class="choice">4</th>
+        <th class="choice">5</th>
+        <th class="choice rank6">6<br><span class="muted" style="font-weight:400">solo si “Otra”</span></th>
+        <th>Nombre de la organización (enlace)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ministerio de Salud / autoridad sanitaria central</td>
+        <td class="choice"><input required type="radio" name="org.rank.moh" value="1"></td>
+        <td class="choice"><input required type="radio" name="org.rank.moh" value="2"></td>
+        <td class="choice"><input required type="radio" name="org.rank.moh" value="3"></td>
+        <td class="choice"><input required type="radio" name="org.rank.moh" value="4"></td>
+        <td class="choice"><input required type="radio" name="org.rank.moh" value="5"></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.moh" value="6" disabled></td>
+        <td><input type="text" name="org.moh.name_link"></td>
+      </tr>
+      <tr>
+        <td>Instituto/agencia nacional para la calidad en salud</td>
+        <td class="choice"><input required type="radio" name="org.rank.quality" value="1"></td>
+        <td class="choice"><input required type="radio" name="org.rank.quality" value="2"></td>
+        <td class="choice"><input required type="radio" name="org.rank.quality" value="3"></td>
+        <td class="choice"><input required type="radio" name="org.rank.quality" value="4"></td>
+        <td class="choice"><input required type="radio" name="org.rank.quality" value="5"></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.quality" value="6" disabled></td>
+        <td><input type="text" name="org.quality.name_link"></td>
+      </tr>
+      <tr>
+        <td>Instituto nacional de salud pública</td>
+        <td class="choice"><input required type="radio" name="org.rank.nphi" value="1"></td>
+        <td class="choice"><input required type="radio" name="org.rank.nphi" value="2"></td>
+        <td class="choice"><input required type="radio" name="org.rank.nphi" value="3"></td>
+        <td class="choice"><input required type="radio" name="org.rank.nphi" value="4"></td>
+        <td class="choice"><input required type="radio" name="org.rank.nphi" value="5"></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.nphi" value="6" disabled></td>
+        <td><input type="text" name="org.nphi.name_link"></td>
+      </tr>
+      <tr>
+        <td>Fondos/aseguradoras de salud (estatales o privadas)</td>
+        <td class="choice"><input required type="radio" name="org.rank.insurance" value="1"></td>
+        <td class="choice"><input required type="radio" name="org.rank.insurance" value="2"></td>
+        <td class="choice"><input required type="radio" name="org.rank.insurance" value="3"></td>
+        <td class="choice"><input required type="radio" name="org.rank.insurance" value="4"></td>
+        <td class="choice"><input required type="radio" name="org.rank.insurance" value="5"></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.insurance" value="6" disabled></td>
+        <td><input type="text" name="org.insurance.name_link"></td>
+      </tr>
+      <tr>
+        <td>Entidades reguladoras profesionales (colegios médicos y de enfermería, juntas de licenciamiento)</td>
+        <td class="choice"><input required type="radio" name="org.rank.regulators" value="1"></td>
+        <td class="choice"><input required type="radio" name="org.rank.regulators" value="2"></td>
+        <td class="choice"><input required type="radio" name="org.rank.regulators" value="3"></td>
+        <td class="choice"><input required type="radio" name="org.rank.regulators" value="4"></td>
+        <td class="choice"><input required type="radio" name="org.rank.regulators" value="5"></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.regulators" value="6" disabled></td>
+        <td><input type="text" name="org.regulators.name_link"></td>
+      </tr>
+
+      <!-- OTRA -->
+      <tr>
+        <td>Otra organización clave (especifique):</td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="1"></td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="2"></td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="3"></td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="4"></td>
+        <td class="choice"><input type="radio" name="org.rank.other" value="5"></td>
+        <td class="choice rank6"><input type="radio" name="org.rank.other" value="6"></td>
+        <td><input type="text" name="org.other.label" placeholder="Nombre de la organización (enlace)"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="org-rank-error" class="muted" style="color:#b91c1c; margin-top:6px; display:none"></div>
+</div>
+        <h4>D) ¿Cuáles considera que son las principales políticas y estrategias que tienen como objetivo mejorar la calidad de la atención en su país? ¿Cuáles son los principales objetivos estratégicos en este tema? Complete el siguiente cuadro teniendo en cuenta tanto las estrategias existentes como las previstas.</h4>
+        <table>
+          <tr>
+            <th> </th>
+            <th>¿Política/estrategia clave? (Sí/No)</th>
+            <th>Estado<br>(Implementado / <br>Planificado)</th>
+            <th>Documentos (títulos + enlaces)</th>
+            <th>Objetivo clave y cronograma</th>
+            <th>Institución responsable</th>
+            <th>Proveedores involucrados<br>(Todos / Privados / Públicos)</th>
+          </tr>
+          <!-- National Quality Strategy / Plan -->
+          <tr>
+            <td>Estrategia/plan nacional de calidad</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.nqs.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.nqs.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.nqs.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.nqs.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.nqs.docs"></td>
+            <td><input type="text" name="pol.nqs.goal"></td>
+            <td><input type="text" name="pol.nqs.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.nqs.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.nqs.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.nqs.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- National Cancer Plan -->
+          <tr>
+            <td><em>Enfermedad específica:</em> Plan Nacional contra el Cáncer</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cancer.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.cancer.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.cancer.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.cancer.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.cancer.docs"></td>
+            <td><input type="text" name="pol.cancer.goal"></td>
+            <td><input type="text" name="pol.cancer.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cancer.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.cancer.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.cancer.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- National CVD Plan -->
+          <tr>
+            <td><em>Enfermedad específica:</em> Plan Nacional de ECV</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cvd.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.cvd.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.cvd.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.cvd.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.cvd.docs"></td>
+            <td><input type="text" name="pol.cvd.goal"></td>
+            <td><input type="text" name="pol.cvd.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cvd.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.cvd.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.cvd.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Accreditation & Licensing -->
+          <tr>
+            <td>Acreditación y licencias (instalaciones/proveedores)</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.accred.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.accred.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.accred.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.accred.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.accred.docs"></td>
+            <td><input type="text" name="pol.accred.goal"></td>
+            <td><input type="text" name="pol.accred.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.accred.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.accred.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.accred.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Clinical Guidelines & Clinical Audit -->
+          <tr>
+            <td>Guías Clínicas y Auditoría Clínica</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.guidelines.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.guidelines.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.guidelines.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.guidelines.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.guidelines.docs"></td>
+            <td><input type="text" name="pol.guidelines.goal"></td>
+            <td><input type="text" name="pol.guidelines.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.guidelines.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.guidelines.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.guidelines.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Measurement & Public Reporting -->
+          <tr>
+            <td>Medición e informes públicos</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.measure.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.measure.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.measure.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.measure.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.measure.docs"></td>
+            <td><input type="text" name="pol.measure.goal"></td>
+            <td><input type="text" name="pol.measure.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.measure.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.measure.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.measure.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- National Cancer Registry -->
+          <tr>
+            <td>Enfermedad específica: Registro Nacional de Cáncer</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cancerreg.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.cancerreg.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.cancerreg.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.cancerreg.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.cancerreg.docs"></td>
+            <td><input type="text" name="pol.cancerreg.goal"></td>
+            <td><input type="text" name="pol.cancerreg.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cancerreg.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.cancerreg.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.cancerreg.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- CVD Epidemiological Monitoring -->
+          <tr>
+            <td>Enfermedad específica: ECV seguimiento epidemiológica</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cvdmon.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.cvdmon.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.cvdmon.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.cvdmon.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.cvdmon.docs"></td>
+            <td><input type="text" name="pol.cvdmon.goal"></td>
+            <td><input type="text" name="pol.cvdmon.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.cvdmon.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.cvdmon.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.cvdmon.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Patient Safety IRLS -->
+          <tr>
+            <td>Seguridad del paciente: sistema de notificación de incidentes y aprendizaje</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.safety.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.safety.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.safety.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.safety.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.safety.docs"></td>
+            <td><input type="text" name="pol.safety.goal"></td>
+            <td><input type="text" name="pol.safety.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.safety.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.safety.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.safety.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- IPC (incl. AMR) -->
+          <tr>
+            <td>Prevención y control de infecciones (incluida la resistencia a los antibióticos)</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.ipc.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.ipc.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.ipc.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.ipc.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.ipc.docs"></td>
+            <td><input type="text" name="pol.ipc.goal"></td>
+            <td><input type="text" name="pol.ipc.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.ipc.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.ipc.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.ipc.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Medication Safety & AMS -->
+          <tr>
+            <td>Seguridad de los medicamentos y administración de antibióticos</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.medsafety.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.medsafety.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.medsafety.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.medsafety.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.medsafety.docs"></td>
+            <td><input type="text" name="pol.medsafety.goal"></td>
+            <td><input type="text" name="pol.medsafety.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.medsafety.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.medsafety.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.medsafety.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Surgical Safety -->
+          <tr>
+            <td>Seguridad quirúrgica (p. ej., lista de verificación de la OMS)</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.surg.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.surg.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.surg.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.surg.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.surg.docs"></td>
+            <td><input type="text" name="pol.surg.goal"></td>
+            <td><input type="text" name="pol.surg.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.surg.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.surg.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.surg.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Patient-Centred Care -->
+          <tr>
+            <td>Atención centrada en el paciente: PROM/PREM y toma de decisiones compartida</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.pcc.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.pcc.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.pcc.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.pcc.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.pcc.docs"></td>
+            <td><input type="text" name="pol.pcc.goal"></td>
+            <td><input type="text" name="pol.pcc.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.pcc.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.pcc.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.pcc.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Digital Health Quality Standards -->
+          <tr>
+            <td>Estándares de calidad en salud digital (HCE, prescripción electrónica, SDC)</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.dh.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.dh.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.dh.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.dh.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.dh.docs"></td>
+            <td><input type="text" name="pol.dh.goal"></td>
+            <td><input type="text" name="pol.dh.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.dh.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.dh.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.dh.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Other 1 -->
+          <tr>
+            <td>Otros (especifique):  __________________________</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other1.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.other1.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.other1.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.other1.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.other1.docs"></td>
+            <td><input type="text" name="pol.other1.goal"></td>
+            <td><input type="text" name="pol.other1.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other1.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.other1.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.other1.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Other 2 -->
+          <tr>
+            <td>Otros (especifique): __________________________</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other2.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.other2.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.other2.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.other2.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.other2.docs"></td>
+            <td><input type="text" name="pol.other2.goal"></td>
+            <td><input type="text" name="pol.other2.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other2.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.other2.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.other2.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+          <!-- Other 3 -->
+          <tr>
+            <td>Otros (especifique): __________________________</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other3.exist" value="Yes"> Si</label>
+                <label><input type="radio" name="pol.other3.exist" value="No"> No</label>
+              </div>
+            </td>
+            <td>
+              <div class="radio-group">
+                <label class="nowrap"><input type="radio" name="pol.other3.status" value="Implemented"> Implementado</label>
+                <label class="nowrap"><input type="radio" name="pol.other3.status" value="Planned"> Planificado</label>
+              </div>
+            </td>
+            <td><input type="text" name="pol.other3.docs"></td>
+            <td><input type="text" name="pol.other3.goal"></td>
+            <td><input type="text" name="pol.other3.inst"></td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="pol.other3.providers" value="All"> Todos</label>
+                <label><input type="radio" name="pol.other3.providers" value="Private"> Privados</label>
+                <label><input type="radio" name="pol.other3.providers" value="Public"> Públicos</label>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <h4>E) ¿Su país cuenta con mecanismos regulares e institucionalizados para reconocer y difundir el éxito en la mejora de la calidad de la atención médica, incluida la identificación de las mejores prácticas y los "valores atípicos positivos" de alto desempeño (es decir, organizaciones/equipos que se desempeñan significativamente más que sus pares en indicadores aptos para la evaluación comparativa)?</h4>
+        <div class="checklist">
+          <label class="checkbox-label"><input type="checkbox" name="recog.forum"> Foro/conferencia nacional sobre calidad</label>
+          <label class="checkbox-label"><input type="checkbox" name="recog.events"> Foro/conferencia nacional sobre calidad</label>
+          <label class="checkbox-label"><input type="checkbox" name="recog.awards"> Programa nacional de premios/reconocimiento por mejora de la calidad o valores atípicos positivos</label>
+          <label class="checkbox-label"><input type="checkbox" name="recog.mechanism"> Mecanismo formal para identificar y difundir las mejores prácticas (p. ej., colaboración para el aprendizaje, comunidades de práctica, centros de mejora).</label>
+          <label class="checkbox-label"><input type="checkbox" name="recog.publications"> Publicación/difusión periódica de estudios de casos, historias de éxito o paneles de información.</label>
+          <label class="checkbox-label"><input type="checkbox" name="recog.none"> Ninguna de las anteriores (no existe un mecanismo regular de reconocimiento o aprendizaje).</label>
+          <label class="checkbox-label">	Otros (especifique): <input type="text" name="recog.other_text" placeholder="Especifique"></label>
+        </div>
+        <p>Sírvase formular comentarios sobre la frecuencia, la cobertura (pública/privada), la base para identificar los "valores atípicos positivos" o cualquier otra información pertinente sobre dicha iniciativa.</p>
+        <textarea name="recog.comment" rows="4" placeholder="Escriba su comentario aquí"></textarea>
+
+        <p>La OMS y la OPS han liderado esfuerzos mundiales y regionales para mejorar la calidad de la atención de las enfermedades no transmisibles (ENT), especialmente las cardiovasculares (ECV) y el cáncer. Sus iniciativas incluyen la elaboración de políticas, la asistencia técnica, el fortalecimiento de la capacidad y la implementación de intervenciones basadas en evidencias.</p>
+
+        <h4>F) Enumere todas las iniciativas y actividades de la OMS/OPS para la mejora de la calidad de las enfermedades no transmisibles o cualquier otra iniciativa y actividad de mejora de la calidad en su país. (Pregunta abierta)</h4>
+        <textarea name="initiatives" rows="6" placeholder="Type your answer here"></textarea>
+      </section>
+
+<!-- Page 2: Part I, Section 1.2 + 1.3 -->
+<section class="q" data-key="part1_legal">
+  <h2>Part I: Quality-of-care policy landscape</h2>
+  <h3>1.2 Legal framework for quality of care</h3>
+
+  <h4>A) Many countries use legislation and regulation to assure the quality and safety of care—covering professionals (physicians, nurses), services (hospitals, outpatient, long-term care), technologies and medicines, and patient rights. Please complete the table to list the main instruments in force, their scope, and last update. (If no instrument exists, indicate “None”)</h4>
+
+  <table>
+    <tr>
+      <th>Area</th>
+      <th>Instrument type:<br>Law/Regulation/<br>Decree/Guideline</th>
+      <th>Title (&amp; link if available)</th>
+      <th>If detailed: Main areas covered</th>
+      <th>Year last updated</th>
+    </tr>
+    <tr>
+      <td>Professionals (physicians, nurses)</td>
+      <td><input type="text" name="lf.prof.instype"></td>
+      <td><input type="text" name="lf.prof.title"></td>
+      <td><input type="text" name="lf.prof.coverage"></td>
+      <td><input type="text" name="lf.prof.updated"></td>
+    </tr>
+    <tr>
+      <td>Services (hospitals, outpatient, LTC)</td>
+      <td><input type="text" name="lf.services.instype"></td>
+      <td><input type="text" name="lf.services.title"></td>
+      <td><input type="text" name="lf.services.coverage"></td>
+      <td><input type="text" name="lf.services.updated"></td>
+    </tr>
+    <tr>
+      <td>Technologies &amp; drugs</td>
+      <td><input type="text" name="lf.tech.instype"></td>
+      <td><input type="text" name="lf.tech.title"></td>
+      <td><input type="text" name="lf.tech.coverage"></td>
+      <td><input type="text" name="lf.tech.updated"></td>
+    </tr>
+    <tr>
+      <td>Patient rights</td>
+      <td><input type="text" name="lf.rights.instype"></td>
+      <td><input type="text" name="lf.rights.title"></td>
+      <td><input type="text" name="lf.rights.coverage"></td>
+      <td><input type="text" name="lf.rights.updated"></td>
+    </tr>
+    <tr>
+      <td>Mandatory reporting of performance</td>
+      <td><input type="text" name="lf.reporting.instype"></td>
+      <td><input type="text" name="lf.reporting.title"></td>
+      <td><input type="text" name="lf.reporting.coverage"></td>
+      <td><input type="text" name="lf.reporting.updated"></td>
+    </tr>
+  </table>
+
+  <h3>1.3 Workforce planning and professional certification and re-certification</h3>
+
+  <h4>a) Does your country have a comprehensive national health workforce strategy that addresses gaps in numbers, distribution, and retention of physicians and nurses in both the short and long term? (Check the applicable option)</h4>
+
+  <table>
+  <tr>
+    <th> </th>
+    <th>Public sector applies</th>
+    <th>Private sector applies</th>
+  </tr>
+
+  <!-- Subheader: comprehensive strategy implemented -->
+  <tr>
+    <td colspan="3"><strong>Yes, a comprehensive strategy exists and is actively implemented with regards to:</strong></td>
+  </tr>
+  <tr>
+    <td>Numbers</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.numbers.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.numbers.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.numbers.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.numbers.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>Distribution</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.distribution.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.distribution.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.distribution.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.distribution.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>Rural retention of health professionals</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.rural.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.rural.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.rural.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.rural.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>National retention of health professionals</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.national.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.national.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.comp.national.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.comp.national.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+
+  <!-- Other overall statuses -->
+  <tr>
+    <td>Yes, a strategy exists but implementation is partial or limited</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.partial.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.partial.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.partial.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.partial.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>No, a strategy is under development</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.develop.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.develop.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.develop.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.develop.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>No, there is no national strategy in place but there are specific provinces/states that have health workforce policies in place</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.subnat.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.subnat.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.subnat.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.subnat.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>No, there is no national or subnational strategy in place</td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.none.public" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.none.public" value="No"> No</label>
+      </div>
+    </td>
+    <td>
+      <div class="radio-group">
+        <label><input type="radio" name="wf.none.private" value="Yes"> Yes</label>
+        <label><input type="radio" name="wf.none.private" value="No"> No</label>
+      </div>
+    </td>
+  </tr>
+</table>
+
+  <h4>b) Please tick the box next to the option that best describes your country’s approach to workforce forecasting and planning policy. (Check the applicable option)</h4>
+  <div class="checklist">
+    <label><input type="checkbox" name="wf.policy.none"> No workforce forecasting and planning policy exists.</label>
+    <label><input type="checkbox" name="wf.policy.public_only"> Yes, a workforce forecasting and planning policy exists and applies only to the public sector.</label>
+    <label><input type="checkbox" name="wf.policy.both"> Yes, a workforce forecasting and planning policy exists and applies to both the public and private sectors.</label>
+    <label>Other (please specify). <input type="text" name="wf.policy.other_text" placeholder="Specify"></label>
+  </div>
+
+  <p>Well trained physicians and nurses constitute the backbone of the health care system. However, medical knowledge and skills need to be updated to assure high level performance of health care professionals. Policies related to professional certification and re-certification (see definition below) as well as continuous professional education and development (CME and CPD) and can be put in place to assure professional performance.</p>
+  <ul>
+    <li><strong>Professional certification:</strong> Certification is the initial process of achieving the designation, proving your foundational knowledge.</li>
+    <li><strong>Professional re-certification:</strong> Re-certification is the subsequent process of renewing that certification after a set period (often 3–5 years) by completing ongoing professional development activities or retaking an exam, demonstrating continued competence and commitment to the field.</li>
+  </ul>
+
+  <h4>c) Which of the following best describes the policies for certifying, and re-certifying physicians and nurses in your country? (Check the applicable option)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>For doctors</th>
+      <th>For nurses</th>
+    </tr>
+    <tr>
+      <td>Mandatory initial certification and regular re-certification.</td>
+      <td>
+        <div class="checklist">
+          <label><input type="checkbox" name="cert.doc.mandatory"> </label>
+          <label>Re certification happens every <input type="number" min="0" style="width:90px" name="cert.doc.reyears"> yrs.</label>
+        </div>
+      </td>
+      <td>
+        <div class="checklist">
+          <label><input type="checkbox" name="cert.nurse.mandatory"> </label>
+          <label>Re certification happens every <input type="number" min="0" style="width:90px" name="cert.nurse.reyears"> yrs.</label>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Mandatory initial certification only; re-certification is voluntary or not required</td>
+      <td><label class="checkbox-label"><input type="checkbox" name="cert.doc.initial_only"></label></td>
+      <td><label class="checkbox-label"><input type="checkbox" name="cert.nurse.initial_only"></label></td>
+    </tr>
+    <tr>
+      <td>Certification is voluntary</td>
+      <td><label class="checkbox-label"><input type="checkbox" name="cert.doc.voluntary"></label></td>
+      <td><label class="checkbox-label"><input type="checkbox" name="cert.nurse.voluntary"></label></td>
+    </tr>
+    <tr>
+      <td>No formal certification policies exist</td>
+      <td><label class="checkbox-label"><input type="checkbox" name="cert.doc.none"></label></td>
+      <td><label class="checkbox-label"><input type="checkbox" name="cert.nurse.none"></label></td>
+    </tr>
+  </table>
+
+  <h4>d) Describe your country’s approach to standardized national certification exams for physicians and nurses (Check the applicable option)</h4>
+  <div class="checklist">
+    <label><input type="checkbox" name="exam.none"> No standardized national certification exam exists.</label>
+    <label><input type="checkbox" name="exam.public_only"> Yes, a standardized national certification exam exists and applies only to the public sector.</label>
+    <label><input type="checkbox" name="exam.private_only"> Yes, a standardized national certification exam exists and applies only to the private sector.</label>
+    <label><input type="checkbox" name="exam.both"> Yes, a standardized national certification exam exists and applies to both the public and private sectors.</label>
+    <label>Other (please specify). <input type="text" name="exam.other_text" placeholder="Specify"></label>
+  </div>
+
+  <h4>e) Where standardized certification exists, it includes certification pathways for foreign-trained medical doctors to practice in the country? (Check the applicable option)</h4>
+  <div class="radio-group">
+    <label><input type="radio" name="foreign.pathways" value="Yes"> Yes</label>
+    <label><input type="radio" name="foreign.pathways" value="No"> No</label>
+  </div>
+
+  <h4>f) Are there national policies requiring continuous professional education (CME/CPD) and quality improvement training for physicians and nurses, and are these integrated into the training curricula? (Check the applicable option)</h4>
+  <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+    <label><input type="radio" name="cme.policy" value="Both integrated"> Yes, mandatory CME/CPD and quality improvement training are required and integrated into curricula</label>
+    <label><input type="radio" name="cme.policy" value="CME only"> Yes, mandatory CME/CPD is required, but quality improvement is not integrated</label>
+    <label><input type="radio" name="cme.policy" value="Encouraged"> CME/CPD is encouraged but not mandatory; quality improvement is partially integrated</label>
+    <label><input type="radio" name="cme.policy" value="No policies"> No national policies exist for CME/CPD or quality improvement training</label>
+  </div>
+
+  <h4>g) Please describe briefly the policies for certifying physicians and nurses in your country, as well as any policies aimed at improving the performance of already certified physicians and nurses. Please include:</h4>
+  <ul>
+    <li>Details on mandatory continuous (medical) education, professional development, and re-certification/licensing</li>
+    <li>The role of key government and professional organizations responsible for executing these policies in your country</li>
+    <li>If this applies to both private and public sector or only to one</li>
+  </ul>
+  <textarea name="cert.description" rows="6" placeholder="Type your answer here"></textarea>
+</section>
+
+      <!-- Page 4: Part I, Section 1.4 -->
+<section class="q" data-key="part1_accreditation">
+  <h2>Part I: Quality-of-care policy landscape</h2>
+  <h3>1.4 Accreditation and other external quality assessment mechanisms</h3>
+
+  <p>Accreditation and other external quality assessment mechanisms provide structured, independent verification that health care organizations meet defined standards and continuously improve. Originating as profession-led initiatives, accreditation programs have evolved with growing government involvement while generally remaining accountable to autonomous governing bodies. They apply broadly consistent, health care–specific standards and emphasize bottom-up improvement through self-assessment, peer review, and management reporting, with recognition granted to organizations that meet requirements; these programs now extend from hospitals to primary care. Complementing accreditation, certification evaluates conformity with international standards such as ISO 9001 through audits by recognized, independent bodies operating under ISO 19011, producing findings on compliance and noncompliance without prescribing corrective recommendations.</p>
+
+  <h4>Which organizations are primarily responsible for conducting accreditation programs in your country? (Check the applicable option) For each one, explain if these organizations have been accredited by ISQua.</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Government agencies</th>
+      <th>Private organizations</th>
+      <th>Both government and private organizations</th>
+      <th>Other</th>
+      <th>No formal accreditation programs exist</th>
+      <th>Explain ISQua accreditation (if any)</th>
+    </tr>
+    <!-- Hospitals -->
+    <tr>
+      <td>For Hospitals</td>
+      <td><label><input type="checkbox" name="acc.org.hosp.gov"></label></td>
+      <td><label><input type="checkbox" name="acc.org.hosp.priv"></label></td>
+      <td><label><input type="checkbox" name="acc.org.hosp.both"></label></td>
+      <td><label><input type="checkbox" name="acc.org.hosp.other"></label></td>
+      <td><label><input type="checkbox" name="acc.org.hosp.none"></label></td>
+      <td><input type="text" name="acc.org.hosp.isqua" placeholder="e.g., ISQua accredited (year)"></td>
+    </tr>
+    <!-- PHC -->
+    <tr>
+      <td>For PHC facilities</td>
+      <td><label><input type="checkbox" name="acc.org.phc.gov"></label></td>
+      <td><label><input type="checkbox" name="acc.org.phc.priv"></label></td>
+      <td><label><input type="checkbox" name="acc.org.phc.both"></label></td>
+      <td><label><input type="checkbox" name="acc.org.phc.other"></label></td>
+      <td><label><input type="checkbox" name="acc.org.phc.none"></label></td>
+      <td><input type="text" name="acc.org.phc.isqua" placeholder="e.g., ISQua accredited (year)"></td>
+    </tr>
+    <!-- LTC -->
+    <tr>
+      <td>Long Term Care</td>
+      <td><label><input type="checkbox" name="acc.org.ltc.gov"></label></td>
+      <td><label><input type="checkbox" name="acc.org.ltc.priv"></label></td>
+      <td><label><input type="checkbox" name="acc.org.ltc.both"></label></td>
+      <td><label><input type="checkbox" name="acc.org.ltc.other"></label></td>
+      <td><label><input type="checkbox" name="acc.org.ltc.none"></label></td>
+      <td><input type="text" name="acc.org.ltc.isqua" placeholder="e.g., ISQua accredited (year)"></td>
+    </tr>
+    <!-- ICN -->
+    <tr>
+      <td>Integrated Care Networks</td>
+      <td><label><input type="checkbox" name="acc.org.icn.gov"></label></td>
+      <td><label><input type="checkbox" name="acc.org.icn.priv"></label></td>
+      <td><label><input type="checkbox" name="acc.org.icn.both"></label></td>
+      <td><label><input type="checkbox" name="acc.org.icn.other"></label></td>
+      <td><label><input type="checkbox" name="acc.org.icn.none"></label></td>
+      <td><input type="text" name="acc.org.icn.isqua" placeholder="e.g., ISQua accredited (year)"></td>
+    </tr>
+    <!-- Other -->
+    <tr>
+      <td>Other:</td>
+      <td><label><input type="checkbox" name="acc.org.other.gov"></label></td>
+      <td><label><input type="checkbox" name="acc.org.other.priv"></label></td>
+      <td><label><input type="checkbox" name="acc.org.other.both"></label></td>
+      <td><label><input type="checkbox" name="acc.org.other.other"></label></td>
+      <td><label><input type="checkbox" name="acc.org.other.none"></label></td>
+      <td><input type="text" name="acc.org.other.isqua" placeholder="Describe"></td>
+    </tr>
+  </table>
+
+  <h4>Are there national standards used in the accreditation process, and are these programs voluntary or mandatory? (For each column, check the applicable option)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>National standards exist; accreditation is mandatory</th>
+      <th>National standards exist; accreditation is voluntary</th>
+      <th>No national standards exist</th>
+      <th>No accreditation program exists</th>
+    </tr>
+    <tr>
+      <td>For Hospitals</td>
+      <td><label><input type="radio" name="acc.std.hosp" value="mandatory"></label></td>
+      <td><label><input type="radio" name="acc.std.hosp" value="voluntary"></label></td>
+      <td><label><input type="radio" name="acc.std.hosp" value="no_standards"></label></td>
+      <td><label><input type="radio" name="acc.std.hosp" value="no_program"></label></td>
+    </tr>
+    <tr>
+      <td>For PHC facilities</td>
+      <td><label><input type="radio" name="acc.std.phc" value="mandatory"></label></td>
+      <td><label><input type="radio" name="acc.std.phc" value="voluntary"></label></td>
+      <td><label><input type="radio" name="acc.std.phc" value="no_standards"></label></td>
+      <td><label><input type="radio" name="acc.std.phc" value="no_program"></label></td>
+    </tr>
+    <tr>
+      <td>Long Term Care</td>
+      <td><label><input type="radio" name="acc.std.ltc" value="mandatory"></label></td>
+      <td><label><input type="radio" name="acc.std.ltc" value="voluntary"></label></td>
+      <td><label><input type="radio" name="acc.std.ltc" value="no_standards"></label></td>
+      <td><label><input type="radio" name="acc.std.ltc" value="no_program"></label></td>
+    </tr>
+    <tr>
+      <td>Integrated Care Networks</td>
+      <td><label><input type="radio" name="acc.std.icn" value="mandatory"></label></td>
+      <td><label><input type="radio" name="acc.std.icn" value="voluntary"></label></td>
+      <td><label><input type="radio" name="acc.std.icn" value="no_standards"></label></td>
+      <td><label><input type="radio" name="acc.std.icn" value="no_program"></label></td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td><label><input type="radio" name="acc.std.other" value="mandatory"></label></td>
+      <td><label><input type="radio" name="acc.std.other" value="voluntary"></label></td>
+      <td><label><input type="radio" name="acc.std.other" value="no_standards"></label></td>
+      <td><label><input type="radio" name="acc.std.other" value="no_program"></label></td>
+    </tr>
+  </table>
+
+  <h4>What are the main quality assessment areas considered in the accreditation process? (Mark all that apply)</h4>
+  <div class="checklist">
+    <label><input type="checkbox" name="acc.areas.psafety"> Patient safety</label>
+    <label><input type="checkbox" name="acc.areas.clinical"> Clinical management</label>
+    <label><input type="checkbox" name="acc.areas.infrastructure"> Infrastructure and equipment</label>
+    <label><input type="checkbox" name="acc.areas.staff"> Staff competence</label>
+    <label><input type="checkbox" name="acc.areas.satisfaction"> User/patient satisfaction</label>
+    <label><input type="checkbox" name="acc.areas.admin"> Administrative processes</label>
+    <label><input type="checkbox" name="acc.areas.continuity"> Continuity of care</label>
+    <label><input type="checkbox" name="acc.areas.it"> Use of information technology</label>
+    <label>Others (please specify): <input type="text" name="acc.areas.other_text" placeholder="Specify"></label>
+  </div>
+
+  <h4>Are accreditation or quality assurance standards designed to reduce inequities in service delivery? (Select one)</h4>
+  <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+    <label><input type="radio" name="acc.inequities" value="Yes, systematically"> Yes, systematically</label>
+    <label><input type="radio" name="acc.inequities" value="Yes, occasionally"> Yes, occasionally</label>
+    <label><input type="radio" name="acc.inequities" value="No"> No</label>
+    <label>Other (specify) <input type="text" name="acc.inequities.other_text" placeholder="Specify"></label>
+  </div>
+
+  <h4>What is the current % of facilities with accreditation? (Complete the table)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Private level</th>
+      <th>Public Level</th>
+      <th>Other</th>
+    </tr>
+    <tr>
+      <td>Hospitals</td>
+      <td><input type="number" min="0" max="100" name="acc.rate.hosp.private" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.hosp.public" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.hosp.other" placeholder="%"></td>
+    </tr>
+    <tr>
+      <td>PHC facilities</td>
+      <td><input type="number" min="0" max="100" name="acc.rate.phc.private" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.phc.public" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.phc.other" placeholder="%"></td>
+    </tr>
+    <tr>
+      <td>Long Term Care Facilities</td>
+      <td><input type="number" min="0" max="100" name="acc.rate.ltc.private" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.ltc.public" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.ltc.other" placeholder="%"></td>
+    </tr>
+    <tr>
+      <td>Integrated Care Networks</td>
+      <td><input type="number" min="0" max="100" name="acc.rate.icn.private" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.icn.public" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.icn.other" placeholder="%"></td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td><input type="number" min="0" max="100" name="acc.rate.other.private" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.other.public" placeholder="%"></td>
+      <td><input type="number" min="0" max="100" name="acc.rate.other.other" placeholder="%"></td>
+    </tr>
+  </table>
+
+  <p>Accreditation is also highly context specific. Although the various forms of external evaluation – accreditation, certification and licensing – differ in theory. External evaluation processes may include elements of some or all of these forms and may self-define as accreditation.</p>
+
+  <h4>Please describe briefly the system used in your country, the scoring and provide results for one recent year (e.g., percentage of hospitals that achieved the maximum score). What have been the consequences of accreditation results? (Open question)</h4>
+  <textarea name="acc.system.description" rows="6" placeholder="Type your answer here"></textarea>
+
+  <h4>In the European system, an inspectorate focuses on ensuring a health facility's compliance with mandatory legal and regulatory standards, acting as a government-mandated oversight body to enforce minimum requirements, while accreditation is an independent, external assessment of a facility against a set of voluntary, pre-defined quality standards by a recognized body, providing public recognition of quality and facilitating mutual recognition of services across borders. The key difference lies in their purpose: inspection ensures legal compliance and minimum safety, whereas accreditation demonstrates a higher level of quality and commitment to excellence beyond basic legal requirements. Does this model with inspectorate exist in your country? (Check the applicable option)</h4>
+  <div class="radio-group">
+    <label><input type="radio" name="acc.inspectorate" value="Yes"> Yes</label>
+    <label><input type="radio" name="acc.inspectorate" value="No"> No</label>
+  </div>
+  <label for="acc_inspectorate_comments">Comments:</label>
+  <textarea id="acc_inspectorate_comments" name="acc.inspectorate.comments" rows="4" placeholder="Add any details, scope, responsible body, how it relates to accreditation"></textarea>
+</section>
+
+      <!-- Page: Part I – 1.5 Practice guidelines -->
+<section class="q" data-key="part1_practice_guidelines">
+  <h2>Part I: Quality-of-care policy landscape</h2>
+  <h3>1.5&nbsp;&nbsp;Practice guidelines</h3>
+
+  <p>The existence of evidence-based practice guidelines is in many countries an important component of their quality policies. With regards to only <strong>Guidelines for Cancer Screening &amp; Early Detection</strong> and <strong>Cardiovascular Disease</strong>:</p>
+
+  <!-- A) Responsible actors -->
+  <h4>Who is primarily responsible for the development and implementation of national clinical practice guidelines in your country? (Select all that apply)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Cancer Screening &amp; Early Detection</th>
+      <th>Cardiovascular Disease</th>
+    </tr>
+    <tr>
+      <td>Government agencies</td>
+      <td><label><input type="checkbox" name="pg.resp.cancer.gov"> </label></td>
+      <td><label><input type="checkbox" name="pg.resp.cvd.gov"> </label></td>
+    </tr>
+    <tr>
+      <td>Health plans or insurers</td>
+      <td><label><input type="checkbox" name="pg.resp.cancer.ins"> </label></td>
+      <td><label><input type="checkbox" name="pg.resp.cvd.ins"> </label></td>
+    </tr>
+    <tr>
+      <td>Professional medical associations</td>
+      <td><label><input type="checkbox" name="pg.resp.cancer.prof"> </label></td>
+      <td><label><input type="checkbox" name="pg.resp.cvd.prof"> </label></td>
+    </tr>
+    <tr>
+      <td>Joint collaboration between multiple stakeholders</td>
+      <td><label><input type="checkbox" name="pg.resp.cancer.joint"> </label></td>
+      <td><label><input type="checkbox" name="pg.resp.cvd.joint"> </label></td>
+    </tr>
+    <tr>
+      <td>No formal programme exists</td>
+      <td><label><input type="checkbox" name="pg.resp.cancer.none"> </label></td>
+      <td><label><input type="checkbox" name="pg.resp.cvd.none"> </label></td>
+    </tr>
+  </table>
+
+  <!-- B) Principles -->
+  <h4>Which of the following principles are incorporated into the development of practice guidelines in your country? (Select all that apply)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Cancer Screening &amp; Early Detection</th>
+      <th>Cardiovascular Disease</th>
+    </tr>
+    <tr>
+      <td>Evidence-Based Medicine (systematic literature reviews)</td>
+      <td><label><input type="checkbox" name="pg.princ.cancer.ebm"> </label></td>
+      <td><label><input type="checkbox" name="pg.princ.cvd.ebm"> </label></td>
+    </tr>
+    <tr>
+      <td>Consideration of cost-effectiveness</td>
+      <td><label><input type="checkbox" name="pg.princ.cancer.ce"> </label></td>
+      <td><label><input type="checkbox" name="pg.princ.cvd.ce"> </label></td>
+    </tr>
+    <tr>
+      <td>Input from patient advocacy groups</td>
+      <td><label><input type="checkbox" name="pg.princ.cancer.pat"> </label></td>
+      <td><label><input type="checkbox" name="pg.princ.cvd.pat"> </label></td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td><label><input type="checkbox" name="pg.princ.cancer.other"> </label>
+          <input type="text" name="pg.princ.cancer.other_text" placeholder="Specify"></td>
+      <td><label><input type="checkbox" name="pg.princ.cvd.other"> </label>
+          <input type="text" name="pg.princ.cvd.other_text" placeholder="Specify"></td>
+    </tr>
+    <tr>
+      <td>None of the above</td>
+      <td><label><input type="checkbox" name="pg.princ.cancer.none"> </label></td>
+      <td><label><input type="checkbox" name="pg.princ.cvd.none"> </label></td>
+    </tr>
+  </table>
+
+  <!-- C) Nature of guidelines -->
+  <h4>With regards to your country's clinical guidelines, please select the option that best describes:</h4>
+   <table class="scope-table">
+  <tr>
+    <th></th>
+    <th>Cancer Screening &amp; Early Detection</th>
+    <th>Cardiovascular Disease</th>
+  </tr>
+  <tr>
+    <td>…are limited to specifying the clinical aspects to be attained at individual health facilities</td>
+    <td class="choice">
+      <input type="radio" name="pg.scope.cancer" value="Facility clinical aspects">
+    </td>
+    <td class="choice">
+      <input type="radio" name="pg.scope.cvd" value="Facility clinical aspects">
+    </td>
+  </tr>
+  <tr>
+    <td>…include patient journey guidelines that address the integration and coordination of care between different facilities, levels, and systems.</td>
+    <td class="choice">
+      <input type="radio" name="pg.scope.cancer" value="Patient journey / integrated care">
+    </td>
+    <td class="choice">
+      <input type="radio" name="pg.scope.cvd" value="Patient journey / integrated care">
+    </td>
+  </tr>
+</table>
+  <!-- D) Update frequency -->
+  <h4>How frequently are the practice guidelines updated in your country? (Check the applicable option)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Cancer Screening &amp; Early Detection</th>
+      <th>Cardiovascular Disease</th>
+    </tr>
+    <tr>
+      <td>Annually</td>
+      <td><label><input type="radio" name="pg.freq.cancer" value="Annually"></label></td>
+      <td><label><input type="radio" name="pg.freq.cvd" value="Annually"></label></td>
+    </tr>
+    <tr>
+      <td>Every 2–3 years</td>
+      <td><label><input type="radio" name="pg.freq.cancer" value="Every 2-3 years"></label></td>
+      <td><label><input type="radio" name="pg.freq.cvd" value="Every 2-3 years"></label></td>
+    </tr>
+    <tr>
+      <td>Every 4–5 years</td>
+      <td><label><input type="radio" name="pg.freq.cancer" value="Every 4-5 years"></label></td>
+      <td><label><input type="radio" name="pg.freq.cvd" value="Every 4-5 years"></label></td>
+    </tr>
+    <tr>
+      <td>Only when major new evidence emerges</td>
+      <td><label><input type="radio" name="pg.freq.cancer" value="Only when major new evidence emerges"></label></td>
+      <td><label><input type="radio" name="pg.freq.cvd" value="Only when major new evidence emerges"></label></td>
+    </tr>
+    <tr>
+      <td>Guidelines are not regularly updated</td>
+      <td><label><input type="radio" name="pg.freq.cancer" value="Not regularly updated"></label></td>
+      <td><label><input type="radio" name="pg.freq.cvd" value="Not regularly updated"></label></td>
+    </tr>
+    <tr>
+      <td>Not sure</td>
+      <td><label><input type="radio" name="pg.freq.cancer" value="Not sure"></label></td>
+      <td><label><input type="radio" name="pg.freq.cvd" value="Not sure"></label></td>
+    </tr>
+  </table>
+
+  <!-- E) Disparities -->
+  <h4>Do clinical guidelines include recommendations to address disparities in diagnosis, treatment, and follow-up for disadvantaged groups? (Check the applicable option)</h4>
+  <div class="stack">
+    <label><input type="radio" name="pg.disparities" value="Yes, systematically included"> Yes, systematically included</label>
+    <label><input type="radio" name="pg.disparities" value="Yes, occasionally included"> Yes, occasionally included</label>
+    <label><input type="radio" name="pg.disparities" value="No, not included"> No, not included</label>
+  </div>
+
+  <!-- F) Barriers -->
+  <h4>What are the main barriers to the implementation of practice guidelines in your country? (Select all that apply)</h4>
+  <div class="checklist">
+    <label class="check-row"><input type="checkbox" name="pg.barriers.awareness"> <span>Lack of awareness among health professionals</span></label>
+    <label class="check-row"><input type="checkbox" name="pg.barriers.resources"> <span>Limited resources or infrastructure</span></label>
+    <label class="check-row"><input type="checkbox" name="pg.barriers.change"> <span>Resistance to change in clinical practice</span></label>
+    <label class="check-row"><input type="checkbox" name="pg.barriers.dissemination"> <span>Inadequate dissemination mechanisms</span></label>
+    <label class="check-row"><input type="checkbox" name="pg.barriers.incentives"> <span>Lack of incentives for compliance</span></label>
+    <label class="check-row">
+      <input type="checkbox" name="pg.barriers.other">
+      <span>Other (please specify):</span>
+      <input type="text" name="pg.barriers.other_text" placeholder="Specify">
+    </label>
+  </div>
+
+  <!-- G) Monitoring -->
+  <h4>Are there monitoring or evaluation systems in place to measure the impact of practice guidelines on patient outcomes? (Check the applicable option)</h4>
+  <div class="stack">
+    <label><input type="radio" name="pg.monitoring" value="Yes, national monitoring systems exist"> Yes, national monitoring systems exist</label>
+    <label><input type="radio" name="pg.monitoring" value="Yes, local or regional monitoring systems exist"> Yes, local or regional monitoring systems exist</label>
+    <label><input type="radio" name="pg.monitoring" value="No formal monitoring systems"> No formal monitoring systems</label>
+    <label><input type="radio" name="pg.monitoring" value="Not sure"> Not sure</label>
+  </div>
+</section>
+
+      <!-- Page: Part I – 1.6 Health Technology Assessment and Medical devices, blood-products and pharmaceuticals -->
+<section class="q" data-key="part1_hta">
+  <h2>Part I: Quality-of-care policy landscape</h2>
+  <h3>1.6&nbsp;&nbsp;Health Technology Assessment and Medical devices, blood-products and pharmaceuticals</h3>
+
+  <h4>What is the main organizational structure responsible for Health Technology Assessment (HTA) in your country, particularly regarding its role in coverage decisions? (Check the applicable option)</h4>
+  <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+    <label><input type="radio" name="hta.structure" value="Single independent central body"> A single independent central body</label>
+    <label><input type="radio" name="hta.structure" value="Government agency"> A government agency</label>
+    <label><input type="radio" name="hta.structure" value="Several independent bodies"> Several independent bodies at the request of purchasers or providers</label>
+    <label><input type="radio" name="hta.structure" value="Not organized"> HTA is not formally organized</label>
+    <label>Other (please specify) <input type="text" name="hta.structure.other" placeholder="Specify"></label>
+  </div>
+
+  <p>Assuring the safety of technologies used in health care is an important element of national quality policies. Once products are allowed to the health care market, mechanism should be in place to assure their safe and appropriate use. This is particularly true for medical devices, blood-products and pharmaceuticals. (Check the applicable option).</p>
+
+  <table>
+    <tr>
+      <th>Area</th>
+      <th>Are technology assessment studies performed?</th>
+      <th>Are results linked to reimbursement decisions?</th>
+      <th>Are standards/mechanisms in place to evaluate compliance?</th>
+    </tr>
+
+    <!-- Medical Devices -->
+    <tr>
+      <td>Medical Devices</td>
+      <td>
+        <div class="radio-group">
+          <label><input type="radio" name="hta.md.studies" value="Yes"> Yes</label>
+          <label><input type="radio" name="hta.md.studies" value="No"> No</label>
+        </div>
+      </td>
+      <td>
+        <div class="radio-group">
+          <label><input type="radio" name="hta.md.reimb" value="Yes"> Yes</label>
+          <label><input type="radio" name="hta.md.reimb" value="No"> No</label>
+        </div>
+      </td>
+      <td>
+        <div class="radio-group">
+          <label><input type="radio" name="hta.md.compliance" value="Yes"> Yes</label>
+          <label><input type="radio" name="hta.md.compliance" value="No"> No</label>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Blood-products -->
+    <tr>
+      <td>Blood-products</td>
+      <td>
+        <div class="radio-group">
+          <label><input type="radio" name="hta.bp.studies" value="Yes"> Yes</label>
+          <label><input type="radio" name="hta.bp.studies" value="No"> No</label>
+        </div>
+      </td>
+      <td>
+        <div class="radio-group">
+          <label><input type="radio" name="hta.bp.reimb" value="Yes"> Yes</label>
+          <label><input type="radio" name="hta.bp.reimb" value="No"> No</label>
+        </div>
+      </td>
+      <td>
+        <div class="radio-group">
+          <label><input type="radio" name="hta.bp.compliance" value="Yes"> Yes</label>
+          <label><input type="radio" name="hta.bp.compliance" value="No"> No</label>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Pharmaceuticals -->
+    <tr>
+      <td>Pharmaceuticals</td>
+      <td>
+        <div class="radio-group">
+          <label><input type="radio" name="hta.pharm.studies" value="Yes"> Yes</label>
+          <label><input type="radio" name="hta.pharm.studies" value="No"> No</label>
+        </div>
+      </td>
+      <td>
+        <div class="radio-group">
+          <label><input type="radio" name="hta.pharm.reimb" value="Yes"> Yes</label>
+          <label><input type="radio" name="hta.pharm.reimb" value="No"> No</label>
+        </div>
+      </td>
+      <td>
+        <div class="radio-group">
+          <label><input type="radio" name="hta.pharm.compliance" value="Yes"> Yes</label>
+          <label><input type="radio" name="hta.pharm.compliance" value="No"> No</label>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Are HTA processes required to consider the differential impact of new technologies on vulnerable populations? (Select one)</h4>
+  <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+    <label><input type="radio" name="hta.vulnerable" value="Yes, systematically required"> Yes, systematically required</label>
+    <label><input type="radio" name="hta.vulnerable" value="Yes, occasionally considered"> Yes, occasionally considered</label>
+    <label><input type="radio" name="hta.vulnerable" value="No, not considered"> No, not considered</label>
+    <label>Other (specify) <input type="text" name="hta.vulnerable.other" placeholder="Specify"></label>
+  </div>
+
+  <h4>Briefly describe existing policies to assess and assure safety and appropriate use. (Open question)</h4>
+  <textarea name="hta.policies.description" rows="6" placeholder="Describe HTA policies, compliance mechanisms, oversight bodies, links to reimbursement, pharmacovigilance, device vigilance, hemovigilance, etc."></textarea>
+</section>
+
+<!-- Page: Part I – 1.7 Audit and performance review -->
+<section class="q" data-key="part1_audit">
+  <h2>Part I: Quality-of-care policy landscape</h2>
+  <h3>1.7&nbsp;&nbsp;Audit and performance review</h3>
+
+  <p>There are several ways to assess quality of care in a health system. Below is a short description of the main approaches:</p>
+  <ul>
+    <li><strong>Audit studies on particular topics</strong> where quality problems are expected. These targeted clinical reviews (e.g., perinatal mortality, post-operative outcomes, anaesthesia adverse events) use records review to identify preventable harm and prompt corrective action.</li>
+    <li><strong>National quality indicator sets</strong> covering structure, process, and outcomes. These standardised measures are applied across hospitals, outpatient/primary care and long-term care to track performance and drive improvement.</li>
+    <li><strong>Public reporting of provider performance.</strong> Public dashboards or reports present comparable provider or system results to support transparency, accountability, and informed choice.</li>
+    <li><strong>Regular national quality/performance report.</strong> Many countries publish periodic (e.g., annual) syntheses that combine audit findings and indicator results, highlight trends and disparities, and recommend actions.</li>
+  </ul>
+
+  <p>a) Considering the above, please complete the items below summarising your country’s quality measurement and reporting. (Check the applicable option)</p>
+
+  <style>
+    /* small layout helpers just for this page */
+    .gate{margin:14px 0 6px}
+    .gate label{display:inline-flex; align-items:center; gap:8px; margin-right:16px}
+    .detail-card{
+      border:1px solid var(--line); border-radius:10px; padding:14px; background:#fff; margin-bottom:20px
+    }
+    .detail-grid{display:grid; gap:14px}
+    @media (min-width: 860px){
+      .detail-grid{grid-template-columns: 1fr 1fr}
+    }
+    .detail-col h6{margin:0 0 6px; font-size:.95rem}
+    .stacked-checks label{display:block; margin:6px 0; font-weight:400}
+  </style>
+
+  <!-- ---------- Block 1: National audit studies (past 4 years) ---------- -->
+  <div class="detail-card" id="audit-block">
+    <h5>In the past 4 years, has your country conducted any <em>national audit studies</em> on specific topics?</h5>
+    <div class="gate" role="group" aria-label="Audit studies status">
+      <label><input type="radio" name="audit.status" value="Yes"> Yes</label>
+      <label><input type="radio" name="audit.status" value="No"> No</label>
+      <label><input type="radio" name="audit.status" value="Partial"> Partial</label>
+    </div>
+
+    <div id="audit-details" class="detail-grid" hidden>
+      <div class="detail-col">
+        <h6>Services covered (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="audit.svc.hosp"> Hospitals</label>
+          <label><input type="checkbox" name="audit.svc.out"> Outpatient</label>
+          <label><input type="checkbox" name="audit.svc.phc"> Primary care</label>
+          <label><input type="checkbox" name="audit.svc.ltc"> Long term care</label>
+        </div>
+      </div>
+
+      <div class="detail-col">
+        <h6>Key scope (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="audit.scope.perinatal"> Perinatal death</label>
+          <label><input type="checkbox" name="audit.scope.postop"> Post-op mortality</label>
+          <label><input type="checkbox" name="audit.scope.anaes"> Anaesthesia adverse events</label>
+          <label><input type="checkbox" name="audit.scope.hae"> Hospital adverse events</label>
+          <label><input type="checkbox" name="audit.scope.surgery"> Surgery-specific</label>
+          <label>Other: <input type="text" name="audit.scope.other_text" placeholder="Specify"></label>
+        </div>
+      </div>
+
+      <div class="detail-col">
+        <h6>Report, Author (link)</h6>
+        <input type="url" name="audit.report.link" placeholder="Title / author / URL">
+      </div>
+
+      <div class="detail-col">
+        <h6>Use for improvement (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="audit.use.benchmark"> Benchmark to providers</label>
+          <label><input type="checkbox" name="audit.use.p4p"> Pay-for-performance</label>
+          <label><input type="checkbox" name="audit.use.collab"> Learning collaboratives</label>
+          <label><input type="checkbox" name="audit.use.afb"> Routine audit &amp; feedback</label>
+          <label>Other: <input type="text" name="audit.use.other_text" placeholder="Specify"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- Block 2: National quality indicator set ---------- -->
+  <div class="detail-card" id="nqi-block">
+    <h5>Does your country have a <em>national quality indicator set</em> covering health services (structure, process, and outcomes)?</h5>
+    <div class="gate" role="group" aria-label="Indicator set status">
+      <label><input type="radio" name="nqi.status" value="Yes"> Yes</label>
+      <label><input type="radio" name="nqi.status" value="No"> No</label>
+      <label><input type="radio" name="nqi.status" value="Partial"> Partial</label>
+    </div>
+
+    <div id="nqi-details" class="detail-grid" hidden>
+      <div class="detail-col">
+        <h6>Services covered (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="nqi.svc.hosp"> Hospitals</label>
+          <label><input type="checkbox" name="nqi.svc.out"> Outpatient</label>
+          <label><input type="checkbox" name="nqi.svc.phc"> Primary care</label>
+          <label><input type="checkbox" name="nqi.svc.ltc"> Long term care</label>
+        </div>
+      </div>
+
+      <div class="detail-col">
+        <h6>Key scope (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="nqi.scope.struct"> Structure</label>
+          <label><input type="checkbox" name="nqi.scope.process"> Process</label>
+          <label><input type="checkbox" name="nqi.scope.outcome"> Outcome</label>
+          <label><input type="checkbox" name="nqi.scope.safety"> Patient safety</label>
+          <label><input type="checkbox" name="nqi.scope.eff"> Effectiveness</label>
+          <label><input type="checkbox" name="nqi.scope.exp"> Patient experience</label>
+        </div>
+      </div>
+
+      <div class="detail-col">
+        <h6>Report, Author (link)</h6>
+        <input type="url" name="nqi.report.link" placeholder="Title / author / URL">
+      </div>
+
+      <div class="detail-col">
+        <h6>Use for improvement (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="nqi.use.benchmark"> Benchmark to providers</label>
+          <label><input type="checkbox" name="nqi.use.p4p"> Pay-for-performance</label>
+          <label><input type="checkbox" name="nqi.use.collab"> Learning collaboratives</label>
+          <label><input type="checkbox" name="nqi.use.afb"> Routine audit &amp; feedback</label>
+          <label>Other: <input type="text" name="nqi.use.other_text" placeholder="Specify"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- Block 3: Public reporting of provider performance ---------- -->
+  <div class="detail-card" id="pr-block">
+    <h5>Is <em>provider performance publicly reported</em> at the national level (e.g., dashboards/reports with comparable results)</h5>
+    <div class="gate" role="group" aria-label="Public reporting status">
+      <label><input type="radio" name="pr.status" value="Yes"> Yes</label>
+      <label><input type="radio" name="pr.status" value="No"> No</label>
+      <label><input type="radio" name="pr.status" value="Partial"> Partial</label>
+    </div>
+
+    <div id="pr-details" class="detail-grid" hidden>
+      <div class="detail-col">
+        <h6>Services covered (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="pr.svc.hosp"> Hospitals</label>
+          <label><input type="checkbox" name="pr.svc.out"> Outpatient</label>
+          <label><input type="checkbox" name="pr.svc.phc"> Primary care</label>
+          <label><input type="checkbox" name="pr.svc.ltc"> Long term care</label>
+        </div>
+      </div>
+
+      <div class="detail-col">
+        <h6>Report, Author (link)</h6>
+        <input type="url" name="pr.report.link" placeholder="Title / author / URL">
+      </div>
+
+      <div class="detail-col">
+        <h6>Use for improvement (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="pr.use.benchmark"> Benchmark to providers</label>
+          <label><input type="checkbox" name="pr.use.p4p"> Pay-for-performance</label>
+          <label><input type="checkbox" name="pr.use.collab"> Learning collaboratives</label>
+          <label><input type="checkbox" name="pr.use.afb"> Routine audit &amp; feedback</label>
+          <label>Other: <input type="text" name="pr.use.other_text" placeholder="Specify"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- Block 4: Regular national quality/performance report ---------- -->
+  <div class="detail-card" id="nr-block">
+    <h5>Does your country publish a <em>regular national quality/performance report</em> (e.g., annual or periodic)?</h5>
+    <div class="gate" role="group" aria-label="National report status">
+      <label><input type="radio" name="nr.status" value="Yes"> Yes</label>
+      <label><input type="radio" name="nr.status" value="No"> No</label>
+      <label><input type="radio" name="nr.status" value="Partial"> Partial</label>
+    </div>
+
+    <div id="nr-details" class="detail-grid" hidden>
+      <div class="detail-col">
+        <h6>Services covered (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="nr.svc.hosp"> Hospitals</label>
+          <label><input type="checkbox" name="nr.svc.out"> Outpatient</label>
+          <label><input type="checkbox" name="nr.svc.phc"> Primary care</label>
+          <label><input type="checkbox" name="nr.svc.ltc"> Long term care</label>
+        </div>
+      </div>
+
+      <div class="detail-col">
+        <h6>Report, Author (link)</h6>
+        <input type="url" name="nr.report.link" placeholder="Title / author / URL">
+      </div>
+
+      <div class="detail-col">
+        <h6>Use for improvement (select all)</h6>
+        <div class="stacked-checks">
+          <label><input type="checkbox" name="nr.use.benchmark"> Benchmark to providers</label>
+          <label><input type="checkbox" name="nr.use.p4p"> Pay-for-performance</label>
+          <label><input type="checkbox" name="nr.use.collab"> Learning collaboratives</label>
+          <label><input type="checkbox" name="nr.use.afb"> Routine audit &amp; feedback</label>
+          <label>Other: <input type="text" name="nr.use.other_text" placeholder="Specify"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Show details when Status is Yes/Partial; hide & clear when No
+  function setupStatusGate(key){
+    const radios = document.querySelectorAll(`input[name="${key}.status"]`);
+    const panel  = document.getElementById(`${key}-details`);
+    if (!radios.length || !panel) return;
+
+    const clearPanel = () => {
+      // clear all inputs inside panel (but not the status radios)
+      panel.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(i => { i.checked = false; });
+      panel.querySelectorAll('input[type="text"], input[type="url"], textarea').forEach(i => { i.value = ''; });
+    };
+
+    const onChange = () => {
+      const v = Array.from(radios).find(r => r.checked)?.value;
+      const show = (v === 'Yes' || v === 'Partial');
+      panel.hidden = !show;
+      if (!show) clearPanel();
+    };
+
+    radios.forEach(r => r.addEventListener('change', onChange));
+    onChange(); // initial
+  }
+
+  // Wire up all four blocks
+  ['audit','nqi','pr','nr'].forEach(setupStatusGate);
+</script>
+
+      <!-- Page: Part I – 1.8 Financial incentives to increase health care quality -->
+<section class="q" data-key="part1_financial_incentives">
+  <h2>Part I: Quality-of-care policy landscape</h2>
+  <h3>1.8&nbsp;&nbsp;Financial incentives to increase health care quality</h3>
+
+  <h4>a) Has your country implemented financial incentives and/or payment reforms to improve quality and integration of care delivery? (Select all that apply)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Hospitals</th>
+      <th>PHC facilities</th>
+      <th>Long Term Care Facilities</th>
+      <th>Integrated Care Networks</th>
+      <th>Private Sector</th>
+    </tr>
+    <tr>
+      <td>Yes, Quality is a major factor in payment schemes (&gt;10% of payments are tied to quality)</td>
+      <td><label><input type="checkbox" name="fi.major.hosp"></label></td>
+      <td><label><input type="checkbox" name="fi.major.phc"></label></td>
+      <td><label><input type="checkbox" name="fi.major.ltc"></label></td>
+      <td><label><input type="checkbox" name="fi.major.icn"></label></td>
+      <td><label><input type="checkbox" name="fi.major.private"></label></td>
+    </tr>
+    <tr>
+      <td>Yes, Quality is a minor factor in payment schemes (&lt;10% of payments are tied to quality)</td>
+      <td><label><input type="checkbox" name="fi.minor.hosp"></label></td>
+      <td><label><input type="checkbox" name="fi.minor.phc"></label></td>
+      <td><label><input type="checkbox" name="fi.minor.ltc"></label></td>
+      <td><label><input type="checkbox" name="fi.minor.icn"></label></td>
+      <td><label><input type="checkbox" name="fi.minor.private"></label></td>
+    </tr>
+    <tr>
+      <td>Quality is not considered in payment schemes</td>
+      <td><label><input type="checkbox" name="fi.none.hosp"></label></td>
+      <td><label><input type="checkbox" name="fi.none.phc"></label></td>
+      <td><label><input type="checkbox" name="fi.none.ltc"></label></td>
+      <td><label><input type="checkbox" name="fi.none.icn"></label></td>
+      <td><label><input type="checkbox" name="fi.none.private"></label></td>
+    </tr>
+  </table>
+
+  <h4>b) What are the main mechanisms for financing quality health care services in your country? (Select all that apply)</h4>
+  <div class="checklist">
+    <label class="checkbox-label"><input type="checkbox" name="fi.mechanisms.ffs"> Fee-for-service</label>
+    <label class="checkbox-label"><input type="checkbox" name="fi.mechanisms.cap"> Capitation</label>
+    <label class="checkbox-label"><input type="checkbox" name="fi.mechanisms.global"> Global budgets</label>
+    <label class="checkbox-label"><input type="checkbox" name="fi.mechanisms.p4p"> Pay for Performance (P4P)</label>
+    <label class="checkbox-label"><input type="checkbox" name="fi.mechanisms.rbf"> Result-Based Financing (RBF)</label>
+    <label class="checkbox-label"><input type="checkbox" name="fi.mechanisms.bundle"> Bundled payments</label>
+    <label class="checkbox-label">Other (please specify): <input type="text" name="fi.mechanisms.other_text" placeholder="____________________"></label>
+  </div>
+
+  <h4>c) Which indicators are used to determine payments, purchasing, or commissioning? (Select all that apply)</h4>
+  <div class="checklist">
+    <label class="checkbox-label"><input type="checkbox" name="fi.indicators.guidelines"> Clinical practice guidelines adherence</label>
+    <label class="checkbox-label"><input type="checkbox" name="fi.indicators.safety"> Patient safety</label>
+    <label class="checkbox-label"><input type="checkbox" name="fi.indicators.satisfaction"> Patient satisfaction</label>
+    <label class="checkbox-label"><input type="checkbox" name="fi.indicators.outcomes"> Health outcomes (e.g., mortality, readmission rates)</label>
+    <label class="checkbox-label"><input type="checkbox" name="fi.indicators.utilization"> Service utilization rates</label>
+    <label class="checkbox-label"><input type="checkbox" name="fi.indicators.preventive"> Preventive care measures</label>
+    <label class="checkbox-label">Other (please specify): <input type="text" name="fi.indicators.other_text" placeholder="____________________"></label>
+  </div>
+
+  <h4>d) If in question (a) you selected that quality is a major factor in payment schemes, please provide details or examples, including any recent changes or notable practices. Please also specify if there are specific diseases or conditions targeted through financial incentives to improve quality of care (Open question)</h4>
+  <textarea name="fi.details" rows="6" placeholder="Type your answer here"></textarea>
+</section>
+
+<!-- Page: Part I – 1.9 Patient safety, medical malpractice and infection control -->
+<section class="q" data-key="part1_patient_safety">
+  <h2>Part I: Quality-of-care policy landscape</h2>
+  <h3>1.9&nbsp;&nbsp;Patient safety, medical malpractice and infection control</h3>
+
+  <h4>a) Does your country have a national patient safety program? If yes, which of the following topics does it address? (Select all that apply)</h4>
+  <div class="checklist">
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.patient_id"> Patient identification </label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.ipc"> Infection prevention and control</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.med_safety"> Medication safety</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.surg_safety"> Surgical safety</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.falls"> Prevention of falls</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.transfusion"> Safe blood transfusion</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.devices"> Safe use of medical devices</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.reporting"> Reporting and learning from adverse events</label>
+    <label class="checkbox-label">
+      <input type="checkbox" name="ps.a.other"> Other (please specify): 
+      <input type="text" name="ps.a.other_text" placeholder="_______________________________">
+    </label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.a.none"> No national patient safety program exists</label>
+  </div>
+
+  <h4>b) Which organizations are responsible for patient safety in your country? (Select all that apply)</h4>
+  <div class="checklist">
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.moh"> Ministry of Health</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.npsa"> National patient safety agency</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.prof"> Professional medical associations</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.accr"> Hospital accreditation bodies</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.ins"> Health insurance providers</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.b.local"> Regional/local health authorities</label>
+    <label class="checkbox-label">
+      <input type="checkbox" name="ps.b.other"> Other (please specify): 
+      <input type="text" name="ps.b.other_text" placeholder="________________________________________________________">
+    </label>
+  </div>
+
+  <h4>c) Are there national procedures for reporting adverse events, never-events, and medical errors? How is this information used? (Check the applicable option)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Public sector</th>
+      <th>Private sector</th>
+    </tr>
+    <tr>
+      <td>Yes, mandatory reporting system exists</td>
+      <td class="choice"><input type="checkbox" name="ps.c.mandatory.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.c.mandatory.private"></td>
+    </tr>
+    <tr>
+      <td>Yes, voluntary reporting system exists</td>
+      <td class="choice"><input type="checkbox" name="ps.c.voluntary.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.c.voluntary.private"></td>
+    </tr>
+    <tr>
+      <td>No national reporting procedures</td>
+      <td class="choice"><input type="checkbox" name="ps.c.none.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.c.none.private"></td>
+    </tr>
+  </table>
+
+  <p><em>If Yes (Select all that apply):</em></p>
+  <div class="checklist">
+    <label class="checkbox-label"><input type="checkbox" name="ps.c.use.qi"> Data is used for quality improvement initiatives</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.c.use.reg"> Data is used for regulatory action or sanctions</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.c.use.public"> Data is used for public reporting</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.c.use.educ"> Data is used for professional education</label>
+    <label class="checkbox-label"><input type="checkbox" name="ps.c.use.none"> Data is not systematically used</label>
+  </div>
+
+  <p><strong>Infection control policies. We are interested in understanding policy and implementation challenges towards improving infection control policies in your health system. To this end, could you please outline:</strong></p>
+
+  <h4>d) Which of the following infection control policies and programs are currently in place in your country’s health care settings? (Select all that apply)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Public sector</th>
+      <th>Private sector</th>
+    </tr>
+    <tr>
+      <td>Mandatory infection control committee</td>
+      <td class="choice"><input type="checkbox" name="ps.d.comm.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.comm.private"></td>
+    </tr>
+    <tr>
+      <td>Infection control nurses or specialists</td>
+      <td class="choice"><input type="checkbox" name="ps.d.staff.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.staff.private"></td>
+    </tr>
+    <tr>
+      <td>Guidelines for infection prevention and control</td>
+      <td class="choice"><input type="checkbox" name="ps.d.guidelines.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.guidelines.private"></td>
+    </tr>
+    <tr>
+      <td>Policies on rational use of antibiotics</td>
+      <td class="choice"><input type="checkbox" name="ps.d.antibiotics.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.antibiotics.private"></td>
+    </tr>
+    <tr>
+      <td>Regular staff training on infection control</td>
+      <td class="choice"><input type="checkbox" name="ps.d.training.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.training.private"></td>
+    </tr>
+    <tr>
+      <td>Surveillance systems for hospital-acquired infections</td>
+      <td class="choice"><input type="checkbox" name="ps.d.surv.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.surv.private"></td>
+    </tr>
+    <tr>
+      <td>Integration with patient safety policies</td>
+      <td class="choice"><input type="checkbox" name="ps.d.integration.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.integration.private"></td>
+    </tr>
+    <tr>
+      <td>No formal infection control policies or programs</td>
+      <td class="choice"><input type="checkbox" name="ps.d.none.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.none.private"></td>
+    </tr>
+    <tr>
+      <td>Other (please specify)</td>
+      <td class="choice"><input type="checkbox" name="ps.d.other.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.d.other.private"></td>
+    </tr>
+  </table>
+
+  <h4>e) Which of the following quality indicators and performance measures relating to hospital-acquired and other infections are used in hospitals in your country? (Select all that apply)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Public sector</th>
+      <th>Private sector</th>
+    </tr>
+    <tr>
+      <td>Rates of surgical site infections</td>
+      <td class="choice"><input type="checkbox" name="ps.e.ssi.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.ssi.private"></td>
+    </tr>
+    <tr>
+      <td>Rates of catheter-associated urinary tract infections</td>
+      <td class="choice"><input type="checkbox" name="ps.e.cauti1.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.cauti1.private"></td>
+    </tr>
+    <tr>
+      <td>Rates of catheter-associated urinary tract infections</td>
+      <td class="choice"><input type="checkbox" name="ps.e.cauti2.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.cauti2.private"></td>
+    </tr>
+    <tr>
+      <td>Rates of central line-associated bloodstream infections</td>
+      <td class="choice"><input type="checkbox" name="ps.e.clabsi.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.clabsi.private"></td>
+    </tr>
+    <tr>
+      <td>Rates of ventilator-associated pneumonia</td>
+      <td class="choice"><input type="checkbox" name="ps.e.vap.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.vap.private"></td>
+    </tr>
+    <tr>
+      <td>Hand hygiene compliance rates</td>
+      <td class="choice"><input type="checkbox" name="ps.e.hand.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.hand.private"></td>
+    </tr>
+    <tr>
+      <td>Antibiotic stewardship indicators</td>
+      <td class="choice"><input type="checkbox" name="ps.e.ams.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.ams.private"></td>
+    </tr>
+    <tr>
+      <td>No standardized indicators are used</td>
+      <td class="choice"><input type="checkbox" name="ps.e.none.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.none.private"></td>
+    </tr>
+    <tr>
+      <td>Other (please specify)</td>
+      <td class="choice"><input type="checkbox" name="ps.e.other.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.e.other.private"></td>
+    </tr>
+  </table>
+
+  <h4>f) Are these infection control indicators and performance measures nationally standardized and publicly reported? (Select all that apply)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Public sector</th>
+      <th>Private sector</th>
+    </tr>
+    <tr>
+      <td>Yes, nationally standardized and publicly reported</td>
+      <td class="choice"><input type="checkbox" name="ps.f.std_pub.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.std_pub.private"></td>
+    </tr>
+    <tr>
+      <td>Yes, nationally standardized but not publicly reported</td>
+      <td class="choice"><input type="checkbox" name="ps.f.std_notpub.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.std_notpub.private"></td>
+    </tr>
+    <tr>
+      <td>Yes, locally standardized and publicly reported</td>
+      <td class="choice"><input type="checkbox" name="ps.f.loc_pub.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.loc_pub.private"></td>
+    </tr>
+    <tr>
+      <td>Yes, locally standardized but not publicly reported</td>
+      <td class="choice"><input type="checkbox" name="ps.f.loc_notpub.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.loc_notpub.private"></td>
+    </tr>
+    <tr>
+      <td>No standardized or public reporting</td>
+      <td class="choice"><input type="checkbox" name="ps.f.none.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.none.private"></td>
+    </tr>
+    <tr>
+      <td>Other (please specify)</td>
+      <td class="choice"><input type="checkbox" name="ps.f.other.public"></td>
+      <td class="choice"><input type="checkbox" name="ps.f.other.private"></td>
+    </tr>
+  </table>
+</section>
+
+
+      <!-- Page: Part I – 1.10 Patient voice & patient experience measurement -->
+<section class="q" data-key="part1_patient_voice">
+  <h2>Part I: Quality-of-care policy landscape</h2>
+  <h3>1.10	The ability for patients to influence health care quality and policies on measuring patient experiences</h3>
+
+  <h4>What opportunities and mechanisms exist for patients to provide their feedback on the quality of care they experienced in your country's health system, and to influence policy priorities for improving the quality of care? (Select all that apply)</h4>
+  <div class="checklist">
+    <label class="checkbox-label"><input type="checkbox" name="px.mechanisms.national_satisfaction"> National patient satisfaction surveys</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.mechanisms.advisory_councils"> Patient advisory councils or committees</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.mechanisms.public_consultations"> Public consultations or hearings</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.mechanisms.online_platforms"> Online platforms or hotlines for complaints and suggestions</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.mechanisms.none"> No formal mechanisms exist</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.mechanisms.other"> Other (please specify): <input type="text" name="px.mechanisms.other_text" placeholder="__________"></label>
+  </div>
+
+  <h4>Do patient organizations (both general and/or disease specific) exist in your country? If yes, which types of patient organizations exist in your country, and what roles do they play in influencing quality of care policies?  </h4>
+  <table>
+    <tr>
+      <th>types of patient organizations</th>
+      <th>Select all that apply</th>
+      <th>For selected ones, explain their roles</th>
+    </tr>
+    <tr>
+      <td>General patient advocacy organizations</td>
+      <td><label><input type="checkbox" name="px.org.general"></label></td>
+      <td><input type="text" name="px.org.general_roles"></td>
+    </tr>
+    <tr>
+      <td>Disease-specific patient organizations</td>
+      <td><label><input type="checkbox" name="px.org.disease"></label></td>
+      <td><input type="text" name="px.org.disease_roles"></td>
+    </tr>
+    <tr>
+      <td>Organizations involved in policy development</td>
+      <td><label><input type="checkbox" name="px.org.policy"></label></td>
+      <td><input type="text" name="px.org.policy_roles"></td>
+    </tr>
+    <tr>
+      <td>Organizations involved in monitoring and evaluation of health services</td>
+      <td><label><input type="checkbox" name="px.org.mande"></label></td>
+      <td><input type="text" name="px.org.mande_roles"></td>
+    </tr>
+    <tr>
+      <td>Organizations providing direct feedback to health authorities</td>
+      <td><label><input type="checkbox" name="px.org.feedback"></label></td>
+      <td><input type="text" name="px.org.feedback_roles"></td>
+    </tr>
+    <tr>
+      <td>No patient organizations exist</td>
+      <td><label><input type="checkbox" name="px.org.none"></label></td>
+      <td><input type="text" name="px.org.none_roles"></td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td><label><input type="checkbox" name="px.org.other"></label></td>
+      <td><input type="text" name="px.org.other_roles"></td>
+    </tr>
+  </table>
+
+  <h4>C) Are there standardized national policies for the systematic measurement of patient experiences in your country’s health system? (Check the applicable option)</h4>
+  <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+    <label><input type="radio" name="px.standardized" value="Yes, standardized questionnaires and data collection methods are used nationally"> Yes, standardized questionnaires and data collection methods are used nationally</label>
+    <label><input type="radio" name="px.standardized" value="Yes, but only in certain regions or health facilities"> Yes, but only in certain regions or health facilities</label>
+    <label><input type="radio" name="px.standardized" value="No, measurement is not standardized"> No, measurement is not standardized</label>
+    <label><input type="radio" name="px.standardized" value="Not measured at all"> Not measured at all</label>
+  </div>
+
+  <h4>D) If yes, which stakeholders are responsible for collecting and reporting patient experience data? (Select all that apply)</h4>
+  <div class="checklist">
+    <label class="checkbox-label"><input type="checkbox" name="px.stakeholders.moh"> Ministry of Health</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.stakeholders.regional"> Regional/local health authorities</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.stakeholders.providers"> Health care providers (hospitals, clinics)</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.stakeholders.independent"> Independent research organizations</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.stakeholders.patient_orgs"> Patient organizations</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.stakeholders.other"> Other (please specify): <input type="text" name="px.stakeholders.other_text" placeholder="_________"></label>
+  </div>
+
+  <p>Integrated care is a key pillar of quality of care because it ensures that health services are organized and delivered in a way that provides people with a seamless continuum of care—ranging from health promotion and disease prevention to treatment, rehabilitation, and palliative care—across different levels and settings of the health system. Rather than being an end, integrated care is a strategy to improve the quality, by reducing fragmentation, enhancing coordination among providers, and focusing care on the needs and preferences of patients.</p>
+
+  <h4>E) What are the most significant challenges to integrating care across different levels of the health system? (Select all that apply)</h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Hospitals</th>
+      <th>PHC facilities</th>
+      <th>Long Term Care Facilities</th>
+    </tr>
+    <tr><td>	Lack of political will and commitment</td>
+      <td><input type="checkbox" name="px.challenges.hosp.political"></td>
+      <td><input type="checkbox" name="px.challenges.phc.political"></td>
+      <td><input type="checkbox" name="px.challenges.ltc.political"></td>
+    </tr>
+    <tr><td>	Weak governance mechanisms</td>
+      <td><input type="checkbox" name="px.challenges.hosp.governance"></td>
+      <td><input type="checkbox" name="px.challenges.phc.governance"></td>
+      <td><input type="checkbox" name="px.challenges.ltc.governance"></td>
+    </tr>
+    <tr><td>	Underdeveloped health data infrastructure, limiting information sharing</td>
+      <td><input type="checkbox" name="px.challenges.hosp.data"></td>
+      <td><input type="checkbox" name="px.challenges.phc.data"></td>
+      <td><input type="checkbox" name="px.challenges.ltc.data"></td>
+    </tr>
+    <tr><td>	Insufficient stakeholder engagement (please specify below)</td>
+      <td><input type="checkbox" name="px.challenges.hosp.stakeholders"></td>
+      <td><input type="checkbox" name="px.challenges.phc.stakeholders"></td>
+      <td><input type="checkbox" name="px.challenges.ltc.stakeholders"></td>
+    </tr>
+    <tr><td>	Limited willingness to collaborate among stakeholders, such as providers and care authorities</td>
+      <td><input type="checkbox" name="px.challenges.hosp.collab"></td>
+      <td><input type="checkbox" name="px.challenges.phc.collab"></td>
+      <td><input type="checkbox" name="px.challenges.ltc.collab"></td>
+    </tr>
+    <tr><td>	Inadequate investment in patient empowerment</td>
+      <td><input type="checkbox" name="px.challenges.hosp.empower"></td>
+      <td><input type="checkbox" name="px.challenges.phc.empower"></td>
+      <td><input type="checkbox" name="px.challenges.ltc.empower"></td>
+    </tr>
+    <tr><td>	Lack of financing and incentives for healthcare professionals to collaborate</td>
+      <td><input type="checkbox" name="px.challenges.hosp.finance"></td>
+      <td><input type="checkbox" name="px.challenges.phc.finance"></td>
+      <td><input type="checkbox" name="px.challenges.ltc.finance"></td>
+    </tr>
+    <tr><td>	Insufficient investment in training health professionals</td>
+      <td><input type="checkbox" name="px.challenges.hosp.training"></td>
+      <td><input type="checkbox" name="px.challenges.phc.training"></td>
+      <td><input type="checkbox" name="px.challenges.ltc.training"></td>
+    </tr>
+    <tr><td>	Lack of systematic monitoring of the impact on quality of care, patient experience, and outcomes</td>
+      <td><input type="checkbox" name="px.challenges.hosp.monitoring"></td>
+      <td><input type="checkbox" name="px.challenges.phc.monitoring"></td>
+      <td><input type="checkbox" name="px.challenges.ltc.monitoring"></td>
+    </tr>
+    <tr><td>	Other (please specify):<input type="text" name="px.challenges.other_text" placeholder="_______________________"></td>
+      <td><input type="checkbox" name="px.challenges.hosp.other"></td>
+      <td><input type="checkbox" name="px.challenges.phc.other"></td>
+      <td><input type="checkbox" name="px.challenges.ltc.other"></td>
+    </tr>
+  </table>
+
+  <h4>F) Which of the following policies or initiatives are currently in place —either at the local or system level—to promote care coordination and improve continuity of care? (Select all that apply)</h4>
+  <div class="checklist">
+    <label class="checkbox-label"><input type="checkbox" name="px.initiatives.strategy"> National or regional care coordination strategies</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.initiatives.ehr"> Shared electronic health records across providers</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.initiatives.teams"> Multidisciplinary care teams</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.initiatives.navigation"> Patient navigation programs</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.initiatives.pathways"> Integrated care pathways or protocols</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.initiatives.financial"> Financial incentives for care coordination</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.initiatives.training"> Training programs for health professionals on integrated care</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.initiatives.monitoring"> Regular monitoring and evaluation of care integration efforts</label>
+    <label class="checkbox-label"><input type="checkbox" name="px.initiatives.other"> Other (please specify):<input type="text" name="px.initiatives.other_text" placeholder="______________________________________________________"></label>
+    <label class="checkbox-label"><input type="checkbox" name="px.initiatives.none"> No policies or initiatives currently in place</label>
+  </div>
+</section>
+
+<!-- ========================= -->
+<!-- Part II: Digitalization & Health Data (intro + Q a) -->
+<!-- ========================= -->
+
+<section class="q" data-key="part2_intro">
+  <h2>Part II. Health data infrastructure / digitalization</h2>
+  <p>This section documents how your country collects, digitizes, links, and uses patient-care data to monitor and improve the quality of care.</p>
+  <ul>
+    <li><strong>Available data sources:</strong> Identify the sources and care settings that provide data to assess quality of care.</li>
+    <li><strong>Extent of digitalization:</strong> Presence/maturity of EHRs and whether key data are structured and coded.</li>
+    <li><strong>Capacity to link datasets:</strong> Patient-level linkage across settings to build robust, comparable quality indicators.</li>
+    <li><strong>Data structure, auditing &amp; reporting capacity:</strong> Challenges and solutions for managing data and reporting on quality of care.</li>
+  </ul>
+  <p class="muted"><strong>Key definition:</strong> An <em>EHR</em> is a longitudinal, interoperable record that contains—or virtually links—information from multiple Electronic Medical Records (EMRs) across settings. Where a nationwide EHR is absent or partial, equivalent data may exist in hospital data, primary care databases, disease registries (e.g., cancer), pharmacy/prescription records, mortality data, and long-term care datasets.</p>
+</section>
+
+<section class="q" data-key="part2_availability">
+  <h2>Part II. Health data infrastructure / digitalization</h2>
+  <h3>a) Health data availability</h3>
+  <p>The table maps the availability of patient-care data for quality monitoring and improvement across healthcare settings. Mark all options that apply. If subnational, add % population covered and indicate whether it corresponds to public or private providers.</p>
+
+  <!-- Helper note -->
+  <p class="muted">Columns (domains): <em>All care settings, Hospital data, Primary care data, Mortality data, Prescription medicines, Formal long-term care, Cancer registry data, Population Health Survey</em>.</p>
+
+  <style>
+    /* Narrow helpers for this section only */
+    .mini { width: 140px; }
+    .w-yesno { display:flex; gap:12px; flex-wrap:wrap }
+    .cellpad { padding:6px 0 }
+    .domain-head { writing-mode:horizontal-tb; transform:none; }
+    @media (min-width:900px){
+      .domain-head { white-space:nowrap }
+    }
+  </style>
+
+  <div class="table-wrap">
+  <table class="compact">
+    <tr>
+      <th>Question</th>
+      <th class="domain-head">All care settings</th>
+      <th class="domain-head">Hospital data</th>
+      <th class="domain-head">Primary care data</th>
+      <th class="domain-head">Mortality data</th>
+      <th class="domain-head">Prescription medicines</th>
+      <th class="domain-head">Formal long-term care</th>
+      <th class="domain-head">Cancer registry data</th>
+      <th class="domain-head">Population Health Survey</th>
+      <th>Comments</th>
+    </tr>
+
+    <!-- Row 1: Availability to a national authority in digital form -->
+    <tr>
+      <td><strong>Is patient care data available to a national authority in a digital form?</strong><br><span class="muted">(If subnational, specify coverage % and sector)</span></td>
+
+      <!-- All care settings -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.all.national"> National</label>
+          <label class="checkbox-label">
+            <input type="checkbox" name="hd.avail.all.subnational"> Subnational, specify:
+          </label>
+          <input type="text" class="mini" name="hd.avail.all.subnational_spec" placeholder="% &amp; sector">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.avail.all.none" class="none-option"> None</label>
+        </div>
+      </td>
+
+      <!-- Hospital -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.hosp.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.hosp.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.hosp.subnational_spec" placeholder="% &amp; sector">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.avail.hosp.none" class="none-option"> None</label>
+        </div>
+      </td>
+
+      <!-- Primary care -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.phc.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.phc.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.phc.subnational_spec" placeholder="% &amp; sector">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.avail.phc.none" class="none-option"> None</label>
+        </div>
+      </td>
+
+      <!-- Mortality -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.mort.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.mort.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.mort.subnational_spec" placeholder="% &amp; sector">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.avail.mort.none" class="none-option"> None</label>
+        </div>
+      </td>
+
+      <!-- Rx -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.rx.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.rx.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.rx.subnational_spec" placeholder="% &amp; sector">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.avail.rx.none" class="none-option"> None</label>
+        </div>
+      </td>
+
+      <!-- LTC -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.ltc.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.ltc.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.ltc.subnational_spec" placeholder="% &amp; sector">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.avail.ltc.none" class="none-option"> None</label>
+        </div>
+      </td>
+
+      <!-- Cancer registry -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.cancer.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.cancer.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.cancer.subnational_spec" placeholder="% &amp; sector">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.avail.cancer.none" class="none-option"> None</label>
+        </div>
+      </td>
+
+      <!-- Pop Health Survey -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.phs.national"> National</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.avail.phs.subnational"> Subnational, specify:</label>
+          <input type="text" class="mini" name="hd.avail.phs.subnational_spec" placeholder="% &amp; sector">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.avail.phs.none" class="none-option"> None</label>
+        </div>
+      </td>
+
+      <td><textarea class="comment-box" name="hd.avail.comments" placeholder="If non-digital, please comment"></textarea></td>
+    </tr>
+
+    <!-- Row 2: Managed in EHR -->
+    <tr>
+      <td><strong>Is patient care data managed in an EHR system?</strong><br><span class="muted">(National or subnational—please specify)</span></td>
+
+      <!-- All care settings -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.all.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.all.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.all.subnational_spec" placeholder="region/program">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.all.no" class="none-option"> No</label>
+        </div>
+      </td>
+
+      <!-- Hospital -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.hosp.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.hosp.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.hosp.subnational_spec" placeholder="region/program">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.hosp.no" class="none-option"> No</label>
+        </div>
+      </td>
+
+      <!-- Primary care -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.phc.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.phc.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.phc.subnational_spec" placeholder="region/program">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.phc.hosp.no" class="none-option"> No</label>
+        </div>
+      </td>
+
+      <!-- Mortality -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.mort.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.mort.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.mort.subnational_spec" placeholder="region/program">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.mort.hosp.no" class="none-option"> No</label>
+        </div>
+      </td>
+
+      <!-- Rx -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.rx.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.rx.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.rx.subnational_spec" placeholder="region/program">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.rx.no" class="none-option"> No</label>
+        </div>
+      </td>
+
+      <!-- LTC -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.ltc.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.ltc.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.ltc.subnational_spec" placeholder="region/program">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.ltc.no" class="none-option"> No</label>
+        </div>
+      </td>
+
+      <!-- Cancer registry -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.cancer.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.cancer.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.cancer.subnational_spec" placeholder="region/program">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.cancer.no" class="none-option"> No</label>
+        </div>
+      </td>
+
+      <!-- Pop Health Survey -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.phs.national"> Yes, national</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.ehr.phs.subnational"> Yes, subnational (specify):</label>
+          <input type="text" class="mini" name="hd.ehr.phs.subnational_spec" placeholder="region/program">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.ehr.phs.no" class="none-option"> No</label>
+        </div>
+      </td>
+
+      <td><textarea class="comment-box" name="hd.ehr.comments" placeholder="Please comment"></textarea></td>
+    </tr>
+
+    <!-- Row 3: Unique patient ID -->
+    <tr>
+      <td><strong>Is there a unique patient identifier (ID) used that can link records across providers or settings?</strong></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.all" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.all" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.hosp" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.hosp" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.phc" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.phc" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.mort" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.mort" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.rx" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.rx" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.ltc" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.ltc" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.cancer" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.cancer" value="No"> No</label>
+      </div></td>
+
+      <td><div class="w-yesno">
+        <label><input type="radio" name="hd.id.phs" value="Yes"> Yes</label>
+        <label><input type="radio" name="hd.id.phs" value="No"> No</label>
+      </div></td>
+
+      <td><textarea class="comment-box" name="hd.id.comments" placeholder="Please comment"></textarea></td>
+    </tr>
+
+    <!-- Row 4: Data storage/processing -->
+    <tr>
+      <td><strong>How is patient care data managed, stored and processed?</strong></td>
+
+      <!-- All -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.all.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.all.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.all.other"></label>
+        </div>
+      </td>
+
+      <!-- Hospital -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.hosp.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.hosp.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.hosp.other"></label>
+        </div>
+      </td>
+
+      <!-- PHC -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.phc.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.phc.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.phc.other"></label>
+        </div>
+      </td>
+
+      <!-- Mortality -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.mort.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.mort.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.mort.other"></label>
+        </div>
+      </td>
+
+      <!-- Rx -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.rx.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.rx.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.rx.other"></label>
+        </div>
+      </td>
+
+      <!-- LTC -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.ltc.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.ltc.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.ltc.other"></label>
+        </div>
+      </td>
+
+      <!-- Cancer -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.cancer.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.cancer.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.cancer.other"></label>
+        </div>
+      </td>
+
+      <!-- PHS -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.phs.local"> Dedicated on-site hardware</label>
+          <label class="checkbox-label"><input type="checkbox" name="hd.store.phs.cloud"> Cloud computing</label>
+          <label class="checkbox-label">Other: <input type="text" class="mini" name="hd.store.phs.other"></label>
+        </div>
+      </td>
+
+     <td><textarea class="comment-box" name="hd.store.comments" placeholder="Please comment"></textarea></td>
+    </tr>
+
+    <!-- Row 5: Breakdown availability -->
+    <tr>
+      <td><strong>Are the following breakdowns available?</strong><br><span class="muted">Mark all that apply in each domain</span></td>
+
+      <!-- All -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.brk.all.none" class="none-option"> None</label>
+          <label><input type="checkbox" name="hd.brk.all.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.all.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.all.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.all.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.all.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.all.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.all.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- Hospital -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.brk.hosp.none" class="none-option"> None</label>
+          <label><input type="checkbox" name="hd.brk.hosp.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.hosp.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.hosp.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.hosp.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.hosp.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.hosp.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.hosp.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- PHC -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.brk.phc.none" class="none-option"> None</label>
+          <label><input type="checkbox" name="hd.brk.phc.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.phc.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.phc.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.phc.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.phc.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.phc.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.phc.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- Mortality -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.brk.mort.none" class="none-option"> None</label>
+          <label><input type="checkbox" name="hd.brk.mort.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.mort.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.mort.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.mort.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.mort.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.mort.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.mort.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- Rx -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.brk.rx.none" class="none-option"> None</label>
+          <label><input type="checkbox" name="hd.brk.rx.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.rx.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.rx.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.rx.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.rx.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.rx.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.rx.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- LTC -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.brk.ltc.none" class="none-option"> None</label>
+          <label><input type="checkbox" name="hd.brk.ltc.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.ltc.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.ltc.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.ltc.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.ltc.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.ltc.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.ltc.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- Cancer registry -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.brk.cancer.none" class="none-option"> None</label>
+          <label><input type="checkbox" name="hd.brk.cancer.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.cancer.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.cancer.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.cancer.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.cancer.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.cancer.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.cancer.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+
+      <!-- Pop Health Survey -->
+      <td>
+        <div class="checklist cellpad">
+          <label class="checkbox-label none-line"><input type="checkbox" name="hd.brk.phs.none" class="none-option"> None</label>
+          <label><input type="checkbox" name="hd.brk.phs.gender"> Gender</label>
+          <label><input type="checkbox" name="hd.brk.phs.race"> Race</label>
+          <label><input type="checkbox" name="hd.brk.phs.indigenous"> Indigenous</label>
+          <label><input type="checkbox" name="hd.brk.phs.income"> Income</label>
+          <label><input type="checkbox" name="hd.brk.phs.citizenship"> Citizenship</label>
+          <label><input type="checkbox" name="hd.brk.phs.rural"> Rural/remote</label>
+          <label><input type="checkbox" name="hd.brk.phs.ins"> Insurance affiliation</label>
+        </div>
+      </td>
+ 
+      <td><textarea class="comment-box" name="hd.brk.comments" placeholder="Please comment"></textarea></td>
+    </tr>
+
+    <!-- Row 6: Patient access -->
+    <tr>
+      <td><strong>Do patients have access to their own data?</strong><br><span class="muted">If yes, specify how access is provided (e.g., portal, app, request)</span></td>
+
+      <!-- All -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.all" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.all.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.all" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- Hospital -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.hosp" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.hosp.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.hosp" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- PHC -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.phc" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.phc.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.phc" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- Mortality -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.mort" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.mort.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.mort" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- Rx -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.rx" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.rx.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.rx" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- LTC -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.ltc" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.ltc.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.ltc" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- Cancer -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.cancer" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.cancer.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.cancer" value="No"> No</label>
+        </div>
+      </td>
+
+      <!-- PHS -->
+      <td>
+        <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+          <label><input type="radio" name="hd.ptacc.phs" value="Yes"> Yes, specify:</label>
+          <input type="text" class="mini" name="hd.ptacc.phs.spec" placeholder="portal/app/request">
+          <label><input type="radio" name="hd.ptacc.phs" value="No"> No</label>
+        </div>
+      </td>
+ 
+       <td><textarea class="comment-box" name="hd.ptacc.comments" placeholder="Please comment"></textarea></td>
+    </tr>
+  </table>
+</div>
+</section>
+
+<!-- ================== Part II (b) ================== -->
+ <!-- Page: Part II – b, c, d -->
+<section class="q" data-key="part2_linkage_struct_quality">
+  <h2>Part II: Health data infrastructure / digitalization</h2>
+
+  <!-- b) Data linkage -->
+  <h3>b) Data linkage</h3>
+  <p class="muted">This question maps your country’s current capacity to link patient-level records across care settings for producing quality-of-care assessments.</p>
+
+  <div class="table-wrap">
+    <table class="compact">
+      <thead>
+        <tr>
+          <th> </th>
+          <th>Primary care data</th>
+          <th>Mortality data</th>
+          <th>Prescription medicines</th>
+          <th>Formal long-term care</th>
+          <th>Cancer registry data</th>
+          <th>Mental health facilities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Hospital data -->
+        <tr>
+          <th>Hospital data</th>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.pcare" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.pcare" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.mort" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.mort" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.rx" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.rx" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.ltc" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.ltc" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.cancer" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.cancer" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.hosp.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.hosp.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Primary care data -->
+        <tr>
+          <th>Primary care data</th>
+          <td></td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.pcare.mort" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.pcare.mort" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.pcare.rx" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.pcare.rx" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.pcare.ltc" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.pcare.ltc" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.pcare.cancer" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.pcare.cancer" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.pcare.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.pcare.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Mortality data -->
+        <tr>
+          <th>Mortality data</th>
+          <td></td>
+          <td></td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.mort.rx" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.mort.rx" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.mort.ltc" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.mort.ltc" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.mort.cancer" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.mort.cancer" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.mort.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.mort.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Prescription medicines -->
+        <tr>
+          <th>Prescription medicines</th>
+          <td></td><td></td>
+          <td></td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.rx.ltc" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.rx.ltc" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.rx.cancer" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.rx.cancer" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.rx.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.rx.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Formal long-term care -->
+        <tr>
+          <th>Formal long-term care</th>
+          <td></td><td></td><td></td>
+          <td></td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.ltc.cancer" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.ltc.cancer" value="No capability"> No capability</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.ltc.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.ltc.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Cancer registry data -->
+        <tr>
+          <th>Cancer registry data</th>
+          <td></td><td></td><td></td><td></td>
+          <td></td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="link.cancer.mental" value="Linked"> Linked</label>
+              <label><input type="radio" name="link.cancer.mental" value="No capability"> No capability</label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Are there ongoing efforts to enhance linkage capabilities for quality-of-care measurement?</strong> If so, please describe them.</p>
+  <textarea name="linkage.efforts" rows="4" placeholder="Open question: describe current projects, timelines, governance, legal/technical enablers…"></textarea>
+
+  <hr>
+
+  <!-- c) Data structures -->
+  <h3>c) Data structures</h3>
+  <p class="muted">Which terminology / messaging standards are currently used? (Select all that apply and specify where relevant.)</p>
+  <div class="checklist">
+    <label class="checkbox-label"><input type="checkbox" name="ds.snomed"> For clinical terminology: SNOMED-CT. Other, please specify: <input type="text" name="ds.snomed.other" placeholder="Specify (if not SNOMED-CT)"></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.safety"> Coding of safety incidents/near misses: SNOMED-CT. Other (e.g., WHO ICPS), specify: <input type="text" name="ds.safety.other" placeholder="Specify"></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.hl7"> For information exchange: HL7. Other, please specify: <input type="text" name="ds.hl7.other" placeholder="FHIR, CDA, IHE profiles, etc."></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.icd"> For coding diagnosis: ICD-9 or ICD-10. Other, please specify: <input type="text" name="ds.icd.other" placeholder="ICD-11, SNOMED-CT, etc."></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.cod"> For coding cause-of-death: ICD-9 or ICD-10. Other, please specify: <input type="text" name="ds.cod.other" placeholder="ICD-11, etc."></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.atc"> For coding medications: WHO ATC. Other, please specify: <input type="text" name="ds.atc.other" placeholder="RxNorm, DM+D, etc."></label>
+    <label class="checkbox-label"><input type="checkbox" name="ds.other"> Other (e.g., radiology, telehealth): <input type="text" name="ds.other.text" placeholder="LOINC, DICOM, SNOMED Procedures, etc."></label>
+  </div>
+
+  <hr>
+
+  <!-- d) Data quality challenges -->
+  <h3>d) Data quality challenges</h3>
+  <p class="muted">What are the main challenges you encounter? (Examples: inconsistent terminology, lack of national governance for standards, lack of legal requirements for EHR adoption, funding or technical constraints, etc.)</p>
+  <textarea name="dq.challenges" rows="6" placeholder="Open question: describe the key issues, affected datasets, root causes, and any known impacts on quality measurement."></textarea>
+</section>
+
+
+      <!-- ================== Part II (e, f) ================== -->
+<section class="q" data-key="part2_strategies_audit">
+  <h2>Part II: Health data infrastructure / digitalization</h2>
+
+  <!-- e) Solutions and Strategies -->
+  <h3>e) Solutions and Strategies</h3>
+  <p class="muted">What solutions or strategies has your country adopted to address data quality concerns?</p>
+
+  <div class="checklist">
+    <label class="checkbox-label"><input type="checkbox" name="p2.soln.stakeholders"> Engaging stakeholders in standards setting</label>
+    <label class="checkbox-label"><input type="checkbox" name="p2.soln.mds"> Promoting a national minimum dataset</label>
+    <label class="checkbox-label"><input type="checkbox" name="p2.soln.law"> Instituting legal or regulatory requirements for EHR adoption</label>
+    <label class="checkbox-label"><input type="checkbox" name="p2.soln.cert"> Certifying software vendors to meet national standards</label>
+    <label class="checkbox-label"><input type="checkbox" name="p2.soln.incentives"> Providing incentives or penalties for adherence to standards</label>
+    <label class="checkbox-label">
+      <input type="checkbox" name="p2.soln.other">
+      Other (please specify)
+      <input type="text" name="p2.soln.other_text" placeholder="Describe">
+    </label>
+  </div>
+
+  <hr>
+
+  <!-- f) Auditing Practices -->
+  <h3>f) Auditing Practices</h3>
+
+  <!-- Clinical content within EHRs audited? -->
+  <p><strong>Is clinical content within EHRs audited as part of your quality improvement strategy?</strong></p>
+  <div class="radio-group" style="flex-direction:column; align-items:flex-start">
+    <label><input type="radio" name="p2.audit.ehr" value="Yes"> Yes</label>
+    <label><input type="radio" name="p2.audit.ehr" value="No"> No</label>
+  </div>
+
+  <label for="p2_audit_who" class="muted">If <em>Yes</em>, who is responsible for conducting these audits (e.g., government agencies, independent bodies, healthcare providers themselves)?</label>
+  <textarea id="p2_audit_who" name="p2.audit.who" rows="4"></textarea>
+
+  <p><strong>Are near misses in care delivery systematically documented and reviewed?</strong></p>
+  <textarea name="p2.audit.nearmisses" rows="4" placeholder="Please describe if mandatory/voluntary, coverage, protections, feedback loop…"></textarea>
+
+  <p><strong>Are structured mortality reviews conducted?</strong></p>
+  <textarea name="p2.audit.mortality" rows="4" placeholder="Please describe types, frequency, coverage, tools/guidance used, learning actions…"></textarea>
+</section>
+
+<!-- ================== Part II (g) ================== -->
+<section class="q" data-key="part2_health_data_intel">
+  <h2>Part II: Health data infrastructure / digitalization</h2>
+
+  <!-- g) Health Data Intelligence -->
+  <h3>g) Health Data Intelligence</h3>
+  <p class="muted">These questions aim to understand the capability of the healthcare information architecture to collect, monitor, and analyse health data for assessing health system performance.</p>
+
+  <div class="table-wrap">
+    <table class="compact">
+      <thead>
+        <tr>
+          <th></th>
+          <th>All care settings</th>
+          <th>Hospital data</th>
+          <th>Primary care data</th>
+          <th>Mortality data</th>
+          <th>Prescription medicines</th>
+          <th>Formal long-term care</th>
+          <th>Cancer registry data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Q1: Regular reporting -->
+        <tr>
+          <th>Is health data used to regularly report on health care quality?<br><span class="muted">For example, regularly published quality indicators.</span></th>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.all" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.all" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.hosp" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.hosp" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.pcare" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.pcare" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.mort" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.mort" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.rx" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.rx" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.ltc" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.ltc" value="No"> No</label>
+            </div>
+          </td>
+          <td>
+            <div class="stack">
+              <label><input type="radio" name="g.report.cancer" value="Yes"> Yes</label>
+              <label><input type="radio" name="g.report.cancer" value="No"> No</label>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Q2: Secondary uses -->
+        <tr>
+          <th>Does your national plan, legal framework, or policies include secondary uses of health data?</th>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.all.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.all.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.all.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.all.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.all.other"> Other: <input type="text" name="g.use.all.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.hosp.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.hosp.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.hosp.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.hosp.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.hosp.other"> Other: <input type="text" name="g.use.hosp.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.pcare.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.pcare.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.pcare.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.pcare.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.pcare.other"> Other: <input type="text" name="g.use.pcare.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.mort.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.mort.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.mort.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.mort.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.mort.other"> Other: <input type="text" name="g.use.mort.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.rx.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.rx.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.rx.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.rx.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.rx.other"> Other: <input type="text" name="g.use.rx.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.ltc.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.ltc.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.ltc.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.ltc.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.ltc.other"> Other: <input type="text" name="g.use.ltc.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+          <td>
+            <div class="checklist">
+              <label class="checkbox-label"><input type="checkbox" name="g.use.cancer.monitor"> Population health monitoring</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.cancer.perf"> Performance, safety &amp; efficiency</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.cancer.cds"> Clinical decision support</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.cancer.research"> Research</label>
+              <label class="checkbox-label"><input type="checkbox" name="g.use.cancer.other"> Other: <input type="text" name="g.use.cancer.other_text" placeholder="Specify"></label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Are there ongoing efforts to enhance these capabilities?</strong> If so, please describe them.</p>
+  <textarea name="g.efforts" rows="4"></textarea>
+
+  <p><strong>Is there a national plan for training and skills development of personnel responsible for processing and analysing patient-level health data?</strong> Please describe.</p>
+  <textarea name="g.training" rows="4"></textarea>
+</section>
+
+
+
+
+      <div class="pager">
+        <button type="button" class="btn ghost" id="prevBtn">← Back</button>
+        <button type="button" class="btn ghost" id="nextBtn">Next →</button>
+        <button type="submit" class="btn primary" id="submitBtn" style="display:none">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+  <script>
+  // ===== CONFIG =====
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxmN8XjWQ6lZDUU2dNas4bfkO6kwAoUO9A3xB9-y03bGHWZAeEUWLEzRdvh_VK3OLka3Q/exec';
+
+  // ===== PAGING (with history) =====
+  const sections = document.querySelectorAll('.q');
+  let step = 0;
+
+  const prevBtn   = document.getElementById('prevBtn');
+  const nextBtn   = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+
+  function update(){
+    sections.forEach((s,i)=>s.classList.toggle('active', i===step));
+    prevBtn.disabled = step===0;
+    nextBtn.disabled = step===sections.length-1;
+    submitBtn.style.display = (step===sections.length-1)?'inline-block':'none';
+    (sections[step].querySelector('h1,h2,h3')||sections[step]).scrollIntoView({block:'start'});
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  // ====== Special validator for the ranking matrix (C) ======
+  // Expects a container with id="org-rank".
+  // Core rows must use each rank 1..5 exactly once.
+  // If "Another key organisation" (name field) is filled, then ranks must be 1..6 exactly once.
+  function validateOrgRanks(container){
+    const errEl = container.querySelector('#org-rank-error');
+    if (errEl){ errEl.style.display = 'none'; errEl.textContent = ''; }
+
+    const core = [
+      'org.rank.moh',
+      'org.rank.quality',
+      'org.rank.nphi',
+      'org.rank.insurance',
+      'org.rank.regulators'
+    ];
+
+    const picks = [];
+    let focusEl = null;
+
+    // gather choices for core rows
+    for (const name of core){
+      const chosen = container.querySelector(`input[type=radio][name="${CSS.escape(name)}"]:checked`);
+      if (!chosen){
+        if (errEl){
+          errEl.textContent = 'Please assign a unique rank (1–5) to each listed organisation.';
+          errEl.style.display = 'block';
+        }
+        // focus first radio of that row
+        focusEl = container.querySelector(`input[type=radio][name="${CSS.escape(name)}"]`);
+        return { ok:false, focusEl };
+      }
+      picks.push(chosen.value);
+    }
+
+    // "Other" rule
+    const otherLabel = container.querySelector('input[name="org.other.label"]');
+    const otherUsed = otherLabel && otherLabel.value.trim() !== '';
+    const otherChosen = container.querySelector(`input[type=radio][name="org.rank.other"]:checked`);
+    if (otherUsed && !otherChosen){
+      if (errEl){
+        errEl.textContent = 'You added “Another key organisation”. Please assign it a unique rank (1–6).';
+        errEl.style.display = 'block';
+      }
+      focusEl = container.querySelector(`input[type=radio][name="org.rank.other"]`);
+      return { ok:false, focusEl };
+    }
+    if (!otherUsed && otherChosen){
+      if (errEl){
+        errEl.textContent = 'If you rank “Another key organisation”, please provide its name/link.';
+        errEl.style.display = 'block';
+      }
+      focusEl = container.querySelector('input[name="org.other.label"]');
+      return { ok:false, focusEl };
+    }
+    if (otherUsed && otherChosen) picks.push(otherChosen.value);
+
+    // uniqueness + full coverage
+    const expectedMax = otherUsed ? 6 : 5;
+    const expected = new Set(Array.from({length: expectedMax}, (_,i)=>String(i+1)));
+    const chosenSet = new Set(picks);
+
+    if (chosenSet.size !== picks.length){
+      if (errEl){
+        errEl.textContent = 'Each rank can be used only once. Please fix duplicates.';
+        errEl.style.display = 'block';
+      }
+      // try to focus the duplicate value if possible
+      for (const v of picks){
+        if (picks.filter(x=>x===v).length > 1){
+          focusEl = container.querySelector(`input[type=radio][value="${CSS.escape(v)}"]`);
+          break;
+        }
+      }
+      return { ok:false, focusEl };
+    }
+    if (picks.length !== expected.size || ![...expected].every(n => chosenSet.has(n))){
+      if (errEl){
+        errEl.textContent = otherUsed
+          ? 'With “Another key organisation”, ranks must cover 1–6 exactly once each.'
+          : 'Please use each rank 1–5 exactly once.';
+        errEl.style.display = 'block';
+      }
+      focusEl = container.querySelector('input[type=radio]');
+      return { ok:false, focusEl };
+    }
+
+    return { ok:true, focusEl:null };
+  }
+
+  // ===== PER-PAGE VALIDATION (includes ranking rule if present) =====
+  function validateCurrentSection(){
+    const current = sections[step];
+
+    // Ranking matrix rule if this page contains it
+    const rankBox = current.querySelector('#org-rank');
+    if (rankBox){
+      const { ok, focusEl } = validateOrgRanks(rankBox);
+      if (!ok){
+        if (focusEl){
+          focusEl.scrollIntoView({behavior:'smooth', block:'center'});
+          focusEl.focus?.({preventScroll:true});
+        }
+        return false;
+      }
+    }
+
+    // Generic HTML5 validation for the rest of the controls
+    const controls = current.querySelectorAll('input, select, textarea');
+    let firstInvalid = null;
+    controls.forEach(el => el.classList.remove('invalid'));
+    const seenRadio = new Set();
+
+    for (const el of controls){
+      if (!el.name || el.disabled) continue;
+      const type = (el.type||'').toLowerCase();
+
+      if (type === 'radio'){
+        if (seenRadio.has(el.name)) continue;
+        seenRadio.add(el.name);
+        const group = current.querySelectorAll(`input[type="radio"][name="${CSS.escape(el.name)}"]`);
+        const required = [...group].some(r => r.required);
+        if (required && ![...group].some(r => r.checked)){
+          group.forEach(r => r.classList.add('invalid'));
+          firstInvalid = firstInvalid || group[0];
+        }
+      } else if (!el.checkValidity()){
+        el.classList.add('invalid');
+        firstInvalid = firstInvalid || el;
+      }
+    }
+
+    if (firstInvalid){
+      firstInvalid.reportValidity?.();
+      firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+      firstInvalid.focus?.({preventScroll:true});
+      return false;
+    }
+    return true;
+  }
+
+  // nav buttons + history
+  nextBtn.onclick = () => {
+    if (step < sections.length-1 && validateCurrentSection()){
+      step++; update(); history.pushState({step}, '', `#step${step}`);
+    }
+  };
+  prevBtn.onclick = () => {
+    if (step > 0){ step--; update(); history.pushState({step}, '', `#step${step}`); }
+  };
+  window.addEventListener('popstate', e => {
+    if (e.state && typeof e.state.step === 'number'){ step = e.state.step; update(); }
+  });
+  window.addEventListener('DOMContentLoaded', () => {
+    const m = location.hash.match(/#step(\d+)/); step = m ? +m[1]||0 : 0;
+    history.replaceState({step}, '', `#step${step}`); update();
+  });
+
+  // ===== FULL VALIDATION (all pages; also enforces ranking rule if present) =====
+  function validateAllSections(){
+    let ok = true, firstInvalid = null, firstSectionIdx = -1;
+
+    sections.forEach((sec, idx) => {
+      // Ranking matrix on this section?
+      const rankBox = sec.querySelector('#org-rank');
+      if (rankBox){
+        const { ok: rOK, focusEl } = validateOrgRanks(rankBox);
+        if (!rOK){
+          ok = false;
+          if (!firstInvalid){ firstInvalid = focusEl || rankBox.querySelector('input,select,textarea'); firstSectionIdx = idx; }
+        }
+      }
+
+      // Generic HTML5 validation
+      const controls = sec.querySelectorAll('input, select, textarea');
+      const seenRadio = new Set();
+      controls.forEach(el => el.classList.remove('invalid'));
+
+      for (const el of controls){
+        if (!el.name || el.disabled) continue;
+        const type = (el.type||'').toLowerCase();
+
+        if (type === 'radio'){
+          if (seenRadio.has(el.name)) continue;
+          seenRadio.add(el.name);
+          const group = sec.querySelectorAll(`input[type="radio"][name="${CSS.escape(el.name)}"]`);
+          const required = [...group].some(r => r.required);
+          if (required && ![...group].some(r => r.checked)){
+            ok = false;
+            if (!firstInvalid){ firstInvalid = group[0]; firstSectionIdx = idx; }
+            group.forEach(r => r.classList.add('invalid'));
+          }
+        } else if (!el.checkValidity()){
+          ok = false;
+          if (!firstInvalid){ firstInvalid = el; firstSectionIdx = idx; }
+          el.classList.add('invalid');
+        }
+      }
+    });
+
+    if (!ok && firstInvalid){
+      step = firstSectionIdx >= 0 ? firstSectionIdx : step;
+      update();
+      firstInvalid.reportValidity?.();
+      firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+      firstInvalid.focus?.({preventScroll:true});
+    }
+    return ok;
+  }
+
+  // ===== SERIALIZE + SUBMIT =====
+  function serializeForm(form){
+    const data = {};
+    const elements = form.querySelectorAll('input, select, textarea');
+
+    // initialize all checkboxes to false so unchecked are captured
+    elements.forEach(el => { if (el.name && el.type === 'checkbox' && data[el.name] === undefined) data[el.name] = false; });
+
+    elements.forEach(el => {
+      if (!el.name || el.disabled) return;
+      const type = (el.type||'').toLowerCase();
+      const tag = el.tagName.toLowerCase();
+
+      if (type === 'checkbox') {
+        if (el.checked) data[el.name] = true;
+      } else if (type === 'radio') {
+        if (el.checked) data[el.name] = el.value;
+        else if (data[el.name] === undefined) data[el.name] = '';
+      } else if (tag === 'select') {
+        data[el.name] = el.multiple ? [...el.selectedOptions].map(o=>o.value).join('; ') : el.value;
+      } else {
+        data[el.name] = el.value;
+      }
+    });
+
+    data._userAgent = navigator.userAgent;
+    data._submittedAtLocal = new Date().toString();
+    return data;
+  }
+
+  const formEl = document.getElementById('survey');
+  formEl.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validateAllSections()) return;
+
+    const original = submitBtn.textContent;
+    submitBtn.disabled = true; submitBtn.textContent = 'Submitting…';
+
+    try {
+      const payload = serializeForm(formEl);
+      const fd = new FormData(); fd.append('payload', JSON.stringify(payload));
+      const res = await fetch(APPS_SCRIPT_URL, { method:'POST', body: fd });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json(); if (!json?.ok) throw new Error('Server not ok');
+
+      alert('Thank you! Your response was submitted successfully.');
+      formEl.reset(); step = 0; update();
+    } catch (err) {
+      console.error(err);
+      alert('Sorry, there was a problem submitting the survey. Please try again.');
+    } finally {
+      submitBtn.disabled = false; submitBtn.textContent = original;
+    }
+  });
+
+      // ---- Ranking matrix behaviour (one rank per column across all rows) ----
+  window.addEventListener('DOMContentLoaded', () => {
+    const box = document.getElementById('org-rank');
+    if (!box) return;
+
+    // 1) Mutually exclusive per rank (column)
+    box.querySelectorAll('input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (!radio.checked) return;
+        const v = radio.value; // "1".."6"
+        // Uncheck the same rank in other rows
+        box.querySelectorAll(`input[type="radio"][value="${CSS.escape(v)}"]`).forEach(other => {
+          if (other !== radio) other.checked = false;
+        });
+      });
+    });
+
+    // 2) Only allow rank "6" if "Another key organisation" is specified
+    const otherName = box.querySelector('input[name="org.other.label"]');
+    const sixRadios = box.querySelectorAll(`input[type="radio"][value="6"]`);
+
+    function syncRank6() {
+      const enabled = otherName && otherName.value.trim() !== '';
+      sixRadios.forEach(r => {
+        r.disabled = !enabled;
+        if (!enabled && r.checked) r.checked = false;
+      });
+    }
+
+    syncRank6();
+    if (otherName) otherName.addEventListener('input', syncRank6);
+  });
+</script>
+</script>
+
+  
+</body>
+</html>
