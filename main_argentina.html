@@ -250,7 +250,7 @@ table.compact td textarea.comment-box {
 
         <p>Este cuestionario está diseñado para recopilar información de los países de ALC sobre las políticas de calidad de la atención y los esfuerzos generales del Gobierno para garantizar y mejorar la calidad de la atención médica. El trabajo basado en esta información se publicará en 2026 como capítulo temático de la tercera edición de Health at a Glance: Latin America and the Caribbean, publicado conjuntamente por la OCDE, el Banco Mundial y el Banco Interamericano de Desarrollo.</p>
 
-        <p>El cuestionario consta de dos partes. En la <strong>primera parte</strong>, se define el estado de las políticas de calidad de la atención: qué existe en la legislación y la gobernanza, los estándares que guían la práctica, cómo se mide y mejora el desempeño, y cómo se relaciona a los pacientes y los profesionales. En la <strong>segunda parte</strong> se analizan las capacidades de salud digital y los usos de los datos de salud para mejorar la calidad.</p>
+        <p>En la <strong>primera parte</strong>, se define el estado de las políticas de calidad de la atención: qué existe en la legislación y la gobernanza, los estándares que guían la práctica, cómo se mide y mejora el desempeño, y cómo se relaciona a los pacientes y los profesionales.</p>
 
         <p>Si ayuda a comunicar la información que desea proporcionar como respuesta, incluya las URL y los enlaces que correspondan.</p>
 
@@ -2327,345 +2327,239 @@ table.compact td textarea.comment-box {
 </div>
 
 
-  <script>
-  // ===== CONFIG =====
+ <script>
+  // ===== CONFIGURACIÓN =====
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw7DSmymNBpuEDkrJQSLjCCu1o-XVOhPfd5QNfjWkDYMWg82ENODp00OtmdAg2vXQhr/exec';
+  const STORAGE_KEY = 'survey_draft_data';
 
-  // ===== PAGING (with history) =====
+  // ===== NAVEGACIÓN (Paginación) =====
   const sections = document.querySelectorAll('.q');
   let step = 0;
 
   const prevBtn   = document.getElementById('prevBtn');
   const nextBtn   = document.getElementById('nextBtn');
   const submitBtn = document.getElementById('submitBtn');
+  const formEl    = document.getElementById('survey');
 
-  function update(){
-    sections.forEach((s,i)=>s.classList.toggle('active', i===step));
-    prevBtn.disabled = step===0;
-    nextBtn.disabled = step===sections.length-1;
-    submitBtn.style.display = (step===sections.length-1)?'inline-block':'none';
-    (sections[step].querySelector('h1,h2,h3')||sections[step]).scrollIntoView({block:'start'});
+  function update() {
+    sections.forEach((s, i) => s.classList.toggle('active', i === step));
+    prevBtn.disabled = (step === 0);
+    nextBtn.disabled = (step === sections.length - 1);
+    submitBtn.style.display = (step === sections.length - 1) ? 'inline-block' : 'none';
+    
+    const target = sections[step].querySelector('h1, h2, h3') || sections[step];
+    target.scrollIntoView({ block: 'start' });
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // ====== Special validator for the ranking matrix (C) ======
-  // Expects a container with id="org-rank".
-  // Core rows must use each rank 1..5 exactly once.
-  // If "Another key organisation" (name field) is filled, then ranks must be 1..6 exactly once.
-  function validateOrgRanks(container){
+  // ===== VALIDACIÓN DE RANGO (Matriz C) =====
+  function validateOrgRanks(container) {
     const errEl = container.querySelector('#org-rank-error');
-    if (errEl){ errEl.style.display = 'none'; errEl.textContent = ''; }
+    if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
 
-    const core = [
-      'org.rank.moh',
-      'org.rank.quality',
-      'org.rank.nphi',
-      'org.rank.insurance',
-      'org.rank.regulators'
-    ];
-
+    const core = ['org.rank.moh', 'org.rank.quality', 'org.rank.nphi', 'org.rank.insurance', 'org.rank.regulators'];
     const picks = [];
     let focusEl = null;
 
-    // gather choices for core rows
-    for (const name of core){
+    for (const name of core) {
       const chosen = container.querySelector(`input[type=radio][name="${CSS.escape(name)}"]:checked`);
-      if (!chosen){
-        if (errEl){
+      if (!chosen) {
+        if (errEl) {
           errEl.textContent = 'Asigne un rango único (1–5) a cada organización listada.';
           errEl.style.display = 'block';
         }
-        // focus first radio of that row
         focusEl = container.querySelector(`input[type=radio][name="${CSS.escape(name)}"]`);
-        return { ok:false, focusEl };
+        return { ok: false, focusEl };
       }
       picks.push(chosen.value);
     }
 
-    // "Other" rule
     const otherLabel = container.querySelector('input[name="org.other.label"]');
     const otherUsed = otherLabel && otherLabel.value.trim() !== '';
     const otherChosen = container.querySelector(`input[type=radio][name="org.rank.other"]:checked`);
-    if (otherUsed && !otherChosen){
-      if (errEl){
-        errEl.textContent = 'Agregó “Otra organización clave”. Asígnele un rango único (1–6).';
-        errEl.style.display = 'block';
-      }
-      focusEl = container.querySelector(`input[type=radio][name="org.rank.other"]`);
-      return { ok:false, focusEl };
+
+    if (otherUsed && !otherChosen) {
+      if (errEl) { errEl.textContent = 'Agregó “Otra organización clave”. Asígnele un rango único (1–6).'; errEl.style.display = 'block'; }
+      return { ok: false, focusEl: container.querySelector(`input[type=radio][name="org.rank.other"]`) };
     }
-    if (!otherUsed && otherChosen){
-      if (errEl){
-        errEl.textContent = 'Si clasifica “Otra organización clave”, proporcione su nombre/enlace.';
-        errEl.style.display = 'block';
-      }
-      focusEl = container.querySelector('input[name="org.other.label"]');
-      return { ok:false, focusEl };
+    if (!otherUsed && otherChosen) {
+      if (errEl) { errEl.textContent = 'Si clasifica “Otra organización clave”, proporcione su nombre/enlace.'; errEl.style.display = 'block'; }
+      return { ok: false, focusEl: otherLabel };
     }
     if (otherUsed && otherChosen) picks.push(otherChosen.value);
 
-    // uniqueness + full coverage
-    const expectedMax = otherUsed ? 6 : 5;
-    const expected = new Set(Array.from({length: expectedMax}, (_,i)=>String(i+1)));
     const chosenSet = new Set(picks);
-
-    if (chosenSet.size !== picks.length){
-      if (errEl){
-        errEl.textContent = 'Cada rango solo puede usarse una vez. Corrija los duplicados.';
-        errEl.style.display = 'block';
-      }
-      // try to focus the duplicate value if possible
-      for (const v of picks){
-        if (picks.filter(x=>x===v).length > 1){
-          focusEl = container.querySelector(`input[type=radio][value="${CSS.escape(v)}"]`);
-          break;
-        }
-      }
-      return { ok:false, focusEl };
-    }
-    if (picks.length !== expected.size || ![...expected].every(n => chosenSet.has(n))){
-      if (errEl){
-        errEl.textContent = otherUsed
-          ? 'Si incluye “Otra organización clave”, los rangos deben cubrir del 1 al 6 exactamente una vez cada uno.'
-          : 'Use cada rango del 1 al 5 exactamente una vez.';
-        errEl.style.display = 'block';
-      }
-      focusEl = container.querySelector('input[type=radio]');
-      return { ok:false, focusEl };
+    if (chosenSet.size !== picks.length) {
+      if (errEl) { errEl.textContent = 'Cada rango solo puede usarse una vez. Corrija los duplicados.'; errEl.style.display = 'block'; }
+      return { ok: false, focusEl: container.querySelector('input[type=radio]') };
     }
 
-    return { ok:true, focusEl:null };
+    return { ok: true, focusEl: null };
   }
 
-  // ===== PER-PAGE VALIDATION (includes ranking rule if present) =====
-  function validateCurrentSection(){
+  // ===== VALIDACIÓN POR PÁGINA =====
+  function validateCurrentSection() {
     const current = sections[step];
-
-    // Ranking matrix rule if this page contains it
     const rankBox = current.querySelector('#org-rank');
-    if (rankBox){
+    if (rankBox) {
       const { ok, focusEl } = validateOrgRanks(rankBox);
-      if (!ok){
-        if (focusEl){
-          focusEl.scrollIntoView({behavior:'smooth', block:'center'});
-          focusEl.focus?.({preventScroll:true});
-        }
+      if (!ok) {
+        if (focusEl) { focusEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); focusEl.focus?.({ preventScroll: true }); }
         return false;
       }
     }
 
-    // Generic HTML5 validation for the rest of the controls
     const controls = current.querySelectorAll('input, select, textarea');
     let firstInvalid = null;
-    controls.forEach(el => el.classList.remove('invalid'));
     const seenRadio = new Set();
 
-    for (const el of controls){
+    for (const el of controls) {
       if (!el.name || el.disabled) continue;
-      const type = (el.type||'').toLowerCase();
-
-      if (type === 'radio'){
+      if (el.type === 'radio') {
         if (seenRadio.has(el.name)) continue;
         seenRadio.add(el.name);
         const group = current.querySelectorAll(`input[type="radio"][name="${CSS.escape(el.name)}"]`);
-        const required = [...group].some(r => r.required);
-        if (required && ![...group].some(r => r.checked)){
+        if ([...group].some(r => r.required) && ![...group].some(r => r.checked)) {
           group.forEach(r => r.classList.add('invalid'));
           firstInvalid = firstInvalid || group[0];
         }
-      } else if (!el.checkValidity()){
+      } else if (!el.checkValidity()) {
         el.classList.add('invalid');
         firstInvalid = firstInvalid || el;
       }
     }
 
-    if (firstInvalid){
+    if (firstInvalid) {
       firstInvalid.reportValidity?.();
-      firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
-      firstInvalid.focus?.({preventScroll:true});
+      firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return false;
     }
     return true;
   }
 
-  // nav buttons + history
-  nextBtn.onclick = () => {
-    if (step < sections.length-1 && validateCurrentSection()){
-      step++; update(); history.pushState({step}, '', `#step${step}`);
-    }
-  };
-  prevBtn.onclick = () => {
-    if (step > 0){ step--; update(); history.pushState({step}, '', `#step${step}`); }
-  };
-  window.addEventListener('popstate', e => {
-    if (e.state && typeof e.state.step === 'number'){ step = e.state.step; update(); }
-  });
-  window.addEventListener('DOMContentLoaded', () => {
-    const m = location.hash.match(/#step(\d+)/); step = m ? +m[1]||0 : 0;
-    history.replaceState({step}, '', `#step${step}`); update();
-  });
-
-  // ===== FULL VALIDATION (all pages; also enforces ranking rule if present) =====
-  function validateAllSections(){
-    let ok = true, firstInvalid = null, firstSectionIdx = -1;
-
-    sections.forEach((sec, idx) => {
-      // Ranking matrix on this section?
-      const rankBox = sec.querySelector('#org-rank');
-      if (rankBox){
-        const { ok: rOK, focusEl } = validateOrgRanks(rankBox);
-        if (!rOK){
-          ok = false;
-          if (!firstInvalid){ firstInvalid = focusEl || rankBox.querySelector('input,select,textarea'); firstSectionIdx = idx; }
-        }
-      }
-
-      // Generic HTML5 validation
-      const controls = sec.querySelectorAll('input, select, textarea');
-      const seenRadio = new Set();
-      controls.forEach(el => el.classList.remove('invalid'));
-
-      for (const el of controls){
-        if (!el.name || el.disabled) continue;
-        const type = (el.type||'').toLowerCase();
-
-        if (type === 'radio'){
-          if (seenRadio.has(el.name)) continue;
-          seenRadio.add(el.name);
-          const group = sec.querySelectorAll(`input[type="radio"][name="${CSS.escape(el.name)}"]`);
-          const required = [...group].some(r => r.required);
-          if (required && ![...group].some(r => r.checked)){
-            ok = false;
-            if (!firstInvalid){ firstInvalid = group[0]; firstSectionIdx = idx; }
-            group.forEach(r => r.classList.add('invalid'));
-          }
-        } else if (!el.checkValidity()){
-          ok = false;
-          if (!firstInvalid){ firstInvalid = el; firstSectionIdx = idx; }
-          el.classList.add('invalid');
-        }
-      }
-    });
-
-    if (!ok && firstInvalid){
-      step = firstSectionIdx >= 0 ? firstSectionIdx : step;
-      update();
-      firstInvalid.reportValidity?.();
-      firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
-      firstInvalid.focus?.({preventScroll:true});
-    }
-    return ok;
-  }
-
-  // ===== SERIALIZE + SUBMIT =====
-  function serializeForm(form){
+  // ===== SERIALIZACIÓN =====
+  function serializeForm(form) {
     const data = {};
-    const elements = form.querySelectorAll('input, select, textarea');
-
-    // initialize all checkboxes to false so unchecked are captured
-    elements.forEach(el => { if (el.name && el.type === 'checkbox' && data[el.name] === undefined) data[el.name] = false; });
-
-    elements.forEach(el => {
+    form.querySelectorAll('input, select, textarea').forEach(el => {
       if (!el.name || el.disabled) return;
-      const type = (el.type||'').toLowerCase();
-      const tag = el.tagName.toLowerCase();
-
-      if (type === 'checkbox') {
-        if (el.checked) data[el.name] = true;
-      } else if (type === 'radio') {
+      if (el.type === 'checkbox') data[el.name] = el.checked;
+      else if (el.type === 'radio') {
         if (el.checked) data[el.name] = el.value;
         else if (data[el.name] === undefined) data[el.name] = '';
-      } else if (tag === 'select') {
-        data[el.name] = el.multiple ? [...el.selectedOptions].map(o=>o.value).join('; ') : el.value;
-      } else {
-        data[el.name] = el.value;
-      }
+      } else data[el.name] = el.value;
     });
-
     data._userAgent = navigator.userAgent;
     data._submittedAtLocal = new Date().toString();
     return data;
   }
 
-  const formEl = document.getElementById('survey');
+  // ===== PERSISTENCIA (Drafts) =====
+  formEl.addEventListener('input', () => {
+    const draft = serializeForm(formEl);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+  });
+
+  window.addEventListener('load', () => {
+    const savedData = localStorage.getItem(STORAGE_KEY);
+    if (!savedData) return;
+    const data = JSON.parse(savedData);
+    Object.keys(data).forEach(key => {
+      const value = data[key];
+      const inputs = formEl.querySelectorAll(`[name="${key}"]`);
+      inputs.forEach(input => {
+        if (input.type === 'checkbox') input.checked = !!value;
+        else if (input.type === 'radio') { if (input.value === value) input.checked = true; }
+        else input.value = value;
+      });
+    });
+    if (typeof setupStatusGate === 'function') {
+      ['audit', 'nqi', 'pr', 'nr'].forEach(setupStatusGate);
+    }
+  });
+
+  // ===== ENVÍO DEL FORMULARIO =====
   formEl.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (!validateAllSections()) return;
+    // Validar todas las secciones antes de enviar
+    let allOk = true;
+    for(let i=0; i<sections.length; i++) {
+        step = i; update(); // Ir a la sección para validar
+        if(!validateCurrentSection()) { allOk = false; break; }
+    }
+    if (!allOk) return;
 
     const original = submitBtn.textContent;
-    submitBtn.disabled = true; submitBtn.textContent = 'Enviando…';
+    submitBtn.disabled = true; 
+    submitBtn.textContent = 'Enviando…';
 
     try {
       const payload = serializeForm(formEl);
-      const fd = new FormData(); fd.append('payload', JSON.stringify(payload));
-      const res = await fetch(APPS_SCRIPT_URL, { method:'POST', body: fd });
+      const fd = new FormData();  
+      fd.append('payload', JSON.stringify(payload));
+      
+      const res = await fetch(APPS_SCRIPT_URL, { method: 'POST', body: fd });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const json = await res.json(); if (!json?.ok) throw new Error('Server not ok');
+      
+      const json = await res.json();  
+      if (!json?.ok) throw new Error('Server not ok');
+
+      // ÉXITO: Limpiar borrador
+      localStorage.removeItem(STORAGE_KEY);
 
       alert('¡Gracias! Su respuesta se envió correctamente.');
-      formEl.reset(); step = 0; update();
+      formEl.reset();  
+      step = 0;  
+      update();
     } catch (err) {
       console.error(err);
       alert('Lo sentimos, hubo un problema al enviar la encuesta. Inténtelo nuevamente.');
     } finally {
-      submitBtn.disabled = false; submitBtn.textContent = original;
+      submitBtn.disabled = false; 
+      submitBtn.textContent = original;
     }
   });
 
-      // ---- Ranking matrix behaviour (one rank per column across all rows) ----
+  // ===== BOTONES NAVEGACIÓN =====
+  nextBtn.onclick = () => { if (step < sections.length - 1 && validateCurrentSection()) { step++; update(); history.pushState({ step }, '', `#step${step}`); } };
+  prevBtn.onclick = () => { if (step > 0) { step--; update(); history.pushState({ step }, '', `#step${step}`); } };
+
+  // ===== MATRIZ DE RANKING (Comportamiento visual) =====
   window.addEventListener('DOMContentLoaded', () => {
     const box = document.getElementById('org-rank');
     if (!box) return;
-
-    // 1) Mutually exclusive per rank (column)
     box.querySelectorAll('input[type="radio"]').forEach(radio => {
       radio.addEventListener('change', () => {
         if (!radio.checked) return;
-        const v = radio.value; // "1".."6"
-        // Uncheck the same rank in other rows
+        const v = radio.value;
         box.querySelectorAll(`input[type="radio"][value="${CSS.escape(v)}"]`).forEach(other => {
           if (other !== radio) other.checked = false;
         });
       });
     });
-
-    // 2) Only allow rank "6" if "Another key organisation" is specified
     const otherName = box.querySelector('input[name="org.other.label"]');
     const sixRadios = box.querySelectorAll(`input[type="radio"][value="6"]`);
-
     function syncRank6() {
       const enabled = otherName && otherName.value.trim() !== '';
-      sixRadios.forEach(r => {
-        r.disabled = !enabled;
-        if (!enabled && r.checked) r.checked = false;
-      });
+      sixRadios.forEach(r => { r.disabled = !enabled; if (!enabled && r.checked) r.checked = false; });
     }
-
     syncRank6();
     if (otherName) otherName.addEventListener('input', syncRank6);
   });
 </script>
-</script>
 
-  <script>
-// Custom Spanish messages for required/format errors
-document.addEventListener('DOMContentLoaded', () => {
-  const requiredMsg = 'Por favor complete este campo.';
-  const emailMsg    = 'Ingrese un correo electrónico válido.';
-
-  document.querySelectorAll('#survey input, #survey select, #survey textarea')
-    .forEach(el => {
-      // Clear custom message on input
+<script>
+  // Mensajes personalizados en español
+  document.addEventListener('DOMContentLoaded', () => {
+    const requiredMsg = 'Por favor complete este campo.';
+    const emailMsg    = 'Ingrese un correo electrónico válido.';
+    document.querySelectorAll('#survey input, #survey select, #survey textarea').forEach(el => {
       el.addEventListener('input', () => el.setCustomValidity(''));
-
-      // Set message when invalid
       el.addEventListener('invalid', () => {
         if (el.validity.valueMissing) el.setCustomValidity(requiredMsg);
         else if (el.type === 'email' && el.validity.typeMismatch) el.setCustomValidity(emailMsg);
-        // add more rules if needed…
       });
     });
-});
+  });
 </script>
 
   
