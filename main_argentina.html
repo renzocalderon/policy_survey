@@ -21,7 +21,9 @@
     body{font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink); margin:0; padding:20px}
     h1,h2,h3,h4{margin:0 0 10px; color:var(--ink)}
     .muted{color:var(--muted)}
-    .app{max-width:1000px;margin:0 auto}
+    .app { width: 92%;           /* Aprovecha el espacio en laptops y tablets */
+    max-width: 1440px;    /* Evita que se deforme en pantallas gigantes */
+    margin: 0 auto;       /* Mantiene el formulario centrado */ }
     .card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:24px}
 
     /* Layout */
